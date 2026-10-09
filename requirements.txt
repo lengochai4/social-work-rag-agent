@@ -1,0 +1,6 @@
+# tải thư mục dự án để chuyển pdf/ docs -> markdown
+pip install docling
+# nếu là word -> markdown
+docling convert "quy_che.docx" --to md --output data/processed
+# nếu là pdf -> markdown
+docling convert "quy_che.pdf" --to md --output data/processed
