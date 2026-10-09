@@ -6,7 +6,7 @@ ROOT, PATH, SETTINGS, AND OTHER CONFIGURATION VARIABLES
 from pathlib import Path
 
 #PROJECT ROOT 
-PROJECT_ROOT = Path(__file__).parent.parent
+PROJECT_ROOT = Path(__file__).resolve().parent
 
 #DATA PATHS
 DATA_PATH = PROJECT_ROOT / "data"
@@ -23,4 +23,3 @@ SUPPORTED_FILE_TYPES = [".md", ".txt"]
 
 #EMBEDING SETTINGS
 EMBEDDING_MODEL_NAME = "..."
-

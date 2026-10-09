@@ -1,0 +1,22 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+node_modules/
+vendor/
+venv/, env/
+
+.env, .env.local, .env.production, .env.test, .env.development.local
+Thumbs.db
+desktop.ini
+
+.vscode/
+.idea/
+
+dist/, build/, out/, target/
+*.pyc, *.class, *.jar, *.war, *.ear, *.exe, *.dll, *.so, *.dylib
+
+*.log, *.tmp, *.temp, *.bak, *.swp, *.swo, *.swn
+.cache/, .parcel-cache/, .coverage/
+
