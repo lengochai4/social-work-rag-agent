@@ -15,13 +15,15 @@ PROCESSED_DATA_PATH = DATA_PATH / "processed"
 RAW_DATA_PATH = DATA_PATH / "raw"
 
 OUTPUT_PATH = DATA_PATH / "ctxh_chunks.json"
+EMBEDDINGS_PATH = DATA_PATH / "ctxh_embeddings.json"
 
 
 #SOURCES FILE SETTINGS 
 SUPPORTED_FILE_TYPES = [".md", ".txt"]
 
 #EMBEDING SETTINGS
-EMBEDDING_MODEL_NAME = "..."
+EMBEDDING_MODEL_NAME = str("intfloat/multilingual-e5-base")
+#EMBEDDING_MODEL_NAME = "all-MiniLM-L6-v2"
 
 CHUNK_SIZE = 1000
 CHUNK_OVERLAP = 200

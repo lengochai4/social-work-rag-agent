@@ -22,3 +22,4 @@ dist/, build/, out/, target/
 
 #Generated files
 data/ctxh_chunks.json
+data/ctxh_embeddings.json

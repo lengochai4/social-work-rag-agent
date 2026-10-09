@@ -4,3 +4,6 @@ pip install docling
 docling convert "quy_che.docx" --to md --output data/processed
 # nếu là pdf -> markdown
 docling convert "quy_che.pdf" --to md --output data/processed
+
+uv add sentence-transformers
+pip install sentence-transformers
