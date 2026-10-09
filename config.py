@@ -14,9 +14,8 @@ DATA_PATH = PROJECT_ROOT / "data"
 PROCESSED_DATA_PATH = DATA_PATH / "processed"
 RAW_DATA_PATH = DATA_PATH / "raw"
 
+OUTPUT_PATH = DATA_PATH / "ctxh_chunks.json"
 
-#OUTPUT FILE PATHS
-CHUNKS_FILE_PATH = DATA_PATH / "ctxh_chunks.json"
 
 #SOURCES FILE SETTINGS 
 SUPPORTED_FILE_TYPES = [".md", ".txt"]

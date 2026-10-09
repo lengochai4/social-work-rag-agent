@@ -20,3 +20,5 @@ dist/, build/, out/, target/
 *.log, *.tmp, *.temp, *.bak, *.swp, *.swo, *.swn
 .cache/, .parcel-cache/, .coverage/
 
+#Generated files
+data/ctxh_chunks.json
