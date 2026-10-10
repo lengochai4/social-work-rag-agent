@@ -1,5 +1,5 @@
 
-from src.mcp.retrieval.vector_store import VectorStore
+from retrieval.vector_store import VectorStore
 from config import EMBEDDINGS_PATH, OUTPUT_PATH
 
 

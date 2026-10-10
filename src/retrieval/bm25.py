@@ -7,7 +7,7 @@ import numpy as np
 
 sys.path.append(str(Path(__file__).resolve().parent.parent / "24110103"))
 print(sys.path)
-from vector_store import VectorStore
+from retrieval.vector_store import VectorStore
 # pyrefly: ignore [missing-import]
 from src.schemas import DocumentChunk
 
