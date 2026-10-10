@@ -1,7 +1,7 @@
 
 from dataclasses import dataclass
 
-from src.retrieval.hybrid_search import RetrievalResult
+from src.schemas import RetrievalResult
 
 
 @dataclass

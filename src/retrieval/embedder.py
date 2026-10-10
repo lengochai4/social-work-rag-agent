@@ -4,6 +4,7 @@ Convert documents to embeddings and save them in a JSON file.
 Convert the user's documents to embeddings and save them in a JSON file.
 """
 
+import os
 from sentence_transformers import SentenceTransformer
 from config import EMBEDDING_MODEL_NAME
 
@@ -34,5 +35,3 @@ class Embedder:
             convert_to_numpy= True
         )
         return embedding.tolist()
-    
-    
