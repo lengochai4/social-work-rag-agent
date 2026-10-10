@@ -85,39 +85,6 @@ def hybrid_search(
     results.sort(key=lambda result: result[1], reverse=True)
     return results[:top_k]
 
-    # query_tokens = query.lower().split()
-    # if not chunks or not embedding:
-    #     return []
-    # if len(chunks) != len(embedding):
-    #     raise ValueError("chunks and embedding must have the same length")
-    # if top_k <= 0:
-    #     return []
-    # if w_bm25 < 0 or w_vector < 0 or w_bm25 + w_vector == 0:
-    #     raise ValueError("weights must be non-negative and not both zero")
-
-    # bm25_scores = list(bm25_index.get_scores(query_tokens))
-    # query_embedding = VectorStore()._embed_query(query)
-    # vector_scores = [
-    #     cosine_similarity(query_embedding, chunk_embedding)
-    #     for chunk_embedding in embedding
-    # ]
-
-    # normalized_bm25 = normalize_scores(bm25_scores)
-    # normalized_vector = normalize_scores(vector_scores)
-    # weight_total = w_bm25 + w_vector
-
-    # results = [
-    #     (
-    #         index,
-    #         (
-    #             w_bm25 * normalized_bm25[index]
-    #             + w_vector * normalized_vector[index]
-    #         ) / weight_total,
-    #     )
-    #     for index in range(len(chunks))
-    # ]
-    # results.sort(key=lambda result: result[1], reverse=True)
-    # return results[:top_k]
 
 hybrid_results = hybrid_search(
     query="on the mat",
