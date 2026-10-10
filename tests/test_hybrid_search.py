@@ -9,7 +9,7 @@ from src.retrieval.hybrid_search import (
     min_max_normalize,
 )
 from src.retrieval.calibration import RetrievalCalibration
-from src.retrieval.hybrid_search import RetrievalResult
+from src.schemas import RetrievalResult
 
 
 class FakeEmbedder:
@@ -149,4 +149,57 @@ def test_testset_has_twelve_questions():
     assert len(cases) == 12
     assert sum(not case["expected_answerable"] for case in cases) >= 4
 
-#uv run python -m pytest tests/test_hybrid_search.py -v
+if __name__ == "__main__":
+    from src.retrieval.embedder import Embedder
+    from src.retrieval.calibration import RetrievalCalibration
+    from src.schemas import RetrievalResult
+    from config import OUTPUT_PATH
+    import json
+    from pathlib import Path
+    
+    print("*" * 50)
+    print("RUNNING HYBRID SEARCH SIMULATION BATCH (testset.jsonl)")
+    print("*" * 50)
+    
+    if not OUTPUT_PATH.exists():
+        print(f"Error: {OUTPUT_PATH} not found. Please run chunker / build_dataset first.")
+    else:
+        with OUTPUT_PATH.open("r", encoding="utf-8") as f:
+            real_chunks = json.load(f)
+            
+        print(f"Loaded {len(real_chunks)} chunks for Hybrid Search.")
+        print("Initializing Embedder and BM25 Index (This will take a moment)...\n")
+        embedder = Embedder()
+        retriever = HybridSearch(chunks=real_chunks, embedder=embedder, alpha=0.5)
+        calibrator = RetrievalCalibration(threshold=0.55)
+        
+        path = Path(__file__).parent / "testset.jsonl"
+        with path.open("r", encoding="utf-8") as f:
+            test_cases = [json.loads(line) for line in f if line.strip()]
+            
+        print(f"Bắt đầu test {len(test_cases)} câu hỏi từ testset.jsonl (Threshold: {calibrator.threshold}):\n")
+        
+        passed_count = 0
+        
+        for idx, case in enumerate(test_cases, start=1):
+            query = case["query"]
+            expected = case["expected_answerable"]
+            results = retriever.search(query, top_k=1)
+            
+            top_result = results[0] if results else None
+            will_answer = calibrator.should_answer(results)
+            match_status = "✅ PASS" if will_answer == expected else "❌ FAIL"
+            
+            if will_answer == expected:
+                passed_count += 1
+                
+            print(f"Câu {idx}: {query}")
+            print(f"  + Kỳ vọng: {'Có thể trả lời' if expected else 'Từ chối (no_answer)'}")
+            print(f"  + Thực tế: {'Có thể trả lời' if will_answer else 'Từ chối (no_answer)'} => {match_status}")
+            
+            if top_result:
+                print(f"  + Điểm cao nhất: {top_result.score:.4f} [Sparse: {top_result.sparse_score:.4f} | Dense: {top_result.dense_score:.4f}]")
+            print("-" * 60)
+            
+        print(f"\nKết quả chung cuộc: {passed_count}/{len(test_cases)} câu PASS (Tỷ lệ: {passed_count/len(test_cases)*100:.2f}%)")
+
