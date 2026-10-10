@@ -33,7 +33,7 @@ def get_status(student_id: str, semester: str="") -> str:
     profile= load_student(student_id)
     if not profile:
         logger.warning(f"Student not found: student_id='{student_id}'")
-        return f"Error: student with ID '{student_id}' not found"
+        return json.dumps(f"Error: student with ID '{student_id}' not found")
 
     total_all_semesters= sum(profile.accumulated_points.values())
     semester_points= (
@@ -72,7 +72,7 @@ def register_activity(student_id: str, activity_code: str, points: int, semester
         logger.warning(
             f"Registration failed - student not found: student_id='{student_id}'"
         )
-        return f"Error: Student with ID '{student_id}' not found."
+        return json.dumps(f"Error: Student with ID '{student_id}' not found.")
 
     current_semester_points = profile.accumulated_points.get(semester, 0)
 
