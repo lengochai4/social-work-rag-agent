@@ -1,61 +1,84 @@
-from dataclasses import asdict
 import json
-import os
 from pathlib import Path
-import tempfile
+from typing import Optional
 from src.schemas import ActivityRecord, StudentProfile
-from config import DB_PATH
+
+ROOT_DIR = Path(__file__).resolve().parent.parent.parent
+DB_PATH = ROOT_DIR / "data" / "db" / "ctxh_db.json"
 
 
-def load_student(student_id: str) -> StudentProfile:
-    """Đọc dữ liệu sinh viên và trả về StudentProfile."""
-    if not DB_PATH.exists():
-        return StudentProfile(
-            student_id=student_id, full_name=f"Sinh viên {student_id}"
-        )
+def load_db() -> dict:
+  if not DB_PATH.exists():
+    return {"students": {}}
+  with open(DB_PATH, "r", encoding="utf-8") as f:
+    try:
+      return json.load(f)
+    except json.JSONDecodeError:
+      return {"students": {}}
 
-    with open(DB_PATH, "r", encoding="utf-8") as f:
-        raw_db = json.load(f).get("students", {})
 
-    if student_id not in raw_db:
-        return StudentProfile(
-            student_id=student_id, full_name=f"Sinh viên {student_id}"
-        )
+def load_student(student_id: str) -> Optional[StudentProfile]:
+  db = load_db()
 
-    data = raw_db[student_id]
-    activities = [
+  # Bóc tách qua tầng "students" nếu có
+  students_map = db.get("students", db)
+  student_data = students_map.get(student_id)
+
+  if not student_data:
+    return None
+
+  # Chuyển đổi activities (tự fallback nếu còn trường cũ 'days')
+  activities = []
+  for act in student_data.get("registered_activities", []):
+    points = act.get("points")
+    if points is None:
+      # Quy đổi dự phòng từ ngày cũ: 1 ngày = 5 điểm
+      points = int(act.get("days", 1.0) * 5)
+
+    activities.append(
         ActivityRecord(
-            activity_code=act["activity_code"],
-            hours=act["hours"],
-            days=act["days"],
-            semester=act["semester"],
+            activity_code=act.get("activity_code", ""),
+            points=points,
+            semester=act.get("semester", "HK1_2025_2026"),
             registered_at=act.get("registered_at", ""),
         )
-        for act in data.get("registered_activities", [])
-    ]
-
-    return StudentProfile(
-        student_id=data["student_id"],
-        full_name=data["full_name"],
-        registered_activities=activities,
-        accumulated_days=data.get("accumulated_days", {}),
     )
+
+  # Chuyển đổi accumulated_points
+  accumulated_points = student_data.get("accumulated_points")
+  if accumulated_points is None:
+    # Nếu DB cũ đang dùng 'accumulated_days'
+    old_days = student_data.get("accumulated_days", {})
+    accumulated_points = {sem: int(days * 5) for sem, days in old_days.items()}
+
+  return StudentProfile(
+      student_id=student_data.get("student_id", student_id),
+      full_name=student_data.get("full_name", ""),
+      accumulated_points=accumulated_points,
+      registered_activities=activities,
+  )
 
 
 def save_student(profile: StudentProfile) -> None:
-    """Ghi dữ liệu StudentProfile an toàn bằng Atomic Write."""
-    DB_PATH.parent.mkdir(parents=True, exist_ok=True)
-    raw_db = {"students": {}}
-    if DB_PATH.exists():
-        with open(DB_PATH, "r", encoding="utf-8") as f:
-            raw_db = json.load(f)
+  db = load_db()
+  if "students" not in db:
+    db = {"students": db}
 
-    raw_db.setdefault("students", {})[profile.student_id] = asdict(profile)
+  db["students"][profile.student_id] = {
+    "student_id": profile.student_id,
+    "full_name": profile.full_name,
+    "accumulated_points": profile.accumulated_points,
+    "registered_activities": [
+      {
+        "activity_code": act.activity_code,
+        "points": act.points,
+        "semester": act.semester,
+        "registered_at": act.registered_at,
+      }
+      for act in profile.registered_activities
+    ],
+  }
 
-    with tempfile.NamedTemporaryFile(
-        "w", dir=DB_PATH.parent, delete=False, encoding="utf-8"
-    ) as tf:
-        json.dump(raw_db, tf, indent=2, ensure_ascii=False)
-        temp_name = tf.name
-
-    os.replace(temp_name, DB_PATH)
+  DB_PATH.parent.mkdir(parents=True, exist_ok=True)
+  with open(DB_PATH, "w", encoding="utf-8") as f:
+    json.dump(db, f, indent=2, ensure_ascii=False)
