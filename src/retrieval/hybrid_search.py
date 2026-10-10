@@ -50,6 +50,10 @@ class EmbeddingModel(Protocol):
         if max_score == min_score:
             return [1.0] * len(scores)
         return [(score - min_score) / (max_score - min_score) for score in scores]
+    
+    def build_bm25_index(self, chunks: List[dict[str, Any]]) -> BM25Okapi:
+        tokenized_chunks = [self.tokenize(chunk["content"]) for chunk in chunks]
+        return BM25Okapi(tokenized_chunks)
 
 class HybridSearch:
     def __init__(
