@@ -1,5 +1,5 @@
 
-from src.retrieval.embedder import Embedder
+from src.mcp.retrieval.embedder import Embedder
 
 
 def main():
