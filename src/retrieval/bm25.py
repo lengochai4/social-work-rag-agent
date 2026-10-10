@@ -3,14 +3,13 @@ from rank_bm25 import BM25Okapi
 import sys 
 from pathlib import Path 
 from sentence_transformers import CrossEncoder
+import numpy as np
 
 sys.path.append(str(Path(__file__).resolve().parent.parent / "24110103"))
 print(sys.path)
 from vector_store import VectorStore
 # pyrefly: ignore [missing-import]
 from src.schemas import DocumentChunk
-from embedding_similarity_helpers import cosine_similarity
-
 
 
 documents = [
@@ -29,6 +28,7 @@ print(doc_scores)
 
 for doc, score in zip(documents, doc_scores):
     print(f"Document: {doc} | Score: {score:.3f}")
+
 
 def normalize_scores (scores: list[float]) -> list[float]:
     if not scores: 
@@ -57,6 +57,14 @@ def hybrid_search(
     Hybrid search: combines BM25 and vector search results based on a weighted score.
     returns a list (chunk_index, hybrid_score) sorted by hybrid_score in descending order.
     """
+
+    def cosine_similarity(a: list[float], b: list[float]) -> float:
+        """Compute cosine similarity between two vectors."""
+        a_arr = np.array(a)
+        b_arr = np.array(b)
+        if np.linalg.norm(a_arr) == 0 or np.linalg.norm(b_arr) == 0:
+            return 0.0
+        return float(np.dot(a_arr, b_arr) / (np.linalg.norm(a_arr) * np.linalg.norm(b_arr)))
     
     query_tokens = query.lower().split()
     bm25_scores = list(bm25_index.get_scores(query_tokens))
