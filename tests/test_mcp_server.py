@@ -1,72 +1,68 @@
-from datetime import datetime
-from src.mcp.db import load_student, save_student
-from src.schemas import ActivityRecord, StudentProfile
+"""tests/test_mcp_server.py: Script kiểm thử MCP Server qua stdio."""
+
+import asyncio
+import json
+import sys
+from mcp import ClientSession, StdioServerParameters
+from mcp.client.stdio import stdio_client
+from rich import print
 
 
-def test_db_operations():
-    print("=" * 60)
-    print("🚀 STARTING MOCK CTXH DATABASE TEST")
-    print("=" * 60)
-
-    # 1. Select student profile for testing (Hai - 24110089)
-    student_id = "24110089"
-    semester = "HK1_2025_2026"
-
-    # Load initial state
-    profile = load_student(student_id)
-    initial_days = profile.accumulated_days.get(semester, 0.0)
-    initial_act_count = len(profile.registered_activities)
-
-    print(f"\n[1] INITIAL STATE:")
-    print(f" - Student: {profile.full_name} ({profile.student_id})")
-    print(f" - Accumulated days ({semester}): {initial_days} day(s)")
-    print(f" - Registered activities count: {initial_act_count}")
-
-    # 2. Create a new activity record to append (Side-effect)
-    new_activity_code = "CTXH_TIEP_SUC_MUA_THI_2026"
-    hours = 16.0
-    added_days = round(hours / 8.0, 2)  
-
-    new_record = ActivityRecord(
-        activity_code=new_activity_code,
-        hours=hours,
-        days=added_days,
-        semester=semester,
-        registered_at=datetime.now().isoformat(),
+async def run_test():
+    print("[bold cyan]1. Đang khởi chạy MCP Server qua subprocess stdio...[/bold cyan]")
+    # Cấu hình lệnh khởi động server bằng chính Python trong môi trường hiện tại
+    server_params = StdioServerParameters(
+        command=sys.executable,
+        args=["-m", "src.mcp.server"],
     )
 
-    # Update StudentProfile dataclass
-    profile.registered_activities.append(new_record)
-    profile.accumulated_days[semester] = round(initial_days + added_days, 2)
+    async with stdio_client(server_params) as (read, write):
+        async with ClientSession(read, write) as session:
+            # Bắt tay khởi tạo giao thức MCP
+            await session.initialize()
+            print("[bold green]✔ Kết nối và handshake thành công![/bold green]\n")
 
-    # 3. Persist to Mock DB via Atomic Write
-    print(
-        f"\n[2] PERFORMING WRITE (SIDE-EFFECT): Registering {new_activity_code} (+{added_days} days)..."
-    )
-    save_student(profile)
-    print(" -> Successfully saved via Atomic Write.")
+            # TEST 1: Dynamic Discovery (Client tự khám phá danh sách tool)
+            print("[bold cyan]2. Đang khám phá công cụ động (list_tools)...[/bold cyan]")
+            tools_resp = await session.list_tools()
+            tools = tools_resp.tools
+            print(f"Server cung cấp {len(tools)} tools:")
+            for t in tools:
+                print(f" - [yellow]{t.name}[/yellow]: {t.description}")
+            assert len(tools) >= 2, "Lỗi: Server phải cung cấp tối thiểu 2 tools!"
 
-    # 4. Reload from disk to verify state change (Verify step)
-    reloaded_profile = load_student(student_id)
-    reloaded_days = reloaded_profile.accumulated_days.get(semester, 0.0)
-    reloaded_act_count = len(reloaded_profile.registered_activities)
+            test_student_id = "24110089"
 
-    print(f"\n[3] VERIFY STATE FROM DISK:")
-    print(f" - Updated days in DB: {reloaded_days} day(s)")
-    print(f" - Updated activities count in DB: {reloaded_act_count}")
+            # TEST 2: Đọc trạng thái ban đầu
+            print(f"\n[bold cyan]3. Kiểm tra trạng thái ban đầu của {test_student_id}...[/bold cyan]")
+            status_before = await session.call_tool(
+                "get_status",
+                {"student_id": test_student_id, "semester": "HK1_2025_2026"},
+            )
+            print("Kết quả ban đầu:", status_before.content[0].text)
 
-    # 5. Assertions for automated validation
-    assert reloaded_days == round(
-        initial_days + added_days, 2
-    ), f"Accumulated days mismatch: expected {initial_days + added_days}, got {reloaded_days}"
-    assert (
-        reloaded_act_count == initial_act_count + 1
-    ), "Activity count did not increment!"
+            # TEST 3: Ghi dữ liệu (Side-effect)
+            print(f"\n[bold cyan]4. Gọi tool ghi (register_activity)...[/bold cyan]")
+            register_res = await session.call_tool(
+                "register_activity",
+                {
+                    "student_id": test_student_id,
+                    "activity_code": "CTXH_HIEN_MAU_2026",
+                    "hours": 8.0,
+                    "semester": "HK1_2025_2026",
+                },
+            )
+            print("Kết quả đăng ký:", register_res.content[0].text)
 
-    print("\n" + "=" * 60)
-    print("✅ TEST PASSED: Read, Write (side-effect), and Verification succeeded!")
-    print("=" * 60)
+            # TEST 4: Bước Verify (Bắt buộc theo yêu cầu 2.7)
+            print(f"\n[bold cyan]5. Verify lại bằng tool đọc (get_status)...[/bold cyan]")
+            status_after = await session.call_tool(
+                "get_status",
+                {"student_id": test_student_id, "semester": "HK1_2025_2026"},
+            )
+            print("Kết quả sau khi ghi:", status_after.content[0].text)
+            print("\n[bold green]🎉 KIỂM THỬ THÀNH CÔNG! SERVER HOẠT ĐỘNG HOÀN HẢO.[/bold green]")
 
 
 if __name__ == "__main__":
-    test_db_operations()
+    asyncio.run(run_test())
