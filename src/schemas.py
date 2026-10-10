@@ -40,7 +40,7 @@ class RetrievalResult:
     content: str
     score: float
     metadata: dict = field(default_factory=dict)
-    spare_core: float = 0.0 
+    sparse_score: float = 0.0 
     dense_score: float = 0.0
 
 @dataclass

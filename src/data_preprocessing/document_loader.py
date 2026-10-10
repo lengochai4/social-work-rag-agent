@@ -11,30 +11,8 @@ from pathlib import Path
 from dataclasses import dataclass, field
 from typing import Optional
 from config import PROJECT_ROOT, PROCESSED_DATA_PATH, SUPPORTED_FILE_TYPES, RAW_DATA_PATH
-
-@dataclass
-class Document: 
-    """Raw document """
+from src.schemas import Document
     
-    title: str 
-    doc_id: str 
-    content: str 
-    version: Optional[str] = None 
-    owner: Optional[str] = None
-    source: Optional[str] = None
-    metadata: dict = field(default_factory=dict)
-    created_at: Optional[datetime] = field(default_factory=datetime.now)
-    
-# @dataclass
-# class DocumentChunk: 
-#     """Chunk of a document"""
-    
-#     doc_id: str = ""
-#     chunk_id: str = ""
-#     chunk_index: int = 0
-#     content: str
-#     metadata: dict = field(default_factory=dict)
-#     created_at: Optional[datetime] = field(default_factory=datetime.now)
     
 DOCUMENT_METADATA = {
     "QUYDINH-HDCDONG-2013.md": {

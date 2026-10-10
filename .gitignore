@@ -84,6 +84,7 @@ target/
 # ==========================================
 
 .cache/
+.pytest_cache/
 .parcel-cache/
 .coverage
 .coverage.*

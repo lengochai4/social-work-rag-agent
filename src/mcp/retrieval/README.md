@@ -1,67 +1,32 @@
-# Retrieval
+# Retrieval Module
 
-## Overview
+## Tổng Quan (Overview)
+Package `retrieval/` đóng vai trò là "Trái tim" của hệ thống RAG, chuyên xử lý kỹ thuật chuyển đổi chunk thành không gian vector đa chiều (Vector Space) và tìm kiếm ra các chunks phủ hợp nhất đối với câu hỏi của User.
 
-The `retrieval/` package converts document chunks into vector representations and retrieves the most relevant chunks for a user query. These results can later be provided to the language model as context for generating grounded answers.
+## Trách Nhiệm Các Modules
+- `embedder.py`: Nạp Mô hình Huggingface `SentenceTransformer` để sinh vector cho văn bản (chunk) và truy vấn (query).
+- `hybrid_search.py`: **Engine Tìm kiếm trung tâm**, kế hợp thuật toán đánh dấu tự nhiên (BM25) và đo lường khoảng cách (Cosine Similarity). Các điểm số này được chuẩn hóa quy về thang `[0,1]` bằng thuật toán Min-Max Normalization.
+- `calibration.py`: Một lớp Filter độc lập thực hiện so sánh điểm Hybrid với điểm kịch trần (Threshold) để vứt bỏ các câu hỏi quá xa vời nội dung tri thức.
 
-## Module Responsibilities
+## Quy Trình Xử Lý Truy Vấn (Hybrid Search Workflow)
+1. Load nội dung text từ file dataset `data/ctxh_chunks.json`.
+2. Tạo không gian Vector nhúng thông qua model `intfloat/multilingual-e5-base`.
+3. Băm nhuyễn từ vựng bằng Tokenizer nội bộ, lọc bỏ Stop Words Tiếng Việt, sau đó tải vào không gian BM25.
+4. Khi có câu hỏi User (Query), Hệ thống đối chiếu và lấy Vector chéo (Dot Product).
+5. Trả về format List Dataset chuẩn hóa: `list[RetrievalResult]`.
 
-- `embedder.py`: Uses a Sentence Transformers model to generate embeddings for document chunks and user queries.
-- `vector_store.py`: Loads the chunk dataset, creates or reuses stored embeddings, calculates cosine similarity, and returns the top-k most relevant chunks.
-- `__init__.py`: Marks the directory as a Python package.
+Do đặc thù mô hình `e5-base`, embeddings text của tài liệu sẽ mang prefix `passage: `, còn câu hỏi user sẽ mang prefix `query: `.
 
-## Retrieval Workflow
+## Thao Tác Chạy Thử Retrieval
 
-1. Load the chunk dataset from `data/ctxh_chunks.json`.
-2. Generate embeddings for each chunk using `intfloat/multilingual-e5-base`.
-3. Save the embeddings to `data/ctxh_embeddings.json` for reuse.
-4. Convert a user query into an embedding.
-5. Calculate cosine similarity between the query vector and document vectors.
-6. Rank the chunks by similarity score and return the top-k results.
-
-The embedding model uses the `passage:` prefix for document content and the `query:` prefix for user queries. Embeddings are normalized before similarity calculations.
-
-## Build the Vector Store
-
-Run the following command from the project root:
+Hãy sử dụng script mô phỏng có sẵn tại root dự án thay vì gọi các hàm đơn lẻ phức tạp:
 
 ```bash
-uv run python -m tests.test_vector_store
+uv run python -m tests.test_hybrid_search
 ```
 
-The first run generates embeddings if no valid saved embeddings are available. Subsequent runs can reuse the saved vectors when the chunk identifiers and model name match.
+Lệnh này sẽ vòng lặp tự động đọc `testset.jsonl` (Bộ 12 câu hỏi chiến lược kiểm thử khả năng tìm kiếm In-domain và đối nghịch Out-domain) rồi in ra toàn bộ điểm số cụ thể từng câu hỏi.
 
-To force embedding regeneration, call:
-
-```python
-store.build(force_rebuild=True)
-```
-
-## Search for Relevant Chunks
-
-```python
-from src.retrieval.vector_store import VectorStore
-
-store = VectorStore()
-store.build()
-
-results = store.search(
-    query="How can a student appeal a training score?",
-    top_k=5,
-)
-
-for result in results:
-    print(result["chunk_id"])
-    print(result["score"])
-    print(result["content"])
-```
-
-Each search result includes the original chunk fields and a similarity score.
-
-## Limitations
-
-- The current implementation performs dense vector retrieval using cosine similarity.
-- Retrieval quality depends on document quality, chunking, and the embedding model.
-- The current saved-embedding validation checks chunk identifiers and model name. Changes to chunk content with unchanged identifiers may require forced regeneration.
-
-Hybrid retrieval, reranking, and more scalable vector databases can be considered in future development.
+## Lưu ý (Limitations)
+- `min_max_normalize` hiện tại là normalization động, sẽ ép mức điểm BM25 cao nhất của truy vấn có mặt về 1.0. Do đó để bộ lọc bám sát nhất nên đẩy hệ số calibration threshold lên cao.
+- Có thể scale module này lên cao hơn trong tương lai thông qua CSDL Vector chuyên dụng như Milvus/Qdrant.

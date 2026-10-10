@@ -1,0 +1,12 @@
+{"query": "Sinh viên Công tác xã hội có thể thực tập tại các cơ sở nào?", "expected_answerable": true}
+{"query": "Quy trình đánh giá điểm thực tập sinh viên CTXH như thế nào?", "expected_answerable": true}
+{"query": "Tiêu chuẩn đạo đức nghề nghiệp của nhân viên CTXH là gì?", "expected_answerable": true}
+{"query": "Sinh viên có được phép chuyển cơ sở thực tập giữa chừng không?", "expected_answerable": true}
+{"query": "Thời gian tối đa để hoàn thành khóa luận tốt nghiệp ngành CTXH là bao lâu?", "expected_answerable": true}
+{"query": "Trách nhiệm của cơ sở tiếp nhận sinh viên thực tập CTXH là gì?", "expected_answerable": true}
+{"query": "Nếu sinh viên vắng mặt quá 20% thời gian thực tập thì sẽ bị xử lý ra sao?", "expected_answerable": true}
+{"query": "Điều kiện để sinh viên CTXH được tham gia xét học bổng là gì?", "expected_answerable": true}
+{"query": "Giá Bitcoin hôm nay thay đổi bao nhiêu phần trăm?", "expected_answerable": false}
+{"query": "Làm thế nào để cài đặt cơ sở dữ liệu MongoDB trên máy chủ Linux?", "expected_answerable": false}
+{"query": "Dự báo thời tiết ngày mai tại Hà Nội có mưa không?", "expected_answerable": false}
+{"query": "Hướng dẫn nướng bánh mì bằng nồi chiên không dầu sao cho giòn?", "expected_answerable": false}

@@ -9,19 +9,10 @@ from typing import List, Optional
 from datetime import datetime
 import re
 from config import CHUNK_SIZE, CHUNK_OVERLAP
-from src.data_preprocessing.document_loader import Document, load_documents_from_directory
+from src.data_preprocessing.document_loader import load_documents_from_directory
+from src.schemas import Document, DocumentChunk
 
-@dataclass
-class DocumentChunk: 
-    """A chunk extracted from a document."""
-    
-    doc_id: str
-    chunk_id: str
-    chunk_index: int 
-    content: str
-    metadata: dict = field(default_factory=dict)
-    embedding: Optional[List[float]] = None
-    
+
 def clean_text(text: str) -> str:
     """Normalize whitespace without removing meaningful content."""
 

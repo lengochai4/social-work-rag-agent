@@ -5,7 +5,12 @@ from pathlib import Path
 import numpy as np
 
 from config import DATA_PATH, OUTPUT_PATH, EMBEDDINGS_PATH
+<<<<<<< HEAD:src/mcp/retrieval/vector_store.py
 from mcp.retrieval.embedder import Embedder
+=======
+from src.schemas import Document, DocumentChunk
+from src.retrieval.embedder import Embedder
+>>>>>>> origin/main:src/retrieval/vector_store.py
 
 
 
@@ -105,3 +110,4 @@ class VectorStore:
             })
 
         return results
+    
