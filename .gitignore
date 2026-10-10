@@ -1,34 +1,109 @@
 
-# Secrets: never commit local environment files
-.env
-.env.*
-!.env.example
-
+# ==========================================
 # Python
+# ==========================================
+
 __pycache__/
 *.py[cod]
-*.egg-info/
-build/
-dist/
+*.pyd
 
-# Virtual environments
+
+# ==========================================
+# Virtual Environments
+# ==========================================
+
 .venv/
 venv/
 env/
 
-# IDE
+
+# ==========================================
+# Environment Variables and Secrets
+# ==========================================
+
+.env
+.env.*
+!.env.example
+
+
+# ==========================================
+# Node.js and Dependencies
+# ==========================================
+
+node_modules/
+vendor/
+
+
+# ==========================================
+# IDE and Editor Settings
+# ==========================================
+
 .vscode/
 .idea/
 
-# Tests and coverage
+
+# ==========================================
+# Build Artifacts
+# ==========================================
+
+dist/
+build/
+out/
+target/
+
+
+# ==========================================
+# Compiled Files
+# ==========================================
+
+*.class
+*.jar
+*.war
+*.ear
+*.exe
+*.dll
+*.so
+*.dylib
+
+
+# ==========================================
+# Logs and Temporary Files
+# ==========================================
+
+*.log
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+*.swn
+
+
+# ==========================================
+# Cache and Test Coverage
+# ==========================================
+
+.cache/
 .pytest_cache/
+.parcel-cache/
 .coverage
+.coverage.*
 htmlcov/
 
-# Logs: keep directory, exclude generated log files
-logs/*
-!logs/.gitkeep
 
-# OS files
-.DS_Store
+# ==========================================
+# Operating System Files
+# ==========================================
+
 Thumbs.db
+desktop.ini
+.DS_Store
+
+
+# ==========================================
+# Generated Datasets and Embeddings
+# ==========================================
+
+data/ctxh_chunks.json
+data/ctxh_embeddings.json
+data/
