@@ -51,8 +51,7 @@ class RetrievalCalibration:
 class ActivityRecord:
     """Bản ghi một hoạt động CTXH đã đăng ký."""
     activity_code: str
-    hours: float
-    days: float
+    points: int
     semester: str
     registered_at: str = field(
         default_factory=lambda: datetime.now().isoformat()
@@ -64,13 +63,13 @@ class StudentProfile:
     student_id: str
     full_name: str
     registered_activities: list[ActivityRecord] = field(default_factory=list)
-    accumulated_days: dict[str, float] = field(default_factory=dict)
+    accumulated_points: dict[str, int] = field(default_factory=dict)
 
 @dataclass
 class RegisterActivityArgs:
     student_id: str
     activity_code: str
-    hours: float
+    points: int
     semester: str = "HK1_2025_2026"
 
 @dataclass
