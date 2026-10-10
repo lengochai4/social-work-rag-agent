@@ -1,12 +1,6 @@
 from dataclasses import dataclass, field
 from datetime import datetime
 from typing import Optional, List, Dict
-from src.data_preprocessing.chunker import DocumentChunk 
-from src.data_preprocessing.document_loader import Document
-from src.data_preprocessing.document_store import DocumentStore
-from src.retrieval.embedder import Embedder
-from src.retrieval.hybrid_search import HybridSearch, RetrievalResult
-from src.retrieval.calibration import RetrievalCalibration
 
 @dataclass
 class DocumentChunk: 
@@ -52,3 +46,34 @@ class RetrievalResult:
 @dataclass
 class RetrievalCalibration:
     threshold: float = 0.55
+
+@dataclass
+class ActivityRecord:
+    """Bản ghi một hoạt động CTXH đã đăng ký."""
+    activity_code: str
+    hours: float
+    days: float
+    semester: str
+    registered_at: str = field(
+        default_factory=lambda: datetime.now().isoformat()
+    )
+
+@dataclass
+class StudentProfile:
+    """Hồ sơ theo dõi CTXH của một sinh viên."""
+    student_id: str
+    full_name: str
+    registered_activities: list[ActivityRecord] = field(default_factory=list)
+    accumulated_days: dict[str, float] = field(default_factory=dict)
+
+@dataclass
+class RegisterActivityArgs:
+    student_id: str
+    activity_code: str
+    hours: float
+    semester: str = "HK1_2025_2026"
+
+@dataclass
+class GetStatusArgs:
+    student_id: str
+    semester: Optional[str] = None
