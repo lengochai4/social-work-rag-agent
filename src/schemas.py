@@ -1,12 +1,6 @@
 from dataclasses import dataclass, field
 from datetime import datetime
 from typing import Optional, List, Dict
-from src.data_preprocessing.chunker import DocumentChunk 
-from src.data_preprocessing.document_loader import Document
-from src.data_preprocessing.document_store import DocumentStore
-from src.retrieval.embedder import Embedder
-from src.retrieval.hybrid_search import HybridSearch, RetrievalResult
-from src.retrieval.calibration import RetrievalCalibration
 
 @dataclass
 class DocumentChunk: 
@@ -46,7 +40,7 @@ class RetrievalResult:
     content: str
     score: float
     metadata: dict = field(default_factory=dict)
-    spare_core: float = 0.0 
+    sparse_score: float = 0.0 
     dense_score: float = 0.0
 
 @dataclass
