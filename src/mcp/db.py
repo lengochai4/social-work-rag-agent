@@ -44,7 +44,6 @@ def load_student(student_id: str) -> Optional[StudentProfile]:
         )
     )
 
-  # Chuyển đổi accumulated_points
   accumulated_points = student_data.get("accumulated_points")
   if accumulated_points is None:
     # Nếu DB cũ đang dùng 'accumulated_days'
@@ -81,4 +80,4 @@ def save_student(profile: StudentProfile) -> None:
 
   DB_PATH.parent.mkdir(parents=True, exist_ok=True)
   with open(DB_PATH, "w", encoding="utf-8") as f:
-    json.dump(db, f, indent=2, ensure_ascii=False)
+    json.dump(db, f, indent=2, ensure_ascii=False) 
