@@ -1,25 +1,108 @@
+
+# ==========================================
+# Python
+# ==========================================
+
 __pycache__/
-*.pyc
-*.pyo
+*.py[cod]
 *.pyd
+
+
+# ==========================================
+# Virtual Environments
+# ==========================================
+
+.venv/
+venv/
+env/
+
+
+# ==========================================
+# Environment Variables and Secrets
+# ==========================================
+
+.env
+.env.*
+!.env.example
+
+
+# ==========================================
+# Node.js and Dependencies
+# ==========================================
 
 node_modules/
 vendor/
-venv/, env/
 
-.env, .env.local, .env.production, .env.test, .env.development.local
-Thumbs.db
-desktop.ini
+
+# ==========================================
+# IDE and Editor Settings
+# ==========================================
 
 .vscode/
 .idea/
 
-dist/, build/, out/, target/
-*.pyc, *.class, *.jar, *.war, *.ear, *.exe, *.dll, *.so, *.dylib
 
-*.log, *.tmp, *.temp, *.bak, *.swp, *.swo, *.swn
-.cache/, .parcel-cache/, .coverage/
+# ==========================================
+# Build Artifacts
+# ==========================================
 
-#Generated files
-data/ctxh_chunks.json
-data/ctxh_embeddings.json
+dist/
+build/
+out/
+target/
+
+
+# ==========================================
+# Compiled Files
+# ==========================================
+
+*.class
+*.jar
+*.war
+*.ear
+*.exe
+*.dll
+*.so
+*.dylib
+
+
+# ==========================================
+# Logs and Temporary Files
+# ==========================================
+
+*.log
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+*.swn
+
+
+# ==========================================
+# Cache and Test Coverage
+# ==========================================
+
+.cache/
+.parcel-cache/
+.coverage
+.coverage.*
+htmlcov/
+
+
+# ==========================================
+# Operating System Files
+# ==========================================
+
+Thumbs.db
+desktop.ini
+.DS_Store
+
+
+# ==========================================
+# Generated Datasets and Embeddings
+# ==========================================
+
+# data/ctxh_chunks.json
+# data/ctxh_embeddings.json
+data/
