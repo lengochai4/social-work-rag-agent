@@ -3,8 +3,8 @@ Document store for managing and retrieving documents.
 """
 from dataclasses import dataclass, field
 from typing import List, Optional
-from src.data_preprocessing.document_loader import Document
-from src.data_preprocessing.chunker import DocumentChunk, chunk_documents
+from src.schemas import Document, DocumentChunk
+from src.data_preprocessing.chunker import chunk_documents
 
 @dataclass
 class DocumentStore: 

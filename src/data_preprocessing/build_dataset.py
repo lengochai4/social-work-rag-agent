@@ -7,8 +7,9 @@ from dataclasses import asdict
 from pathlib import Path
 
 from config import CHUNK_SIZE, CHUNK_OVERLAP, OUTPUT_PATH
+from src.schemas import Document, DocumentChunk
 from src.data_preprocessing.document_loader import load_documents_from_directory
-from src.data_preprocessing.chunker import Document, DocumentChunk, split_document, clean_text, chunk_documents
+from src.data_preprocessing.chunker import split_document, clean_text, chunk_documents
 
 def main(): 
     if not OUTPUT_PATH.parent.exists():
