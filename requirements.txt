@@ -7,3 +7,6 @@ docling convert "quy_che.pdf" --to md --output data/processed
 
 uv add sentence-transformers
 pip install sentence-transformers
+
+uv add rank-bm25 numpy
+uv add --dev pytest
