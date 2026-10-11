@@ -103,7 +103,6 @@ desktop.ini
 # ==========================================
 # Generated Datasets and Embeddings
 # ==========================================
-
+data/
 data/ctxh_chunks.json
 data/ctxh_embeddings.json
-data/
