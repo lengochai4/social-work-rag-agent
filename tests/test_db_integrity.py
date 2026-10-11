@@ -7,7 +7,7 @@ import asyncio
 from pathlib import Path
 from src.mcp.client import CTXHMCPClient
 from src.mcp.db import load_db
-from config import DBA_PATH
+from config import DB_PATH
 
 async def run_stress_test():
     print("=== BẮT ĐẦU KIỂM THỬ TÍNH TOÀN VẸN CỦA DB JSON ===")
@@ -39,9 +39,9 @@ async def run_stress_test():
 
     # 2. Kiểm tra tính toàn vẹn của file JSON
     print("\n=== ĐỐI CHIẾU KIỂM TRA FILE data/db/ctxh_db.json ===")
-    assert DBA_PATH.exists(), "LỖI: File DB không tồn tại!"
+    assert DB_PATH.exists(), "LỖI: File DB không tồn tại!"
     
-    with open(DBA_PATH, "r", encoding="utf-8") as f:
+    with open(DB_PATH, "r", encoding="utf-8") as f:
         data = json.load(f) 
         
     assert "students" in data, "LỖI: Cấu trúc JSON bị mất key 'students'!"
