@@ -32,6 +32,8 @@ social-work-rag-agent/
 └── document_guide/              # Thư mục chứa báo cáo kỹ thuật thuật toán
 ```
 
+LINKGGDRIVE_DATA: https://drive.google.com/drive/folders/1VCwrwHplQBLwjCfr_11-UZMcpYLjV4zI?usp=drive_link
+
 ## 2. Hướng dẫn chạy nhanh (Quick Start)
 
 Cách dễ nhất để kiểm thử luồng RAG từ khâu xử lý tài liệu cho đến truy vấn Hybrid Search mà không cần setup phức tạp là cấu trúc script tổng:
@@ -41,6 +43,7 @@ uv run python run_project.py
 ```
 
 Lệnh này sẽ tự động:
+
 1. Đọc file Markdown -> Cắt Chunks.
 2. Nạp E5 Embedding Model & Tính toán BM25 Inverted Index.
 3. Chạy qua 3 câu hỏi giả lập để test điểm Dense / Sparse và màng lọc Threshold độc lập.
@@ -48,6 +51,7 @@ Lệnh này sẽ tự động:
 ## 3. Hệ thống Hybrid Retrieval System
 
 Quá trình truy vấn không sử dụng cơ sở dữ liệu cồng kềnh mà hoạt động in-memory qua sự dung hợp (Fusion):
+
 - **Dense Search (Ngữ nghĩa):** Sử dụng LLM Embedder `intfloat/multilingual-e5-base` tối ưu tiếng Việt. Trọng số 0.5.
 - **Sparse Search (Từ khóa):** Dùng `BM25 Okapi` qua bộ lọc lột bỏ 41 Stop words Tiếng Việt để tránh nhiễu hệ số. Trọng số 0.5.
 - **Min-Max Score Normalization:** Chuẩn hoá 2 thang biểu diễn điểm số về khoảng `[0..1]`.
@@ -58,4 +62,5 @@ Quá trình truy vấn không sử dụng cơ sở dữ liệu cồng kềnh mà
 ```bash
 uv run pytest tests/ -v
 ```
+
 Quá trình này đảm nhiệm kiểm thử module `Hybrid Search` và độ dài của câu hỏi trong `testset.jsonl`.

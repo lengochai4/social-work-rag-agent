@@ -3,8 +3,7 @@ from pathlib import Path
 from typing import Optional
 from src.schemas import ActivityRecord, StudentProfile
 
-ROOT_DIR = Path(__file__).resolve().parent.parent.parent
-DB_PATH = ROOT_DIR / "data" / "db" / "ctxh_db.json"
+from config import DB_PATH
 
 
 def load_db() -> dict:
@@ -20,20 +19,16 @@ def load_db() -> dict:
 def load_student(student_id: str) -> Optional[StudentProfile]:
   db = load_db()
 
-  # Bóc tách qua tầng "students" nếu có
   students_map = db.get("students", db)
   student_data = students_map.get(student_id)
 
   if not student_data:
     return None
 
-  # Chuyển đổi activities (tự fallback nếu còn trường cũ 'days')
+  # Chuyển đổi activities 
   activities = []
   for act in student_data.get("registered_activities", []):
     points = act.get("points")
-    if points is None:
-      # Quy đổi dự phòng từ ngày cũ: 1 ngày = 5 điểm
-      points = int(act.get("days", 1.0) * 5)
 
     activities.append(
         ActivityRecord(
@@ -45,10 +40,6 @@ def load_student(student_id: str) -> Optional[StudentProfile]:
     )
 
   accumulated_points = student_data.get("accumulated_points")
-  if accumulated_points is None:
-    # Nếu DB cũ đang dùng 'accumulated_days'
-    old_days = student_data.get("accumulated_days", {})
-    accumulated_points = {sem: int(days * 5) for sem, days in old_days.items()}
 
   return StudentProfile(
       student_id=student_data.get("student_id", student_id),

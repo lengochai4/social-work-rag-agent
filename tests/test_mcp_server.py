@@ -152,8 +152,7 @@ def test_stdout_purity():
       clean_stdout
   ), "Lỗi: stdout bị nhiễm văn bản thường/log! Hãy kiểm tra lại sys.stderr."
   print(
-      "[bold green]✔ stdout hoàn toàn sạch, không có tạp âm log lọt qua![/bold"
-      " green]"
+      "[bold green]✔ stdout hoàn toàn sạch, không có tạp âm log lọt qua![/bold green]"
   )
 
   if stderr_data:
@@ -168,8 +167,7 @@ async def main():
   await test_mcp_server_workflow()
   test_stdout_purity()
   print(
-      "\n[bold green]🎉 TẤT CẢ CÁC BƯỚC KIỂM THỬ ĐÃ VƯỢT QUA XUẤT SẮC![/bold"
-      " green]"
+      "\n[bold green]🎉 TẤT CẢ CÁC BƯỚC KIỂM THỬ ĐÃ VƯỢT QUA XUẤT SẮC![/bold green]"
   )
 
 
