@@ -1,10 +1,5 @@
-"""
-tests/test_db_integrity.py: Kiểm thử tính toàn vẹn của Mock DB JSON 
-khi chạy liên tiếp các tình huống mô phỏng 12 câu testset.
-"""
 import json
 import asyncio
-from pathlib import Path
 from src.mcp.client import CTXHMCPClient
 from src.mcp.db import load_db
 from config import DB_PATH
@@ -22,14 +17,14 @@ async def run_stress_test():
         ("register_activity", {"student_id": "24110089", "activity_code": "CTXH_DON_DEP_2026", "points": 5}),
         ("get_status", {"student_id": "24110103"}),
         ("register_activity", {"student_id": "24110103", "activity_code": "CTXH_HIEN_MAU_2026", "points": 10}),
-        ("get_status", {"student_id": "INVALID_ID"}),  # Test lỗi
+        ("get_status", {"student_id": "33424221"}),  # Test lỗi
         ("register_activity", {"student_id": "24110089", "activity_code": "CTXH_XUAN_TN_2026", "points": 10}),
-        ("register_activity", {"student_id": "INVALID_ID", "activity_code": "TEST", "points": 5}),  # Test lỗi
+        ("register_activity", {"student_id": "24242433", "activity_code": "TEST", "points": 5}),  # Test lỗi
         ("get_status", {"student_id": "24110077"}),
         ("register_activity", {"student_id": "24110089", "activity_code": "TEST_INVALID", "points": -5}),  # Test lỗi
         ("get_status", {"student_id": "24110089"}),
         ("register_activity", {"student_id": "24110077", "activity_code": "CTXH_HOI_THAO_2026", "points": 5}),
-        ("get_status", {"student_id": "24110077"}),
+        ("get_status", {"student_id": "24110085"}),  #test lỗi
     ]
 
     async with CTXHMCPClient() as client:
