@@ -16,6 +16,9 @@ PROJECT_ROOT = Path(__file__).resolve().parent
 
 #DATA PATHS
 DATA_PATH = PROJECT_ROOT / "data"
+DB_PATH = DB_PATH = PROJECT_ROOT / "data" / "db" / "ctxh_db.json"
+DBA_PATH = PROJECT_ROOT / "data" / "db" / "ctxh_db.json"
+
 
 # Directory containing cleaned and preprocessed documents.
 PROCESSED_DATA_PATH = DATA_PATH / "processed"

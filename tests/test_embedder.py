@@ -1,5 +1,5 @@
 
-from src.retrieval.embedder import Embedder
+from retrieval.embedder import Embedder
 
 
 def main():
