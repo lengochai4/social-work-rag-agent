@@ -190,7 +190,7 @@ def save_trace_log(
     }
 
     with open(filepath, "a", encoding="utf-8") as f:
-        f.write(json.dumps(log_entry, ensure_ascii=False) + "\n")
+        f.write(json.dumps(log_entry, ensure_ascii=False, indent = 2 ) + "\n\n")
 
     return filepath
 
