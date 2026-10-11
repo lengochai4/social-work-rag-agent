@@ -2,7 +2,7 @@ import time
 import random
 import os
 from typing import List, Dict, Any, Optional
-from openai import OpenAI, RateLimitError, APIConnectionError, APIError
+from openai import OpenAI, RateLimitError, APIConnectionError
 from config import LLM_PROVIDER, LLM_BASE_URL, LLM_MODEL, GROQ_API_KEY, LLM_TIMEOUT, LLM_MAX_RETRIES, LLM_BASE_DELAY, LLM_MAX_DELAY
 
 client = OpenAI(
@@ -34,7 +34,7 @@ def call_llm(
             response = client.chat.completions.create(**kwargs)
             return response
 
-        except (RateLimitError, APIConnectionError, APIError) as e:
+        except (RateLimitError, APIConnectionError) as e:
             retries += 1
             if retries > LLM_MAX_RETRIES:
                 print(f"[LLM ERROR] Exceeded the number of retry attempts ({LLM_MAX_RETRIES}). Error: {e}")
