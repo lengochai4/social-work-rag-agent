@@ -71,11 +71,13 @@ def register_activity(student_id: str, activity_code: str, points: int, semester
         semester: Academic semester (defaults to 'HK1_2025_2026').
     """
     try:
+        if points <=0:
+            logger.warning(f"Registration rejected: Invalid points={points}")
+            return f"Error: points to award must be positive integer, got {points}."
+        
         profile = load_student(student_id)
         if not profile:
-            logger.warning(
-                f"Registration failed - student not found: student_id='{student_id}'"
-            )
+            logger.warning(f"Registration failed - student not found: student_id='{student_id}'")
             return json.dumps(f"Error: Student with ID '{student_id}' not found.")
 
         current_semester_points = profile.accumulated_points.get(semester, 0)
