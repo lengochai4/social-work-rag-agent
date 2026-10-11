@@ -27,33 +27,37 @@ def get_status(student_id: str, semester: str="") -> str:
         semester: Academic semester. If empty, returns
           all semesters.
     """
+    try:
+        logger.info(f"Calling get_status: student_id='{student_id}', semester: '{semester}'")
 
-    logger.info(f"Calling get_status: student_id='{student_id}', semester: '{semester}'")
+        profile= load_student(student_id)
+        if not profile:
+            logger.warning(f"Student not found: student_id='{student_id}'")
+            return json.dumps(f"Error: student with ID '{student_id}' not found")
 
-    profile= load_student(student_id)
-    if not profile:
-        logger.warning(f"Student not found: student_id='{student_id}'")
-        return json.dumps(f"Error: student with ID '{student_id}' not found")
+        total_all_semesters= sum(profile.accumulated_points.values())
+        semester_points= (
+            profile.accumulated_points.get(semester,0)
+            if semester
+            else total_all_semesters
+        )
+        is_qualified= total_all_semesters >= PASSING_POINTS_THRESHOLD
 
-    total_all_semesters= sum(profile.accumulated_points.values())
-    semester_points= (
-        profile.accumulated_points.get(semester,0)
-        if semester
-        else total_all_semesters
-    )
-    is_qualified= total_all_semesters >= PASSING_POINTS_THRESHOLD
+        result_data= {
+            "student_id":profile.student_id,
+            "full_name": profile.full_name,
+            "semester_points": semester_points,
+            "total_accumulated_points": total_all_semesters,
+            "required_threshold": PASSING_POINTS_THRESHOLD,
+            "is_qualified": is_qualified,
+            "total_registered_activities": len(profile.registered_activities),
+        }
+        return json.dumps(result_data, ensure_ascii=False)  
 
-    result_data= {
-        "student_id":profile.student_id,
-        "full_name": profile.full_name,
-        "semester_points": semester_points,
-        "total_accumulated_points": total_all_semesters,
-        "required_threshold": PASSING_POINTS_THRESHOLD,
-        "is_qualified": is_qualified,
-        "total_registered_activities": len(profile.registered_activities),
-    }
-    return json.dumps(result_data, ensure_ascii=False)  
-
+    except Exception as exc:
+        logger.error(f"Exception in get_status: {exc}")
+        return f"Error: {str(exc)}"
+    
 
 @mcp.tool()
 def register_activity(student_id: str, activity_code: str, points: int, semester: str="HK1_2025_2026") -> str:
@@ -66,46 +70,48 @@ def register_activity(student_id: str, activity_code: str, points: int, semester
         points: Social work points to award (e.g., 5, 10, 15).
         semester: Academic semester (defaults to 'HK1_2025_2026').
     """
+    try:
+        profile = load_student(student_id)
+        if not profile:
+            logger.warning(
+                f"Registration failed - student not found: student_id='{student_id}'"
+            )
+            return json.dumps(f"Error: Student with ID '{student_id}' not found.")
 
-    profile = load_student(student_id)
-    if not profile:
-        logger.warning(
-            f"Registration failed - student not found: student_id='{student_id}'"
+        current_semester_points = profile.accumulated_points.get(semester, 0)
+
+        # Thêm bản ghi hoạt động mới
+        new_record = ActivityRecord(
+            activity_code=activity_code,
+            points=points,
+            semester=semester,
+            registered_at=datetime.now().isoformat(),
         )
-        return json.dumps(f"Error: Student with ID '{student_id}' not found.")
+        profile.registered_activities.append(new_record)
+        profile.accumulated_points[semester] = current_semester_points + points
 
-    current_semester_points = profile.accumulated_points.get(semester, 0)
+        total_points = sum(profile.accumulated_points.values())
+        is_qualified = total_points >= PASSING_POINTS_THRESHOLD
 
-    # Thêm bản ghi hoạt động mới
-    new_record = ActivityRecord(
-        activity_code=activity_code,
-        points=points,
-        semester=semester,
-        registered_at=datetime.now().isoformat(),
-    )
-    profile.registered_activities.append(new_record)
-    profile.accumulated_points[semester] = current_semester_points + points
+        # Ghi đè cập nhật vào cơ sở dữ liệu
+        save_student(profile)
+        logger.info(
+            f"Successfully awarded {points} points to {student_id}. Total: {total_points}/{PASSING_POINTS_THRESHOLD}"
+        )
 
-    total_points = sum(profile.accumulated_points.values())
-    is_qualified = total_points >= PASSING_POINTS_THRESHOLD
-
-    # Ghi đè cập nhật vào cơ sở dữ liệu
-    save_student(profile)
-    logger.info(
-        f"Successfully awarded {points} points to {student_id}. Total: {total_points}/{PASSING_POINTS_THRESHOLD}"
-    )
-
-    result = {
-        "status": "success",
-        "message": f"Successfully registered activity '{activity_code}'.",
-        "student_id": student_id,
-        "awarded_points": points,
-        "semester_points": profile.accumulated_points[semester],
-        "total_accumulated_points": total_points,
-        "is_qualified": is_qualified,
-    }
-    return json.dumps(result, ensure_ascii=False)
-
+        result = {
+            "status": "success",
+            "message": f"Successfully registered activity '{activity_code}'.",
+            "student_id": student_id,
+            "awarded_points": points,
+            "semester_points": profile.accumulated_points[semester],
+            "total_accumulated_points": total_points,
+            "is_qualified": is_qualified,
+        }
+        return json.dumps(result, ensure_ascii=False)
+    except Exception as exc:
+        logger.error(f"Exception in register_activity: {exc}")
+        return f"Error: {str(exc)}"
 
 # --- ENTRYPOINT ---
 if __name__ == "__main__":

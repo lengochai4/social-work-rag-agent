@@ -1,0 +1,48 @@
+{
+  "students": {
+    "24110103": {
+      "student_id": "24110103",
+      "full_name": "Trần Gia Kiệt",
+      "accumulated_points": {
+        "HK1_2025_2026": 0
+      },
+      "registered_activities": []
+    },
+    "24110089": {
+      "student_id": "24110089",
+      "full_name": "Lê Ngọc Hải",
+      "accumulated_points": {
+        "HK1_2025_2026": 20
+      },
+      "registered_activities": [
+        {
+          "activity_code": "CTXH_DON_VE_SINH_2025",
+          "points": 10,
+          "semester": "HK1_2025_2026",
+          "registered_at": "2025-10-15T08:00:00"
+        },
+        {
+          "activity_code": "CTXH_HOI_NGHI_2025",
+          "points": 10,
+          "semester": "HK1_2025_2026",
+          "registered_at": "2025-11-20T08:00:00"
+        }
+      ]
+    },
+    "24110077": {
+      "student_id": "24110077",
+      "full_name": "Trần Thiên Ân",
+      "accumulated_points": {
+        "HK1_2025_2026": 40
+      },
+      "registered_activities": [
+        {
+          "activity_code": "CTXH_MUA_HE_XANH_2025",
+          "points": 40,
+          "semester": "HK1_2025_2026",
+          "registered_at": "2025-08-01T07:30:00"
+        }
+      ]
+    }
+  }
+}
