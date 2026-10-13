@@ -7,8 +7,10 @@ Enforces MAX_STEPS = 10 and Action & Verify constraints.
 
 import os
 import json
+from datetime import datetime
 from dotenv import load_dotenv
 from rich import print
+from typing import Dict, Any, List
 from src.llm_client import call_llm
 
 MAX_STEPS = 10
@@ -153,6 +155,44 @@ def react_agent(question: str, tool_executor_map: dict, max_steps=MAX_STEPS) -> 
 
     return "(stopped: too many steps)"
 
+def save_trace_log(
+        question: str,
+        final_answer: str,
+        usage_stats: Dict[str, Any],
+        traces: List[Dict[str, Any]],
+        is_verified: bool,
+        log_filename: str = None
+) -> str:
+    """ Export trace and detailed USAGE stats to the logs/*.jsonl"""
+    logs_dir = "logs"
+    os.makedirs(logs_dir, exist_ok=True)
+
+    if not log_filename:
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        log_filename = f"agent_eval_{timestamp}.jsonl"
+
+    filepath = os.path.join(logs_dir, log_filename)
+
+    usage_payload = {
+        "calls": usage_stats.get("calls", 0),
+        "prompt_tokens": usage_stats.get("prompt_tokens", 0),
+        "completion_tokens": usage_stats.get("completion_tokens", 0),
+        "total_tokens": usage_stats.get("total_tokens", 0),
+    }
+
+    log_entry = {
+        "timestamp": datetime.now().isoformat(),
+        "question": question,
+        "final_answer": final_answer,
+        "is_verified": is_verified,
+        "usage": usage_payload,
+        "traces": traces
+    }
+
+    with open(filepath, "a", encoding="utf-8") as f:
+        f.write(json.dumps(log_entry, ensure_ascii=False, indent = 2 ) + "\n\n")
+
+    return filepath
 
 def main():
     load_dotenv()
