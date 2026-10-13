@@ -12,25 +12,34 @@ Topic **T5** - Advanced AI & RAG Agent Final Project (**AIPR**).
 
 ##  1. Quick Start (Evaluator One-Liner)
 
-To install dependencies and immediately run the live end-to-end demo:
-
+### Linux / macOS / WSL:
 ```bash
 make setup && make demo
-```
-
-To run the complete benchmark evaluation (12 test questions with token usage and metrics logging):
-
-```bash
 make eval
-```
-
-To run the unit test suite:
-
-```bash
 make test
 ```
 
-*(Note: On systems without `make`, run directly: `python run_demo.py`, `python run_evaluation.py`, and `pytest tests/ -v`)*
+### Windows (CMD or PowerShell):
+The repository includes a native `make.bat` wrapper so you can run `make` commands on Windows without installing any third-party tools:
+- **Command Prompt (CMD)**:
+  ```cmd
+  make setup
+  make demo
+  make eval
+  make test
+  ```
+- **PowerShell**:
+  ```powershell
+  .\make demo
+  .\make eval
+  .\make test
+  ```
+- **Direct Python commands** (platform independent):
+  ```bash
+  python run_demo.py
+  python run_evaluation.py
+  pytest tests/ -v
+  ```
 
 ---
 
@@ -59,7 +68,8 @@ This project strictly adheres to the 3-layer architecture required by the projec
 
 ```text
 social-work-rag-agent/
-├── Makefile                     # Automation targets: make setup, make demo, make eval, make test
+├── Makefile                     # Automation targets for Linux/macOS/WSL
+├── make.bat                     # Automation wrapper for Windows (CMD and PowerShell)
 ├── README.md                    # System documentation and instructions
 ├── ai-usage.md                  # Academic integrity disclosure (AI usage disclosure)
 ├── config.py                    # Project configurations, paths, model settings
@@ -144,7 +154,7 @@ Executes 15 comprehensive tests covering retrieval, calibration, MCP communicati
 
 ---
 
-## ⚙️ 7. Environment Variables
+##  7. Environment Variables
 
 Create a `.env` file in the project root:
 
