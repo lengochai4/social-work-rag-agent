@@ -158,6 +158,8 @@ class HybridSearch:
         results = []
         for idx in ranked_indices:
             idx = int(idx)
+            if hybrid_scores[idx] < 0.0:
+                continue
             chunk = self.chunks[idx]
             
             doc_id = chunk.get("doc_id", "") if isinstance(chunk, dict) else chunk.doc_id
