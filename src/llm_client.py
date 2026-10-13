@@ -1,11 +1,12 @@
 import time
 import random
 import os
+from groq import Groq
 from typing import List, Dict, Any, Optional
 from openai import OpenAI, RateLimitError, APIConnectionError
 from config import LLM_PROVIDER, LLM_BASE_URL, LLM_MODEL, GROQ_API_KEY, LLM_TIMEOUT, LLM_MAX_RETRIES, LLM_BASE_DELAY, LLM_MAX_DELAY
 
-client = OpenAI(
+client = Groq(
     api_key=GROQ_API_KEY or os.getenv("GROQ_API_KEY", "mock_key"),
     base_url=LLM_BASE_URL if LLM_BASE_URL else None,
     timeout=float(LLM_TIMEOUT)
@@ -40,7 +41,6 @@ def call_llm(
                 print(f"[LLM ERROR] Exceeded the number of retry attempts ({LLM_MAX_RETRIES}). Error: {e}")
                 raise e
 
-            # Công thức Exponential Backoff với Jitter
             delay = min(LLM_MAX_DELAY, LLM_BASE_DELAY * (2 ** (retries - 1)))
             jitter = random.uniform(0, 0.1 * delay) # Add random delay to avoid bottleneck
             total_delay = delay + jitter

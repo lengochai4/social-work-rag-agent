@@ -8,8 +8,6 @@ from config import DATA_PATH, OUTPUT_PATH, EMBEDDINGS_PATH
 from src.schemas import Document, DocumentChunk
 from src.retrieval.embedder import Embedder
 
-
-
 class VectorStore:
     def __init__(self, embedder: Embedder | None = None):
         self.embedder = embedder or Embedder()

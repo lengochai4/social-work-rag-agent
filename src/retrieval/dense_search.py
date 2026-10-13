@@ -4,7 +4,6 @@ import numpy as np
 from src.retrieval.embedder import Embedder
 from src.schemas import RetrievalResult
 
-
 class DenseSearch:
     def __init__(self, chunks: list[dict], embedder: Embedder):
         if not chunks:
@@ -12,7 +11,6 @@ class DenseSearch:
 
         self.chunks = chunks
         self.embedder = embedder
-
         vectors = self.embedder.embed_documents(
             [chunk["content"] for chunk in chunks]
         )

@@ -32,7 +32,7 @@ class RAGPipeline:
                 status="no_answer",
             )
 
-        # 1. Retrieval: tìm các chunk liên quan
+        #Retrieval
         results = self.retriever.search(
             question,
             top_k=self.top_k,
@@ -41,17 +41,17 @@ class RAGPipeline:
         if not results:
             return self._no_answer(question, results)
 
-        # 2. Calibration: kiểm tra kết quả có đủ tốt không
+        #Calibration
         if not self.calibrator.should_answer(results):
             return self._no_answer(question, results)
 
-        # 3. Ghép nội dung các chunk thành context
+        #Ghép nội dung
         context = self._build_context(results)
 
         if not context.strip():
             return self._no_answer(question, results)
 
-        # 4. Generation: LLM sinh câu trả lời dựa trên context
+        #generation
         answer = self.generator.generate(
             question=question,
             context=context,
@@ -60,7 +60,7 @@ class RAGPipeline:
         if not answer:
             return self._no_answer(question, results)
 
-        # 5. Trả câu trả lời kèm nguồn
+        #Trả lời kèm nguồn
         return RAGResponse(
             question=question,
             answer=answer,
