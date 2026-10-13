@@ -5,7 +5,10 @@ from dataclasses import asdict
 from src.schemas import RetrievalResult
 from src.retrieval.hybrid_search import HybridSearch
 from src.retrieval.embedder import Embedder
+from src.retrieval.dense_search import DenseSearch
 from config import TESTSET_PATH, OUTPUT_TEST_RAG_PATH
+
+RETRIEVAL_MODE = "dense" #dense hoặc hybrid
 
 TOP_K = 5
 
@@ -23,17 +26,25 @@ def load_testset(path: Path) -> list[dict]:
         ]
 
 
+
 def build_retriever():
     with open("data/ctxh_chunks.json", "r", encoding="utf-8") as f:
         chunks = json.load(f)
 
     embedder = Embedder()
 
-    return HybridSearch(
-        chunks=chunks,
-        embedder=embedder,
-        alpha=0.5,
-    )
+    if RETRIEVAL_MODE == "dense":
+        return DenseSearch(chunks, embedder)
+
+    if RETRIEVAL_MODE == "hybrid":
+        return HybridSearch(
+            chunks=chunks,
+            embedder=embedder,
+            alpha=0.5,
+        )
+
+    raise ValueError(f"Unknown retrieval mode: {RETRIEVAL_MODE}")
+
 
 
 def main():
