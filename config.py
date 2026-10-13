@@ -16,7 +16,8 @@ PROJECT_ROOT = Path(__file__).resolve().parent
 
 #DATA PATHS
 DATA_PATH = PROJECT_ROOT / "data"
-DB_PATH = DB_PATH = PROJECT_ROOT / "data" / "db" / "ctxh_db.json"
+DB_PATH = PROJECT_ROOT / "data" / "db" / "ctxh_db.json"
+RESULTS_PATH = PROJECT_ROOT / "results"
 
 
 # Directory containing cleaned and preprocessed documents.
@@ -27,8 +28,10 @@ RAW_DATA_PATH = DATA_PATH / "raw"
 OUTPUT_PATH = DATA_PATH / "ctxh_chunks.json"
 # Path to the JSON file containing document embedding vectors.
 EMBEDDINGS_PATH = DATA_PATH / "ctxh_embeddings.json"
+# Test set 
+TESTSET_PATH = PROJECT_ROOT / "tests" / "testset.jsonl"
 
-
+OUTPUT_TEST_RAG_PATH = RESULTS_PATH / "retrieval_results.json" 
 #SOURCES FILE SETTINGS 
 SUPPORTED_FILE_TYPES = [".md", ".txt"]
 
