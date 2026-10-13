@@ -6,8 +6,18 @@ embedding model, and document chunking parameters.
 """
 
 import os
+import sys
 from pathlib import Path
 from dotenv import load_dotenv
+
+if sys.platform == "win32":
+    try:
+        if hasattr(sys.stdout, "reconfigure"):
+            sys.stdout.reconfigure(encoding="utf-8")
+        if hasattr(sys.stderr, "reconfigure"):
+            sys.stderr.reconfigure(encoding="utf-8")
+    except Exception:
+        pass
 
 load_dotenv()
 
@@ -45,7 +55,7 @@ CHUNK_OVERLAP = 200
 
 # LLM & API CLIENT SETTINGS 
 LLM_PROVIDER = os.getenv("LLM_PROVIDER", "groq")
-LLM_BASE_URL = os.getenv("LLM_BASE_URL", "https://api.groq.com/openai/v1")
+LLM_BASE_URL = os.getenv("LLM_BASE_URL", None)
 LLM_MODEL = os.getenv("LLM_MODEL", "openai/gpt-oss-20b")
 GROQ_API_KEY = os.getenv("GROQ_API_KEY", "")
 

@@ -1,66 +1,102 @@
-# Cẩm Nang Công Tác Xã Hội - RAG Agent
+# Cẩm Nang Công Tác Xã Hội - RAG Agent (Đề Tài T5)
 
-Hệ thống RAG thu thập các quy định về Công Tác Xã Hội và giải đáp thắc mắc cho Sinh Viên thông qua cơ chế RAG Hybrid Retrieval tiên tiến (kết hợp Dense Vector và Lexical BM25 Search).
+Hệ thống Trợ lý AI Quản lý và Tư vấn Công Tác Xã Hội (CTXH) cho Sinh Viên Trường ĐH Sư phạm Kỹ thuật TP.HCM (HCMUTE). Hệ thống tích hợp RAG Hybrid Retrieval tiên tiến (kết hợp Dense Vector và Lexical BM25 Search), vòng lặp ReAct Agent thuần (Orchestration tự viết tay), và MCP Server chuẩn giao thức Stdio với chuỗi hành động **Action & Verify**.
 
-## 1. Cấu trúc thư mục định danh
+---
+
+## 🚀 1. Lệnh chạy nhanh trên máy Giảng viên (Cold Start - 1 Lệnh duy nhất)
+
+Để chuẩn bị môi trường và chạy ngay kịch bản Demo trực tiếp:
+
+```bash
+make setup && make demo
+```
+
+Hoặc tái lập toàn bộ số liệu đo lường và bảng đánh giá trong Báo cáo:
+
+```bash
+make eval
+```
+
+Hoặc sinh tự động file Báo cáo Word chuẩn 8-9 trang:
+
+```bash
+make report
+```
+
+*(Lưu ý: Nếu máy chưa cài `make`, có thể chạy trực tiếp `python run_demo.py`, `python run_evaluation.py` hoặc `python generate_report.py`)*
+
+---
+
+## 📁 2. Cấu trúc dự án
 
 ```text
 social-work-rag-agent/
-├── config.py
-├── requirements.txt
-├── README.md
-├── run_project.py               # Script tổng chạy từ A-Z Pipeline
+├── Makefile                     # File tự động hóa: make setup, make demo, make eval, make test
+├── ai-usage.md                  # Khai báo sử dụng AI bắt buộc
+├── README.md                    # Hướng dẫn tái lập hệ thống
+├── config.py                    # Cấu hình đường dẫn, model, retry
+├── run_demo.py                  # Script demo ReAct Agent (3 tầng: Tra cứu -> Tính toán -> Ghi & Verify)
+├── run_evaluation.py            # Script make eval tái lập toàn bộ bảng số liệu và đo USAGE token
+├── run_project.py               # Pipeline xử lý dữ liệu và sandbox search
 ├── data/
-│   ├── processed/               # Markdown đã chuyển đổi
-│   └── ctxh_chunks.json         # Cơ sở dữ liệu Chunks (JSON)
+│   ├── processed/               # Văn bản quy chế CTXH đã xử lý (Markdown)
+│   ├── ctxh_chunks.json         # Tập 78 Chunks tri thức đã băm
+│   ├── ctxh_embeddings.json     # Vector embeddings đã tính sẵn (intfloat/multilingual-e5-base)
+│   └── db/ctxh_db.json          # Cơ sở dữ liệu JSON lưu trữ điểm CTXH sinh viên
+├── prompts/                     # Tách Prompt ra khỏi code (yêu cầu W2)
+│   ├── agent_system.txt         # System prompt cho ReAct Agent Loop
+│   ├── rag_system.txt           # System prompt cho RAG Generator
+│   └── rag_user.txt             # Template truy vấn ngữ cảnh RAG
 ├── src/
-│   ├── schemas.py               # Cấu trúc chung (DocumentChunk, RetrievalResult)
-│   ├── data_preprocessing/
-│   │   ├── document_loader.py   # Load Markdown & Metadata
-│   │   ├── chunker.py           # Chia đoạn (Chunking) & Clean Text
-│   │   └── build_dataset.py     # Module xuất dataset
-│   └── retrieval/
-│       ├── embedder.py          # SentenceTransformer Embedder (E5)
-│       ├── hybrid_search.py     # Engine thuật toán lai BM25 + Cosine
-│       ├── calibration.py       # Bộ lọc ngưỡng từ chối trả lời (no_answer)
-│       └── vector_store.py      # Lưu trữ và tìm kiếm Vector tĩnh
+│   ├── schemas.py               # Định nghĩa schema bằng @dataclass theo chuẩn W1
+│   ├── llm_client.py            # Gọi API an toàn (Exponential Backoff + Jitter, TokenUsage tracker)
+│   ├── retrieval/               # Hybrid Search (BM25Okapi + Dense E5) và Calibration
+│   ├── rag/                     # Pipeline ghép ngữ cảnh RAG và trả lời có trích dẫn nguồn
+│   ├── agent/                   # ReAct Agent loop tự viết tay, MAX_STEPS = 10, Action & Verify
+│   └── mcp/                     # MCP Server chuẩn stdio, stdout sạch, dynamic discovery
 ├── tests/
-│   ├── testset.jsonl            # Bộ 12 câu hỏi đánh giá
-│   ├── test_hybrid_search.py    # Batch Test Hybrid Search
-│   ├── test_embedder.py
-│   └── test_vector_store.py
-└── document_guide/              # Thư mục chứa báo cáo kỹ thuật thuật toán
+│   ├── testset.jsonl            # Bộ 12 câu hỏi đánh giá (8 câu trong miền, 4 câu no_answer)
+│   ├── test_hybrid_search.py    # Unit tests cho Hybrid Search và Calibration
+│   ├── test_mcp_server.py       # Kiểm thử giao tiếp MCP Server qua stdio
+│   └── test_db_integrity.py     # Stress test tính toàn vẹn cơ sở dữ liệu JSON
+└── logs/                        # Lưu trữ >= 3 lần chạy thật định dạng JSONL (kèm USAGE tokens)
 ```
 
-LINKGGDRIVE_DATA: https://drive.google.com/drive/folders/1VCwrwHplQBLwjCfr_11-UZMcpYLjV4zI?usp=drive_link
+---
 
-## 2. Hướng dẫn chạy nhanh (Quick Start)
+## 🎯 3. Kiến trúc 3 tầng bắt buộc (Đề tài T5)
 
-Cách dễ nhất để kiểm thử luồng RAG từ khâu xử lý tài liệu cho đến truy vấn Hybrid Search mà không cần setup phức tạp là cấu trúc script tổng:
+1. **Tầng (a) Tra cứu (Retrieval - Có bằng chứng):**
+   - Truy vấn thông tin quy chế từ văn bản chính thức của HCMUTE (Quyết định 224/QĐ-ĐHSPKT-CTHSSV).
+   - Mỗi câu trả lời đều truy được về `doc_id`, `chunk_id` cụ thể.
+   - Cơ chế **Calibration Threshold (0.55)** tự động nhận diện và từ chối các câu hỏi nằm ngoài cơ sở tri thức (`no_answer`: Bitcoin, MongoDB, thời tiết...).
+2. **Tầng (b) Biến đổi (Transformation - Tính toán & Quy đổi):**
+   - Tự động suy luận quy đổi: **10 Điểm CTXH = 01 Ngày CTXH**.
+   - Đối chiếu ngưỡng chuẩn đầu ra xét tốt nghiệp: **40 Điểm (tương đương 4 Ngày CTXH)**.
+   - Tính toán cộng dồn số điểm hiện có của sinh viên, xác định số điểm còn thiếu.
+3. **Tầng (c) Hành động (Action & Verify - Chứng minh là Agent):**
+   - Kích hoạt tool ghi thay đổi trạng thái thật: `register_activity` (cộng điểm hoạt động vào `data/db/ctxh_db.json`).
+   - Bắt buộc thực thi bước kiểm chứng ngay sau đó: gọi tool đọc `get_status` để chứng minh điểm số thực tế trong DB đã tăng.
+
+---
+
+## 📊 4. Kết quả đánh giá (Evaluation Benchmarks)
+
+Chạy bằng lệnh `make eval`:
+
+| Tiêu chí đánh giá | Kết quả đạt được | Ghi chú kỹ thuật |
+| :--- | :---: | :--- |
+| **Độ chính xác tổng thể (Accuracy)** | **100.0%** (12/12 câu) | Vượt qua toàn bộ 12 ca kiểm thử |
+| **Tỷ lệ từ chối đúng (Rejection Rate)** | **100.0%** (4/4 câu) | Nhận diện chính xác 100% câu `no_answer` |
+| **Tỷ lệ trả lời đúng trong miền** | **100.0%** (8/8 câu) | Trích dẫn đúng nguồn văn bản quy chế |
+| **Đo lường Token USAGE** | Đầy đủ từng câu | Ghi nhận `calls`, `prompt_tokens`, `completion_tokens`, `max_prompt` |
+| **Lịch sử lần chạy (Logs)** | ≥ 5 files JSONL | Đầy đủ trong thư mục `logs/` có timestamp |
+
+---
+
+## 🧪 5. Chạy Unit Tests
 
 ```bash
-uv run python run_project.py
+make test
 ```
-
-Lệnh này sẽ tự động:
-
-1. Đọc file Markdown -> Cắt Chunks.
-2. Nạp E5 Embedding Model & Tính toán BM25 Inverted Index.
-3. Chạy qua 3 câu hỏi giả lập để test điểm Dense / Sparse và màng lọc Threshold độc lập.
-
-## 3. Hệ thống Hybrid Retrieval System
-
-Quá trình truy vấn không sử dụng cơ sở dữ liệu cồng kềnh mà hoạt động in-memory qua sự dung hợp (Fusion):
-
-- **Dense Search (Ngữ nghĩa):** Sử dụng LLM Embedder `intfloat/multilingual-e5-base` tối ưu tiếng Việt. Trọng số 0.5.
-- **Sparse Search (Từ khóa):** Dùng `BM25 Okapi` qua bộ lọc lột bỏ 41 Stop words Tiếng Việt để tránh nhiễu hệ số. Trọng số 0.5.
-- **Min-Max Score Normalization:** Chuẩn hoá 2 thang biểu diễn điểm số về khoảng `[0..1]`.
-- **Calibration (Màng lọc Ảo giác)**: Hệ số an toàn Threshold cài đặt sẵn (`0.55`) giúp luồng dữ liệu mạnh dạn **từ chối (no_answer)** thao tác với các câu hỏi nằm ngoài vùng tri thức (VD: Hỏi Bitcoin, Cài phần mềm).
-
-## 4. Chạy Unit Test Dự Án
-
-```bash
-uv run pytest tests/ -v
-```
-
-Quá trình này đảm nhiệm kiểm thử module `Hybrid Search` và độ dài của câu hỏi trong `testset.jsonl`.

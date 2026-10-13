@@ -1,0 +1,14 @@
+{
+  "configurations": {
+    "Dense_Only": {
+      "avg_in_domain_score": 0.8651,
+      "avg_out_of_domain_score": 0.7887,
+      "rejection_accuracy_at_threshold": "75.0% (dễ false positive do ngữ nghĩa chung)"
+    },
+    "Hybrid_Search_BM25_E5": {
+      "avg_in_domain_score": 0.9321,
+      "avg_out_of_domain_score": 0.3155,
+      "rejection_accuracy_at_threshold": "100.0% (tách bạch rõ ràng nhờ kết hợp từ khóa)"
+    }
+  }
+}

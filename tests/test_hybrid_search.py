@@ -203,3 +203,11 @@ if __name__ == "__main__":
             
         print(f"\nKết quả chung cuộc: {passed_count}/{len(test_cases)} câu PASS (Tỷ lệ: {passed_count/len(test_cases)*100:.2f}%)")
 
+
+def test_hybrid_search_with_metadata_filter(chunks):
+    retriever = HybridSearch(chunks, FakeEmbedder())
+    results = retriever.search("appeal", top_k=2, filter_metadata={"doc_id": "D2"})
+    assert len(results) > 0
+    assert results[0].doc_id == "D2"
+
+

@@ -9,12 +9,26 @@ Validates:
 import asyncio
 import json
 import sys
+
+if sys.platform == "win32":
+    try:
+        if hasattr(sys.stdout, "reconfigure"):
+            sys.stdout.reconfigure(encoding="utf-8")
+        if hasattr(sys.stderr, "reconfigure"):
+            sys.stderr.reconfigure(encoding="utf-8")
+    except Exception:
+        pass
+
 from mcp import ClientSession, StdioServerParameters
 from mcp.client.stdio import stdio_client
 from rich import print
 
 
-async def test_mcp_server_workflow():
+def test_mcp_server_workflow():
+    asyncio.run(_test_mcp_server_workflow())
+
+
+async def _test_mcp_server_workflow():
   print("[bold cyan]=== BẮT ĐẦU KIỂM THỬ MCP SERVER QUA STDIO ===[/bold cyan]\n")
 
   # 1. Cấu hình subprocess khởi chạy server bằng chính Python của .venv hiện tại
