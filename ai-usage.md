@@ -1,5 +1,5 @@
-# 🤖 KHAI BÁO SỬ DỤNG AI (AI-USAGE DECLARATION)
-**Môn học:** Các phương pháp Trí tuệ Nhân tạo Tiên tiến (AIPR)  
+# KHAI BÁO SỬ DỤNG AI (AI-USAGE DECLARATION)
+**Môn học:** AI Programming with Python (AIPR)  
 **Đề tài:** T5 — Trợ lý CTXH: Quy đổi & Đăng ký (Social Work RAG Agent)  
 **Nhóm sinh viên:** 3 thành viên  
 
@@ -13,12 +13,12 @@
 
 ## 2. Mục đích và phạm vi sử dụng AI trong từng phần của dự án
 
-| STT | Thành phần dự án | Công cụ AI | Mục đích sử dụng | Mức độ can thiệp của sinh viên |
-| :---: | :--- | :--- | :--- | :--- |
-| **1** | **RAG & Hybrid Search** | Gemini / Claude | Gợi ý khung thuật toán kết hợp BM25Okapi và Dense E5, công thức chuẩn hóa Min-Max | Sinh viên tự viết bộ lọc Stopwords tiếng Việt, thiết lập ngưỡng Calibration Score và tiền xử lý văn bản quy chế HCMUTE. |
-| **2** | **MCP Server & Client** | Gemini / Claude | Hướng dẫn định dạng giao thức Stdio MCP và cơ chế bóc tách schema từ Dataclass | Sinh viên tự triển khai 2 tools (`register_activity`, `get_status`), xử lý luồng `sys.stderr` sạch và kiểm thử tính toàn vẹn DB. |
-| **3** | **Agent ReAct Loop** | Claude 3.5 Sonnet | Gợi ý mẫu vòng lặp Native Tool Calling và ràng buộc Action & Verify | Sinh viên tự lập trình vòng lặp thuần (không dùng LangChain), bóc tách tham số JSON an toàn và xử lý cờ kiểm chứng. |
-| **4** | **Benchmark & Đo lường** | Gemini / Claude | Gợi ý cấu trúc logging JSONL và đo lường USAGE token từng câu | Sinh viên xây dựng bộ testset 12 câu, thiết lập ma trận kiểm định và script tái lập `make eval`. |
+| STT | Thành phần dự án | Công cụ AI | Mục đích sử dụng | 
+| :---: | :--- | :--- | :--- | 
+| **1** | **RAG & Hybrid Search** | Gemini / Claude | Gợi ý khung thuật toán kết hợp BM25Okapi và Dense E5, công thức chuẩn hóa Min-Max |
+| **2** | **MCP Server & Client** | Gemini / Claude | Hướng dẫn định dạng giao thức Stdio MCP và cơ chế bóc tách schema từ Dataclass 
+| **3** | **Agent ReAct Loop** | Claude 3.5 Sonnet | Gợi ý mẫu vòng lặp Native Tool Calling và ràng buộc Action & Verify 
+| **4** | **Benchmark & Đo lường** | Gemini / Claude | Gợi ý cấu trúc logging JSONL và đo lường USAGE token từng câu | 
 
 ---
 
@@ -32,6 +32,9 @@ và Dense Cosine Similarity (E5 vector). Yêu cầu:
 - Tích hợp bộ lọc từ khóa/stop words tiếng Việt để tránh việc câu hỏi ngoài lề (out-of-domain) 
   vẫn nhận điểm số cao.
 - Trả về danh sách đối tượng RetrievalResult theo cấu trúc @dataclass.
+- Testcase và logs 
+- Make file 
+- Chuẩn hóa bảng chunk dữ liệu bảng
 ```
 
 ### Prompt 2: Xây dựng vòng lặp ReAct Agent thuần và Action & Verify
@@ -53,17 +56,3 @@ Yêu cầu:
   top_score, latency, và USAGE chi tiết (calls, prompt_tokens, completion_tokens, max_prompt).
 ```
 
----
-
-## 4. Các đoạn mã nguồn có sự hỗ trợ của AI
-1. **[src/retrieval/hybrid_search.py](file:///c:/Users/Admin/AIPR/social-work-rag-agent/src/retrieval/hybrid_search.py):** Hàm `min_max_normalize` và hàm phân tích `tokenize_vietnamese`.
-2. **[src/agent/loop.py](file:///c:/Users/Admin/AIPR/social-work-rag-agent/src/agent/loop.py):** Khung bắt lỗi parse tool arguments và logic chuyển trạng thái `has_registered -> has_verified`.
-3. **[src/llm_client.py](file:///c:/Users/Admin/AIPR/social-work-rag-agent/src/llm_client.py):** Cơ chế Exponential Backoff kèm Jitter và lớp `TokenUsage`.
-4. **[run_evaluation.py](file:///c:/Users/Admin/AIPR/social-work-rag-agent/run_evaluation.py):** Bộ bảng hiển thị kết quả bằng thư viện `rich`.
-
----
-
-## 5. Cam kết liêm chính học thuật
-- Nhóm sinh viên cam kết đã **hiểu rõ 100% từng dòng mã nguồn** trong dự án.
-- Tất cả logic nghiệp vụ (quy đổi 10 điểm = 1 ngày CTXH, hạn mức 40 điểm tốt nghiệp, mã hoạt động) đều do sinh viên nghiên cứu và thiết lập dựa trên tài liệu quy chế thực tế của trường HCMUTE.
-- Toàn bộ thành viên sẵn sàng giải thích và sửa đổi mã nguồn trực tiếp tại buổi bảo vệ theo yêu cầu của Giảng viên.
