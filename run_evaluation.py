@@ -252,7 +252,7 @@ def evaluate_system(mode: str = "hybrid", threshold: float = 0.55):
     except Exception as e:
         print(f"[dim]Note: Không thể vẽ biểu đồ: {e}[/dim]")
 
-    # 6. Ablation Study (+1 Điểm cộng: So sánh Dense vs Hybrid Search)
+    # 6. Ablation Study (So sánh Dense với Hybrid Search)
     ablation_summary = run_ablation_comparison(retriever, cases, threshold)
 
     print(Panel.fit(

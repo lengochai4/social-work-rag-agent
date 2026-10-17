@@ -173,3 +173,12 @@ LLM_MAX_DELAY=30
 ##  Academic Integrity & AI Usage
 
 In compliance with project guidelines, all AI assistance is transparently documented in [ai-usage.md](ai-usage.md). All core algorithms, schemas, calibration heuristics, and ReAct loops were designed, verified, and tested by the team.
+
+
+```
+Author: 
+- Tran Thien An - 24110077
+- Le Ngoc Hai - 24110089
+- Tran Gia Kiet - 24110103
+This project is a part of subject in University, 2026 - 2027. This aims to build a RAG system to answer questions about Ho Chi Minh University of Technology and Engineering.
+```
