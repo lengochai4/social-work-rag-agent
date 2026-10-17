@@ -80,6 +80,7 @@ target/
 # logs/ (Keep real JSONL benchmark runs per Rubric requirement #3)
 !logs/*.jsonl
 !logs/.gitkeep
+logs/
 
 
 # ==========================================

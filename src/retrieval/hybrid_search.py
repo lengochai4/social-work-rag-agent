@@ -129,7 +129,7 @@ class HybridSearch:
             doc_id = chunk.get("doc_id", "") if isinstance(chunk, dict) else chunk.doc_id
             metadata = chunk.get("metadata", {}) if isinstance(chunk, dict) else chunk.metadata
 
-            # Metadata Filter (+1 Điểm cộng: lọc thật theo doc_id hoặc metadata)
+            # Metadata Filter lọc theo doc hoặc metadata
             if filter_metadata:
                 match = True
                 for k, v in filter_metadata.items():

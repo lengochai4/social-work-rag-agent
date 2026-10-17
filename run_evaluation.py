@@ -256,7 +256,7 @@ def evaluate_system(mode: str = "hybrid", threshold: float = 0.55):
     ablation_summary = run_ablation_comparison(retriever, cases, threshold)
 
     print(Panel.fit(
-        f"[bold green]✔ TỔNG KẾT ĐÁNH GIÁ (EVALUATION SUMMARY)[/bold green]\n\n"
+        f"[bold green] TỔNG KẾT ĐÁNH GIÁ (EVALUATION SUMMARY)[/bold green]\n\n"
         f"- Độ chính xác tổng thể: [bold yellow]{accuracy_pct:.1f}%[/bold yellow] ({correct_count}/{len(cases)} câu)\n"
         f"- Tỷ lệ từ chối đúng (no_answer): [bold cyan]{reject_accuracy:.1f}%[/bold cyan] ({correct_rejected}/{total_rejected} câu)\n"
         f"- Tỷ lệ trả lời đúng câu hỏi trong miền: [bold cyan]{answer_accuracy:.1f}%[/bold cyan] ({correct_answerable}/{total_answerable} câu)\n"
