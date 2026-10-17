@@ -1,10 +1,17 @@
-from datetime import datetime
-from mcp.server.mcpserver import MCPServer
+try:
+    from mcp.server.mcpserver import MCPServer
+except ImportError:
+    try:
+        from mcp.server.fastmcp import FastMCP as MCPServer
+    except ImportError:
+        MCPServer = None
+
 from src.mcp.db import load_student, save_student
 from src.schemas import ActivityRecord
 import json
 import logging
 import sys
+from datetime import datetime
 
 logging.basicConfig(
     level=logging.INFO,
@@ -12,13 +19,20 @@ logging.basicConfig(
     stream=sys.stderr
 )
 
-logger= logging.getLogger("ctxh-mcp-server")
+logger = logging.getLogger("ctxh-mcp-server")
 
-mcp=MCPServer("ctxh-mcp-server")
+mcp = MCPServer("ctxh-mcp-server") if MCPServer else None
+
+def mcp_tool():
+    def decorator(fn):
+        if mcp and hasattr(mcp, "tool"):
+            return mcp.tool()(fn)
+        return fn
+    return decorator
 
 PASSING_POINTS_THRESHOLD = 40
 
-@mcp.tool()
+@mcp_tool()
 def get_status(student_id: str, semester: str="") -> str:
     """Retrieve social work records of a student for verfication.
     
@@ -59,7 +73,7 @@ def get_status(student_id: str, semester: str="") -> str:
         return f"Error: {str(exc)}"
     
 
-@mcp.tool()
+@mcp_tool()
 def register_activity(student_id: str, activity_code: str, points: int, semester: str="HK1_2025_2026") -> str:
     """Register social work points for a completed activity (produces side-effects).
 
@@ -117,7 +131,10 @@ def register_activity(student_id: str, activity_code: str, points: int, semester
 
 # --- ENTRYPOINT ---
 if __name__ == "__main__":
-    logger.info("Starting CTXH MCP Server via stdio transport...")
-    mcp.run()
+    if mcp:
+        logger.info("Starting CTXH MCP Server via stdio transport...")
+        mcp.run()
+    else:
+        logger.info("MCP SDK not installed in this environment; running in fallback mode.")
 
    

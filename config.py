@@ -6,8 +6,18 @@ embedding model, and document chunking parameters.
 """
 
 import os
+import sys
 from pathlib import Path
 from dotenv import load_dotenv
+
+if sys.platform == "win32":
+    try:
+        if hasattr(sys.stdout, "reconfigure"):
+            sys.stdout.reconfigure(encoding="utf-8")
+        if hasattr(sys.stderr, "reconfigure"):
+            sys.stderr.reconfigure(encoding="utf-8")
+    except Exception:
+        pass
 
 load_dotenv()
 
@@ -16,7 +26,8 @@ PROJECT_ROOT = Path(__file__).resolve().parent
 
 #DATA PATHS
 DATA_PATH = PROJECT_ROOT / "data"
-DB_PATH = DB_PATH = PROJECT_ROOT / "data" / "db" / "ctxh_db.json"
+DB_PATH = PROJECT_ROOT / "data" / "db" / "ctxh_db.json"
+RESULTS_PATH = PROJECT_ROOT / "results"
 
 
 # Directory containing cleaned and preprocessed documents.
@@ -27,8 +38,10 @@ RAW_DATA_PATH = DATA_PATH / "raw"
 OUTPUT_PATH = DATA_PATH / "ctxh_chunks.json"
 # Path to the JSON file containing document embedding vectors.
 EMBEDDINGS_PATH = DATA_PATH / "ctxh_embeddings.json"
+# Test set 
+TESTSET_PATH = PROJECT_ROOT / "tests" / "testset.jsonl"
 
-
+OUTPUT_TEST_RAG_PATH = RESULTS_PATH / "retrieval_results.json" 
 #SOURCES FILE SETTINGS 
 SUPPORTED_FILE_TYPES = [".md", ".txt"]
 
@@ -42,7 +55,7 @@ CHUNK_OVERLAP = 200
 
 # LLM & API CLIENT SETTINGS 
 LLM_PROVIDER = os.getenv("LLM_PROVIDER", "groq")
-LLM_BASE_URL = os.getenv("LLM_BASE_URL", "https://api.groq.com/openai/v1")
+LLM_BASE_URL = os.getenv("LLM_BASE_URL", None)
 LLM_MODEL = os.getenv("LLM_MODEL", "openai/gpt-oss-20b")
 GROQ_API_KEY = os.getenv("GROQ_API_KEY", "")
 

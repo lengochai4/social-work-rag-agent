@@ -15,11 +15,9 @@ from src.schemas import Document, DocumentChunk
 
 def clean_text(text: str) -> str:
     """Normalize whitespace without removing meaningful content."""
-
     text = text.replace("\r\n", "\n").replace("\r", "\n")
     text = re.sub(r"[ \t]+", " ", text)
     text = re.sub(r"\n{3,}", "\n\n", text)
-
     return text.strip()    
     
 def split_document(document: Document, chunksize=CHUNK_SIZE, overlap=CHUNK_OVERLAP) -> List[DocumentChunk]:
@@ -48,7 +46,7 @@ def split_document(document: Document, chunksize=CHUNK_SIZE, overlap=CHUNK_OVERL
         
     return chunks
     
-    
+
 def chunk_documents(documents: List[Document], chunksize=CHUNK_SIZE, overlap=CHUNK_OVERLAP) -> List[DocumentChunk]:
     """Split a list of documents into chunks"""
     all_chunks = []
@@ -67,20 +65,17 @@ def split_long_text(
 ) -> list[str]:
     """
     Split long text by character count.
-
     Prefer paragraph/sentence/word boundaries when possible.
     """
 
     if chunk_size <= 0:
         raise ValueError("chunk_size must be greater than 0")
-
     if overlap < 0 or overlap >= chunk_size:
         raise ValueError(
             "overlap must be >= 0 and smaller than chunk_size"
         )
 
     text = text.strip()
-
     if not text:
         return []
 
@@ -92,10 +87,8 @@ def split_long_text(
         end = min(start + chunk_size, text_length)
 
         if end < text_length:
-            # Prefer a paragraph boundary.
             cut = text.rfind("\n\n", start, end)
 
-            # Otherwise prefer a sentence boundary.
             if cut < start + chunk_size // 2:
                 cut = max(
                     text.rfind(". ", start, end),
@@ -103,7 +96,6 @@ def split_long_text(
                     text.rfind("! ", start, end),
                 )
 
-            # Otherwise prefer a word boundary.
             if cut < start + chunk_size // 2:
                 cut = text.rfind(" ", start, end)
 
@@ -199,7 +191,6 @@ def split_markdown_blocks(text: str) -> list[dict[str, str]]:
     return blocks
 
 # Nếu bảng dài hơn, chia theo dòng
-    
 def split_markdown_table(
     table_text: str,
     chunk_size: int,
@@ -231,8 +222,6 @@ def split_markdown_table(
                     "\n".join([header, separator, *current_rows])
                 )
             else:
-                # A single row is longer than the limit.
-                # Keep the row intact rather than breaking its columns.
                 parts.append(
                     "\n".join([header, separator, row])
                 )
@@ -249,8 +238,6 @@ def split_markdown_table(
         return ["\n".join([header, separator])]
 
     return parts
-
-    
 
 def split_document(
     document: Document,

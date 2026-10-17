@@ -1,0 +1,12 @@
+QUESTION:
+{question}
+
+RETRIEVED CONTEXT:
+{context}
+
+Answer the question using only the information provided in the CONTEXT.
+
+If the CONTEXT does not contain sufficient evidence to answer the question, explicitly state that the available documents do not provide enough information.
+
+Do not invent facts or rely on unsupported assumptions.
+Whenever possible, identify the relevant source document.

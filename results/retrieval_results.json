@@ -1,0 +1,1226 @@
+[
+  {
+    "question_id": 1,
+    "question": "Sinh viên Công tác xã hội có thể thực tập tại các cơ sở nào?",
+    "expected": null,
+    "retrieval_results": [
+      {
+        "doc_id": "CTXH_002",
+        "chunk_id": "CTXH_002_chunk_000",
+        "content": "## QUY ĐỊNH HOẠT ĐỘNG CÔNG TÁC XÃ HỘI\n\n(Trích Quyết định số 224/QĐ-ĐHSPKT-CTHSSV về việc ban hành quy chế Quy định tổ chức thực hiện chương trình Công tác xã hội cho sinh viên hệ chính quy)\n\n## 1. Hoạt động công tác xã hội là gì?\n\nHoạt động công tác xã hội (CTXH) là các hoạt động sinh viên trường tham gia nhằm phòng ngừa, can thiệp - trị liệu, phục hồi chức năng và hỗ trợ các cá nhân, nhóm, gia đình và phát triển cộng đồng; đồng thời thúc đẩy tạo lập môi trường xã hội, chính sách, nguồn lực và dịch vụ góp phần bảo đảm an sinh xã hội và hạnh phúc của người dân.\n\nĐiểm CTXH là đơn vị thước đo dùng để đánh giá mức độ tham gia hoạt động CTXH của sinh viên. Ngày CTXH là đơn vị thời gian quy đổi khi tham gia hoạt động CTXH. Số Ngày CTXH được quy đổi từ Điểm CTXH. Theo đó, 10 Điểm CTXH được quy đổi tương đương với 01 Ngày CTXH.\n\n## 2. Mục đích SV phải hoàn thành chương trình CTXH trước khi tốt nghiệp",
+        "score": 0.8395199179649353,
+        "metadata": {
+          "title": "Quy định về đánh giá kết quả điểm công tác xã hội sinh viên HCMUTE",
+          "version": "v2.0",
+          "owner": "Trường Đại học Công nghệ Kỹ thuật TPHCM",
+          "source": "https://sao.hcmute.edu.vn/Resources/Docs/SubDomain/sao/Quy%20%C4%91%E1%BB%8Bnh%20hi%E1%BB%87n%20h%C3%A0nh/_SO%20TAY%20SV%202024%20-%2006-11%20-%20final.pdf",
+          "document_type": "regulation",
+          "document_number": "224/QĐ-ĐHSPKT-CTHSSV",
+          "publication_year": 2024,
+          "language": "Vietnamese",
+          "content_type": "text"
+        },
+        "sparse_score": 0.0,
+        "dense_score": 0.8395199179649353
+      },
+      {
+        "doc_id": "CTXH_001",
+        "chunk_id": "CTXH_001_chunk_009",
+        "content": "gia các hoạt động công tác xã hội, SV phải làm đơn kèm xác nhận về tình trạng sức khỏe của cơ quan y tế (từ cấp huyện trở lên) để Nhà trường xem xét việc miễn, giảm tham gia hoạt động công tác xã hội.\n\n- Các đơn vị trong trường: Các khoa/phòng/ban/TT, Đoàn thanh niên &amp; Hội SV chịu trách nhiệm tổ chức các hoạt động CTXH cho SV. Trong đó tổ chức Đoàn &amp; Hội giữ vai trò nòng cốt.\n\n## II. NỘI DUNG CÔNG TÁC XÃ HỘI, MÃ HÓA &amp; QUY ĐỔI NGÀY CTXH\n\n1. Các nội dung CTXH:",
+        "score": 0.8385894894599915,
+        "metadata": {
+          "title": "Quy định tổ chức thực hiện chương trình Công tác xã hội cho sinh viên hệ chính quy HCMUTE 2013",
+          "version": "v1.0",
+          "owner": "Trường Đại học Công nghệ Kỹ thuật TPHCM",
+          "source": "https://sao.hcmute.edu.vn/Resources/Docs/SubDomain/sao/Quy%20%C4%91%E1%BB%8Bnh%20hi%E1%BB%87n%20h%C3%A0nh/QUYDINH-HDCDONG-2013%20(1).pdf",
+          "document_type": "regulation",
+          "document_number": "224/QĐ-ĐHSPKT-CTHSSV",
+          "publication_year": 2013,
+          "language": "Vietnamese",
+          "content_type": "text"
+        },
+        "sparse_score": 0.0,
+        "dense_score": 0.8385894894599915
+      },
+      {
+        "doc_id": "CTXH_001",
+        "chunk_id": "CTXH_001_chunk_003",
+        "content": "CHỨC THỰC HIỆN CHƯƠNG TRÌNH CÔNG TÁC XÃ HỘI ĐỐI VỚI SINH VIÊN HỆ CHÍNH QUY\n\n(Ban hành kèm theo Quyết định số 224 /QĐ-ĐHSPKT-CTHSSV ngày 09 tháng 12 năm 2013) **\\*\\***\\*\\***\\*\\***\n\n## I. QUY ĐỊNH CHUNG\n\n1. Căn cứ để xây dựng &amp; thực hiện Chương trình công tác xã hội.",
+        "score": 0.8373221158981323,
+        "metadata": {
+          "title": "Quy định tổ chức thực hiện chương trình Công tác xã hội cho sinh viên hệ chính quy HCMUTE 2013",
+          "version": "v1.0",
+          "owner": "Trường Đại học Công nghệ Kỹ thuật TPHCM",
+          "source": "https://sao.hcmute.edu.vn/Resources/Docs/SubDomain/sao/Quy%20%C4%91%E1%BB%8Bnh%20hi%E1%BB%87n%20h%C3%A0nh/QUYDINH-HDCDONG-2013%20(1).pdf",
+          "document_type": "regulation",
+          "document_number": "224/QĐ-ĐHSPKT-CTHSSV",
+          "publication_year": 2013,
+          "language": "Vietnamese",
+          "content_type": "text"
+        },
+        "sparse_score": 0.0,
+        "dense_score": 0.8373221158981323
+      },
+      {
+        "doc_id": "CTXH_001",
+        "chunk_id": "CTXH_001_chunk_006",
+        "content": "tập và thi cử, phòng chống tội phạm, tệ nạn xã hội\".\n- Quy chế học sinh, sinh viên các trường đại học, cao đẳng và trung cấp chuyên nghiệp hệ chính quy ban hành kèm theo Quyết định số 42/2007/QĐ-BGDĐT ngày 13/8/2007 của Bộ trưởng Bộ Giáo dục &amp; Đào tạo, Điều 5, mục 7 quy định nghĩa vụ của sinh viên: \"Tham gia lao động và hoạt động xã hội, hoạt động bảo vệ môi trường phù hợp với năng lực và sức khoẻ theo yêu cầu của nhà trường\".\n\n2. Phạm vi điều chỉnh &amp; đối tượng áp dụng\n\n- Văn bản này quy định việc tổ chức thực hiện Chương trình công tác xã hội (CTXH) đối với SV hệ chính quy bao gồm nội dung CTXH, tổ chức &amp; đánh giá SV tham gia hoạt động CTXH, sử dụng kết quả CTXH để xét tốt nghiệp SV hệ chính quy;\n- Quy định này áp dụng đối với SV hệ chính quy tuyển sinh từ khóa 2012 trở đi.\n\n3. Mục đích",
+        "score": 0.8340075016021729,
+        "metadata": {
+          "title": "Quy định tổ chức thực hiện chương trình Công tác xã hội cho sinh viên hệ chính quy HCMUTE 2013",
+          "version": "v1.0",
+          "owner": "Trường Đại học Công nghệ Kỹ thuật TPHCM",
+          "source": "https://sao.hcmute.edu.vn/Resources/Docs/SubDomain/sao/Quy%20%C4%91%E1%BB%8Bnh%20hi%E1%BB%87n%20h%C3%A0nh/QUYDINH-HDCDONG-2013%20(1).pdf",
+          "document_type": "regulation",
+          "document_number": "224/QĐ-ĐHSPKT-CTHSSV",
+          "publication_year": 2013,
+          "language": "Vietnamese",
+          "content_type": "text"
+        },
+        "sparse_score": 0.0,
+        "dense_score": 0.8340075016021729
+      },
+      {
+        "doc_id": "CTXH_002",
+        "chunk_id": "CTXH_002_chunk_004",
+        "content": "ện trong suốt khóa học; SV tự quyết định thời gian hoàn tất việc tích lũy số ngày CTXH; Nhà trường khuyến cáo SV không nên để dồn vào cuối khóa.\n\n## 4. Các hoạt động nào được cộng điểm Công tác xã hội\n\n- Tình nguyện vì cộng đồng: Mùa hè xanh, hiến máu tình nguyện, xuân tình nguyện, đêm hội trăng rằm, tiếp sức mùa thi, tư vấn hướng nghiệp-tuyển sinh, tiếp sức tân sinh viên; hoạt động cứu trợ thiên tai hoặc vận động quyên góp giúp đồng bào bị thiên tai,…\n- Công ích phục vụ nhà trường, phục vụ lợi ích của SV; tham gia các hoạt động công ích phục vụ các nhu cầu cấp thiết của xã hội nơi cư trú do các đơn vị trong và ngoài trường đề nghị, tổ chức;\n- Tham gia hoạt động giữ gìn và bảo vệ môi trường; tuyên truyền và phổ biến pháp luật;\n- Tham gia các hoạt động chăm lo các đối tượng chính sách, người già neo đơn và trẻ em có hoàn cảnh đặc biệt khó khăn và các bệnh nhân nghèo, neo đơn đang điều trị tại các bệnh viện hay tại nhà;\n- Tham gia hoạt động dạy nghề cho thanh niên; dạy kèm cho các em",
+        "score": 0.8328827023506165,
+        "metadata": {
+          "title": "Quy định về đánh giá kết quả điểm công tác xã hội sinh viên HCMUTE",
+          "version": "v2.0",
+          "owner": "Trường Đại học Công nghệ Kỹ thuật TPHCM",
+          "source": "https://sao.hcmute.edu.vn/Resources/Docs/SubDomain/sao/Quy%20%C4%91%E1%BB%8Bnh%20hi%E1%BB%87n%20h%C3%A0nh/_SO%20TAY%20SV%202024%20-%2006-11%20-%20final.pdf",
+          "document_type": "regulation",
+          "document_number": "224/QĐ-ĐHSPKT-CTHSSV",
+          "publication_year": 2024,
+          "language": "Vietnamese",
+          "content_type": "text"
+        },
+        "sparse_score": 0.0,
+        "dense_score": 0.8328827023506165
+      }
+    ]
+  },
+  {
+    "question_id": 2,
+    "question": "Quy trình đánh giá điểm thực tập sinh viên CTXH như thế nào?",
+    "expected": null,
+    "retrieval_results": [
+      {
+        "doc_id": "CTXH_002",
+        "chunk_id": "CTXH_002_chunk_009",
+        "content": "sinh và công tác SV hoặc Đoàn TNCS Hồ Chí Minh trường.\n- SV tham gia hoạt động CTXH theo đúng yêu cầu của đơn vị tổ chức, sau khi tham gia thực hiện điểm danh và xem điểm được đơn vị tổ chức đánh giá\n\nsinh và công tác SV hoặc Đoàn TNCS Hồ Chí Minh trường.\n- SV tham gia hoạt động CTXH theo đúng yêu cầu của đơn vị tổ chức, sau khi tham gia thực hiện điểm danh và xem điểm được đơn vị tổ chức đánh giá. Trường hợp đơn vị tổ chức đánh giá điểm không phù hợp có thể phản hồi và kiếu nại nếu cần.\n- Sinh viên theo dõi điểm CTXH được đơn vị tổ chức cập nhật trên trang online SV (https://online.hcmute.edu.vn/); phản hồi với đơn vị tổ chức chương trình nếu điểm nhập không đúng với điểm được công bố sau khi tham gia.\n- Các trường hợp phát sinh gây mất quyền lợi chính đáng của bản thân, SV có quyền khiếu nại đến Ban giám hiệu thông qua Phòng Tuyển sinh và công tác SV để được kiểm tra, xử lý.\n\n## 6. Trách nhiệm các bên liên quan",
+        "score": 0.8882005214691162,
+        "metadata": {
+          "title": "Quy định về đánh giá kết quả điểm công tác xã hội sinh viên HCMUTE",
+          "version": "v2.0",
+          "owner": "Trường Đại học Công nghệ Kỹ thuật TPHCM",
+          "source": "https://sao.hcmute.edu.vn/Resources/Docs/SubDomain/sao/Quy%20%C4%91%E1%BB%8Bnh%20hi%E1%BB%87n%20h%C3%A0nh/_SO%20TAY%20SV%202024%20-%2006-11%20-%20final.pdf",
+          "document_type": "regulation",
+          "document_number": "224/QĐ-ĐHSPKT-CTHSSV",
+          "publication_year": 2024,
+          "language": "Vietnamese",
+          "content_type": "text"
+        },
+        "sparse_score": 0.0,
+        "dense_score": 0.8882005214691162
+      },
+      {
+        "doc_id": "CTXH_002",
+        "chunk_id": "CTXH_002_chunk_000",
+        "content": "## QUY ĐỊNH HOẠT ĐỘNG CÔNG TÁC XÃ HỘI\n\n(Trích Quyết định số 224/QĐ-ĐHSPKT-CTHSSV về việc ban hành quy chế Quy định tổ chức thực hiện chương trình Công tác xã hội cho sinh viên hệ chính quy)\n\n## 1. Hoạt động công tác xã hội là gì?\n\nHoạt động công tác xã hội (CTXH) là các hoạt động sinh viên trường tham gia nhằm phòng ngừa, can thiệp - trị liệu, phục hồi chức năng và hỗ trợ các cá nhân, nhóm, gia đình và phát triển cộng đồng; đồng thời thúc đẩy tạo lập môi trường xã hội, chính sách, nguồn lực và dịch vụ góp phần bảo đảm an sinh xã hội và hạnh phúc của người dân.\n\nĐiểm CTXH là đơn vị thước đo dùng để đánh giá mức độ tham gia hoạt động CTXH của sinh viên. Ngày CTXH là đơn vị thời gian quy đổi khi tham gia hoạt động CTXH. Số Ngày CTXH được quy đổi từ Điểm CTXH. Theo đó, 10 Điểm CTXH được quy đổi tương đương với 01 Ngày CTXH.\n\n## 2. Mục đích SV phải hoàn thành chương trình CTXH trước khi tốt nghiệp",
+        "score": 0.8836138248443604,
+        "metadata": {
+          "title": "Quy định về đánh giá kết quả điểm công tác xã hội sinh viên HCMUTE",
+          "version": "v2.0",
+          "owner": "Trường Đại học Công nghệ Kỹ thuật TPHCM",
+          "source": "https://sao.hcmute.edu.vn/Resources/Docs/SubDomain/sao/Quy%20%C4%91%E1%BB%8Bnh%20hi%E1%BB%87n%20h%C3%A0nh/_SO%20TAY%20SV%202024%20-%2006-11%20-%20final.pdf",
+          "document_type": "regulation",
+          "document_number": "224/QĐ-ĐHSPKT-CTHSSV",
+          "publication_year": 2024,
+          "language": "Vietnamese",
+          "content_type": "text"
+        },
+        "sparse_score": 0.0,
+        "dense_score": 0.8836138248443604
+      },
+      {
+        "doc_id": "CTXH_002",
+        "chunk_id": "CTXH_002_chunk_010",
+        "content": "ợp phát sinh gây mất quyền lợi chính đáng của bản thân, SV có quyền khiếu nại đến Ban giám hiệu thông qua Phòng Tuyển sinh và công tác SV để được kiểm tra, xử lý.\n\n## 6. Trách nhiệm các bên liên quan\n\n- Sinh viên có trách nhiệm tham gia hoạt động CTXH theo quy định, theo dõi điểm CTXH cá nhân trên trang online.hcmute.edu.vn và phản hồi với đơn vị tổ chức chương trình đã tham gia để đề nghị cộng điểm (trường hợp chưa được cộng điểm).\n- Các đơn vị trong trường tổ chức hoạt động cho SV tham gia; trong quá trình tổ chức thực hiện điểm danh SV tham gia; sau khi tổ chức, chấm điểm CTXH cho SV theo kết quả, thái độ tham gia hoạt động của SV. Nhập điểm vào phần mềm quản lý Điểm CTXH.\n- Phòng Tuyển sinh và công tác SV có trách nhiệm quản lý phần mềm, các hoạt động và điểm CTXH của SV; in bảng điểm CTXH cho SV khi SV có nhu cầu (đăng ký in bảng điểm trên trang online)\n- Phòng Đào tạo dựa vào điểm CTXH được SV tích lũy trên phần mềm tiến hành xét tốt nghiệp cho SV.",
+        "score": 0.8830183744430542,
+        "metadata": {
+          "title": "Quy định về đánh giá kết quả điểm công tác xã hội sinh viên HCMUTE",
+          "version": "v2.0",
+          "owner": "Trường Đại học Công nghệ Kỹ thuật TPHCM",
+          "source": "https://sao.hcmute.edu.vn/Resources/Docs/SubDomain/sao/Quy%20%C4%91%E1%BB%8Bnh%20hi%E1%BB%87n%20h%C3%A0nh/_SO%20TAY%20SV%202024%20-%2006-11%20-%20final.pdf",
+          "document_type": "regulation",
+          "document_number": "224/QĐ-ĐHSPKT-CTHSSV",
+          "publication_year": 2024,
+          "language": "Vietnamese",
+          "content_type": "text"
+        },
+        "sparse_score": 0.0,
+        "dense_score": 0.8830183744430542
+      },
+      {
+        "doc_id": "CTXH_002",
+        "chunk_id": "CTXH_002_chunk_003",
+        "content": "## 3. Yêu cầu đối với sinh viên về hoạt động CTXH\n\n- Sinh viên phải tích lũy 04 Ngày CTXH (tương đương 40 điểm CTXH) để được xét tốt nghiệp.\n- Việc tích lũy ngày CTXH của SV được thực hiện trong suốt khóa học; SV tự quyết định thời gian hoàn tất việc tích lũy số ngày CTXH; Nhà trường khuyến cáo SV không nên để dồn vào cuối khóa.\n\n## 4. Các hoạt động nào được cộng điểm Công tác xã hội",
+        "score": 0.8802689909934998,
+        "metadata": {
+          "title": "Quy định về đánh giá kết quả điểm công tác xã hội sinh viên HCMUTE",
+          "version": "v2.0",
+          "owner": "Trường Đại học Công nghệ Kỹ thuật TPHCM",
+          "source": "https://sao.hcmute.edu.vn/Resources/Docs/SubDomain/sao/Quy%20%C4%91%E1%BB%8Bnh%20hi%E1%BB%87n%20h%C3%A0nh/_SO%20TAY%20SV%202024%20-%2006-11%20-%20final.pdf",
+          "document_type": "regulation",
+          "document_number": "224/QĐ-ĐHSPKT-CTHSSV",
+          "publication_year": 2024,
+          "language": "Vietnamese",
+          "content_type": "text"
+        },
+        "sparse_score": 0.0,
+        "dense_score": 0.8802689909934998
+      },
+      {
+        "doc_id": "CTXH_001",
+        "chunk_id": "CTXH_001_chunk_037",
+        "content": "oạt động CTXH do địa phương tổ chức, người đứng đầu hoặc quỷ quyền cho thành viên trong ban tổ chức chương trình chịu trách nhiệm ghi kết quả (cho điểm) &amp; ký tên vào phiếu đánh giá hoạt động CTXH.\n\n- Với hoạt động CTXH do địa phương &amp; trường cùng tổ chức tại địa phương, người đứng đầu hoặc quỷ quyền cho thành viên trong ban tổ chức chương trình của trường chịu trách nhiệm ghi kết quả (cho điểm) &amp; cùng với người đứng đầu tổ chức ở địa phương ký tên vào phiếu đánh giá hoạt động CTXH.\n\n6. Bước 6: Nhập kết quả đánh giá (nhập điểm) vào phần mềm PSC.\n\n- a. Tại trường: Các đơn vị chủ trì tổ chức &amp; đánh giá kết quả hoạt động CTXH của sinh viên chịu trách nhiệm nhập kết quả đánh giá vào phần mềm PSC.\n- b. Tại địa phương: Phòng Công tác HSSV chịu trách nhiệm nhập kết quả vào phần mềm PSC.\n\nViệc nhập &amp; công bố kết quả đánh giá hoạt động CTXH của SV trên phần mềm PSC phải được hoàn tất chậm nhất sau 02 tuần khi hoạt động CTXH kết thúc.",
+        "score": 0.8772636651992798,
+        "metadata": {
+          "title": "Quy định tổ chức thực hiện chương trình Công tác xã hội cho sinh viên hệ chính quy HCMUTE 2013",
+          "version": "v1.0",
+          "owner": "Trường Đại học Công nghệ Kỹ thuật TPHCM",
+          "source": "https://sao.hcmute.edu.vn/Resources/Docs/SubDomain/sao/Quy%20%C4%91%E1%BB%8Bnh%20hi%E1%BB%87n%20h%C3%A0nh/QUYDINH-HDCDONG-2013%20(1).pdf",
+          "document_type": "regulation",
+          "document_number": "224/QĐ-ĐHSPKT-CTHSSV",
+          "publication_year": 2013,
+          "language": "Vietnamese",
+          "content_type": "text"
+        },
+        "sparse_score": 0.0,
+        "dense_score": 0.8772636651992798
+      }
+    ]
+  },
+  {
+    "question_id": 3,
+    "question": "Tiêu chuẩn đạo đức nghề nghiệp của nhân viên CTXH là gì?",
+    "expected": null,
+    "retrieval_results": [
+      {
+        "doc_id": "CTXH_002",
+        "chunk_id": "CTXH_002_chunk_001",
+        "content": "gia hoạt động CTXH. Số Ngày CTXH được quy đổi từ Điểm CTXH. Theo đó, 10 Điểm CTXH được quy đổi tương đương với 01 Ngày CTXH.\n\n## 2. Mục đích SV phải hoàn thành chương trình CTXH trước khi tốt nghiệp\n\n- Phát huy tinh thần xung kích và tình nguyện vì cộng đồng của SV, khuyến khích lòng nhân ái, tinh thần tương trợ và sự chủ động góp sức trẻ của SV tham gia giải quyết các vấn đề đang được nhà trường và xã hội quan tâm, góp phần thiết thực vào sự phát triển kinh tế - xã hội của TP. Hồ Chí Minh và của đất nước.\n- Nâng cao ý thức trách nhiệm của SV đối với bản thân, gia đình và cộng đồng; rèn luyện và phát triển tính chủ động, sáng tạo, linh hoạt trong hoạt động thực tiễn; hình thành các kỹ năng sống và trau dồi bản lĩnh tổ chức công việc cho SV trước khi ra trường.\n- Thực hiện mục tiêu giáo dục toàn diện người học, nâng cao chuẩn đầu ra của SV",
+        "score": 0.8497775793075562,
+        "metadata": {
+          "title": "Quy định về đánh giá kết quả điểm công tác xã hội sinh viên HCMUTE",
+          "version": "v2.0",
+          "owner": "Trường Đại học Công nghệ Kỹ thuật TPHCM",
+          "source": "https://sao.hcmute.edu.vn/Resources/Docs/SubDomain/sao/Quy%20%C4%91%E1%BB%8Bnh%20hi%E1%BB%87n%20h%C3%A0nh/_SO%20TAY%20SV%202024%20-%2006-11%20-%20final.pdf",
+          "document_type": "regulation",
+          "document_number": "224/QĐ-ĐHSPKT-CTHSSV",
+          "publication_year": 2024,
+          "language": "Vietnamese",
+          "content_type": "text"
+        },
+        "sparse_score": 0.0,
+        "dense_score": 0.8497775793075562
+      },
+      {
+        "doc_id": "CTXH_002",
+        "chunk_id": "CTXH_002_chunk_000",
+        "content": "## QUY ĐỊNH HOẠT ĐỘNG CÔNG TÁC XÃ HỘI\n\n(Trích Quyết định số 224/QĐ-ĐHSPKT-CTHSSV về việc ban hành quy chế Quy định tổ chức thực hiện chương trình Công tác xã hội cho sinh viên hệ chính quy)\n\n## 1. Hoạt động công tác xã hội là gì?\n\nHoạt động công tác xã hội (CTXH) là các hoạt động sinh viên trường tham gia nhằm phòng ngừa, can thiệp - trị liệu, phục hồi chức năng và hỗ trợ các cá nhân, nhóm, gia đình và phát triển cộng đồng; đồng thời thúc đẩy tạo lập môi trường xã hội, chính sách, nguồn lực và dịch vụ góp phần bảo đảm an sinh xã hội và hạnh phúc của người dân.\n\nĐiểm CTXH là đơn vị thước đo dùng để đánh giá mức độ tham gia hoạt động CTXH của sinh viên. Ngày CTXH là đơn vị thời gian quy đổi khi tham gia hoạt động CTXH. Số Ngày CTXH được quy đổi từ Điểm CTXH. Theo đó, 10 Điểm CTXH được quy đổi tương đương với 01 Ngày CTXH.\n\n## 2. Mục đích SV phải hoàn thành chương trình CTXH trước khi tốt nghiệp",
+        "score": 0.8480536341667175,
+        "metadata": {
+          "title": "Quy định về đánh giá kết quả điểm công tác xã hội sinh viên HCMUTE",
+          "version": "v2.0",
+          "owner": "Trường Đại học Công nghệ Kỹ thuật TPHCM",
+          "source": "https://sao.hcmute.edu.vn/Resources/Docs/SubDomain/sao/Quy%20%C4%91%E1%BB%8Bnh%20hi%E1%BB%87n%20h%C3%A0nh/_SO%20TAY%20SV%202024%20-%2006-11%20-%20final.pdf",
+          "document_type": "regulation",
+          "document_number": "224/QĐ-ĐHSPKT-CTHSSV",
+          "publication_year": 2024,
+          "language": "Vietnamese",
+          "content_type": "text"
+        },
+        "sparse_score": 0.0,
+        "dense_score": 0.8480536341667175
+      },
+      {
+        "doc_id": "CTXH_001",
+        "chunk_id": "CTXH_001_chunk_007",
+        "content": ", tổ chức &amp; đánh giá SV tham gia hoạt động CTXH, sử dụng kết quả CTXH để xét tốt nghiệp SV hệ chính quy;\n- Quy định này áp dụng đối với SV hệ chính quy tuyển sinh từ khóa 2012 trở đi.\n\n3. Mục đích\n\n- Phát huy tinh thần xung kích của SV, tình nguyện vì cộng đồng, nhân ái, tương trợ và chủ động góp sức trẻ tham gia giải quyết các vấn đề đang được nhà trường và xã hội quan tâm. Qua đó, nâng cao ý thức trách nhiệm của SV đối với bản thân và cộng đồng;\n- Rèn luyện &amp; nâng cao tính chủ động, sáng tạo, linh hoạt trong hoạt động thực tiễn; hình thành các kỹ năng sống, trau dồi bản lĩnh tổ chức công việc,… cho SV trước khi ra trường.\n\n4. Yêu cầu\n SV phải tích lũy số ngày CTXH tối thiểu/khóa đào tạo theo quy định như sau: 04 ngày CTXH với khóa đào tạo từ 4 năm trở lên; 02 ngày CTXH với khóa đào tạo dưới 4 năm.",
+        "score": 0.8457938432693481,
+        "metadata": {
+          "title": "Quy định tổ chức thực hiện chương trình Công tác xã hội cho sinh viên hệ chính quy HCMUTE 2013",
+          "version": "v1.0",
+          "owner": "Trường Đại học Công nghệ Kỹ thuật TPHCM",
+          "source": "https://sao.hcmute.edu.vn/Resources/Docs/SubDomain/sao/Quy%20%C4%91%E1%BB%8Bnh%20hi%E1%BB%87n%20h%C3%A0nh/QUYDINH-HDCDONG-2013%20(1).pdf",
+          "document_type": "regulation",
+          "document_number": "224/QĐ-ĐHSPKT-CTHSSV",
+          "publication_year": 2013,
+          "language": "Vietnamese",
+          "content_type": "text"
+        },
+        "sparse_score": 0.0,
+        "dense_score": 0.8457938432693481
+      },
+      {
+        "doc_id": "CTXH_002",
+        "chunk_id": "CTXH_002_chunk_020",
+        "content": "| Lĩnh vực CTXH | Mã | Nội dung & định lượng | Thang điểm | Quy đổi sang ngày CTXH |\n| ------------------------------------------------------------------- | ------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- | ---------------------- |\n| Chăm sóc người già, trẻ em khó khăn | 004205 | Tham gia chăm sóc người bệnh có hoàn khó khăn tại bệnh viện hoặc gia đình (01 lần). | 5→10 | 0,5→1 |\n| Dạy nghề, chuyên môn cho thanh niên | 005101 | Tham gia dạy nghề, chuyên môn cho thanh niên địa phương (01 tuần) | 20→30 | 2→3 |\n| Dạy nghề, chuyên môn cho thanh niên | 005102 | Tham gia giúp địa phương tin học hóa công tác quản lý (01 tuần) | 20→30 | 2→3 |\n| Dạy học cho các cháu có hoàn cảnh khó khăn | 005201 | Tham gia phổ cập văn hóa cho các cháu theo yêu cầu của địa phương (01 tuần) | 20→30 | 2→3 |",
+        "score": 0.8425161838531494,
+        "metadata": {
+          "title": "Quy định về đánh giá kết quả điểm công tác xã hội sinh viên HCMUTE",
+          "version": "v2.0",
+          "owner": "Trường Đại học Công nghệ Kỹ thuật TPHCM",
+          "source": "https://sao.hcmute.edu.vn/Resources/Docs/SubDomain/sao/Quy%20%C4%91%E1%BB%8Bnh%20hi%E1%BB%87n%20h%C3%A0nh/_SO%20TAY%20SV%202024%20-%2006-11%20-%20final.pdf",
+          "document_type": "regulation",
+          "document_number": "224/QĐ-ĐHSPKT-CTHSSV",
+          "publication_year": 2024,
+          "language": "Vietnamese",
+          "content_type": "table"
+        },
+        "sparse_score": 0.0,
+        "dense_score": 0.8425161838531494
+      },
+      {
+        "doc_id": "CTXH_001",
+        "chunk_id": "CTXH_001_chunk_006",
+        "content": "tập và thi cử, phòng chống tội phạm, tệ nạn xã hội\".\n- Quy chế học sinh, sinh viên các trường đại học, cao đẳng và trung cấp chuyên nghiệp hệ chính quy ban hành kèm theo Quyết định số 42/2007/QĐ-BGDĐT ngày 13/8/2007 của Bộ trưởng Bộ Giáo dục &amp; Đào tạo, Điều 5, mục 7 quy định nghĩa vụ của sinh viên: \"Tham gia lao động và hoạt động xã hội, hoạt động bảo vệ môi trường phù hợp với năng lực và sức khoẻ theo yêu cầu của nhà trường\".\n\n2. Phạm vi điều chỉnh &amp; đối tượng áp dụng\n\n- Văn bản này quy định việc tổ chức thực hiện Chương trình công tác xã hội (CTXH) đối với SV hệ chính quy bao gồm nội dung CTXH, tổ chức &amp; đánh giá SV tham gia hoạt động CTXH, sử dụng kết quả CTXH để xét tốt nghiệp SV hệ chính quy;\n- Quy định này áp dụng đối với SV hệ chính quy tuyển sinh từ khóa 2012 trở đi.\n\n3. Mục đích",
+        "score": 0.8410750031471252,
+        "metadata": {
+          "title": "Quy định tổ chức thực hiện chương trình Công tác xã hội cho sinh viên hệ chính quy HCMUTE 2013",
+          "version": "v1.0",
+          "owner": "Trường Đại học Công nghệ Kỹ thuật TPHCM",
+          "source": "https://sao.hcmute.edu.vn/Resources/Docs/SubDomain/sao/Quy%20%C4%91%E1%BB%8Bnh%20hi%E1%BB%87n%20h%C3%A0nh/QUYDINH-HDCDONG-2013%20(1).pdf",
+          "document_type": "regulation",
+          "document_number": "224/QĐ-ĐHSPKT-CTHSSV",
+          "publication_year": 2013,
+          "language": "Vietnamese",
+          "content_type": "text"
+        },
+        "sparse_score": 0.0,
+        "dense_score": 0.8410750031471252
+      }
+    ]
+  },
+  {
+    "question_id": 4,
+    "question": "Sinh viên có được phép chuyển cơ sở thực tập giữa chừng không?",
+    "expected": null,
+    "retrieval_results": [
+      {
+        "doc_id": "CTXH_001",
+        "chunk_id": "CTXH_001_chunk_001",
+        "content": "sinh, sinh viên các trường đại học, cao đẳng và trung cấp chuyên nghiệp hệ chính quy ban hành kèm theo Quyết định số 42/2007/QĐ-BGDĐT ngày 13 tháng 8 năm 2007 của Bộ trưởng Bộ Giáo dục &amp; Đào tạo;\n\nCăn cứ Quyết định số 43/2007/QĐ-BGDĐT Ngày 15 tháng 8 năm 2007 của Bộ trưởng Bộ Giáo dục và Đào tạo về tổ chức đào tạo, kiểm tra, thi và công nhận tốt nghiệp đại học, cao đẳng hệ chính quy theo học chế tín chỉ;\n\nTheo yêu cầu công tác quản lý sinh viên của trường Đại học Sư phạm Kỹ thuật thành phố Hồ Chí Minh;\n\nTheo đề nghị của Trưởng phòng Công tác học sinh, sinh viên,\n\n## QUYẾT ĐỊNH",
+        "score": 0.8158227205276489,
+        "metadata": {
+          "title": "Quy định tổ chức thực hiện chương trình Công tác xã hội cho sinh viên hệ chính quy HCMUTE 2013",
+          "version": "v1.0",
+          "owner": "Trường Đại học Công nghệ Kỹ thuật TPHCM",
+          "source": "https://sao.hcmute.edu.vn/Resources/Docs/SubDomain/sao/Quy%20%C4%91%E1%BB%8Bnh%20hi%E1%BB%87n%20h%C3%A0nh/QUYDINH-HDCDONG-2013%20(1).pdf",
+          "document_type": "regulation",
+          "document_number": "224/QĐ-ĐHSPKT-CTHSSV",
+          "publication_year": 2013,
+          "language": "Vietnamese",
+          "content_type": "text"
+        },
+        "sparse_score": 0.0,
+        "dense_score": 0.8158227205276489
+      },
+      {
+        "doc_id": "CTXH_001",
+        "chunk_id": "CTXH_001_chunk_008",
+        "content": "trước khi ra trường.\n\n4. Yêu cầu\n SV phải tích lũy số ngày CTXH tối thiểu/khóa đào tạo theo quy định như sau: 04 ngày CTXH với khóa đào tạo từ 4 năm trở lên; 02 ngày CTXH với khóa đào tạo dưới 4 năm.\n\nVới khóa 2012, quy định SV phải tích lũy số ngày CTXH như sau: 03 ngày CTXH với khóa đào tạo từ 4 năm trở lên; 01 ngày CTXH với khóa đào tạo dưới 4 năm, hệ liên thông từ CĐ lên ĐH được miễn.\n\n- Việc tích lũy ngày CTXH của SV được thực hiện trong suốt khóa học; SV tự quyết định thời gian hoàn tất việc tích lũy số ngày CTXH. Nhà trường khuyến cáo SV không nên để dồn vào cuối khóa.\n- SV tích lũy đủ số ngày CTXH theo quy định, mới được xét công nhận tốt nghiệp.\n\nTrường hợp vì lý do sức khỏe, nên SV rất khó khăn hoặc không thể tham gia các hoạt động công tác xã hội, SV phải làm đơn kèm xác nhận về tình trạng sức khỏe của cơ quan y tế (từ cấp huyện trở lên) để Nhà trường xem xét việc miễn, giảm tham gia hoạt động công tác xã hội.",
+        "score": 0.8155842423439026,
+        "metadata": {
+          "title": "Quy định tổ chức thực hiện chương trình Công tác xã hội cho sinh viên hệ chính quy HCMUTE 2013",
+          "version": "v1.0",
+          "owner": "Trường Đại học Công nghệ Kỹ thuật TPHCM",
+          "source": "https://sao.hcmute.edu.vn/Resources/Docs/SubDomain/sao/Quy%20%C4%91%E1%BB%8Bnh%20hi%E1%BB%87n%20h%C3%A0nh/QUYDINH-HDCDONG-2013%20(1).pdf",
+          "document_type": "regulation",
+          "document_number": "224/QĐ-ĐHSPKT-CTHSSV",
+          "publication_year": 2013,
+          "language": "Vietnamese",
+          "content_type": "text"
+        },
+        "sparse_score": 0.0,
+        "dense_score": 0.8155842423439026
+      },
+      {
+        "doc_id": "CTXH_001",
+        "chunk_id": "CTXH_001_chunk_050",
+        "content": "c đơn vị trong và ngoài trường tổ chức, giới thiệu. SV có quyền tham gia hoạt động CTXH ở bất kỳ địa phương nào khi có điều kiện, không nhất thiết phải tham gia ở địa phương nơi cư trú.\n\n- V. KINH PHÍ\n\n1. Nguồn kinh phí tổ chức hoạt động CTXH\n2. Từ nguồn kinh phí hỗ trợ của nhà trường;\n3. Từ nguồn tài trợ của các tổ chức, cá nhân trong &amp; ngoài trường;\n4. Từ sự đóng góp tự nguyện của sinh viên khi tham gia chương trình.\n5. Phòng Kế hoạch-Tài chính chịu trách nhiệm hướng dẫn thu, chi những nội dung liên quan đến hoạt động CTXH.\n\n## HIỆU TRƯỞNG\n\n(Đã ký)\n\n## PGS. TS. ĐỖ VĂN DŨNG",
+        "score": 0.8155434727668762,
+        "metadata": {
+          "title": "Quy định tổ chức thực hiện chương trình Công tác xã hội cho sinh viên hệ chính quy HCMUTE 2013",
+          "version": "v1.0",
+          "owner": "Trường Đại học Công nghệ Kỹ thuật TPHCM",
+          "source": "https://sao.hcmute.edu.vn/Resources/Docs/SubDomain/sao/Quy%20%C4%91%E1%BB%8Bnh%20hi%E1%BB%87n%20h%C3%A0nh/QUYDINH-HDCDONG-2013%20(1).pdf",
+          "document_type": "regulation",
+          "document_number": "224/QĐ-ĐHSPKT-CTHSSV",
+          "publication_year": 2013,
+          "language": "Vietnamese",
+          "content_type": "text"
+        },
+        "sparse_score": 0.0,
+        "dense_score": 0.8155434727668762
+      },
+      {
+        "doc_id": "CTXH_001",
+        "chunk_id": "CTXH_001_chunk_002",
+        "content": "uy theo học chế tín chỉ;\n\nTheo yêu cầu công tác quản lý sinh viên của trường Đại học Sư phạm Kỹ thuật thành phố Hồ Chí Minh;\n\nTheo đề nghị của Trưởng phòng Công tác học sinh, sinh viên,\n\n## QUYẾT ĐỊNH\n\n- Điều 1: Nay ban hành kèm theo Quyết định này \"Quy định tổ chức thực hiện chương trình Công tác xã hội đối với sinh viên hệ chính quy của trường Đại học Sư phạm Kỹ thuật thành phố Hồ Chí Minh.\n- Điều 2: Quyết định này có hiệu lực kể từ ngày ký và được áp dụng đối với sinh viên hệ chính quy tuyển sinh từ khóa năm 2012 trở đi.\n- Điều 3: Các Ông, Bà Trưởng các Khoa, Phòng ban liên quan, các cán bộ, viên chức và sinh viên trường chịu trách nhiệm thi hành Quyết định này.\n\n## HIỆU TRƯỞNG\n\n(Đã ký)\n\n## Nơi nhận:\n\n- BGH;\n- Như Điều 3;\n- Lưu CTHSSV.\n\n1\n\n## QUY ĐỊNH TỔ CHỨC THỰC HIỆN CHƯƠNG TRÌNH CÔNG TÁC XÃ HỘI ĐỐI VỚI SINH VIÊN HỆ CHÍNH QUY\n\n(Ban hành kèm theo Quyết định số 224 /QĐ-ĐHSPKT-CTHSSV ngày 09 tháng 12 năm 2013) **\\*\\***\\*\\***\\*\\***\n\n## I. QUY ĐỊNH CHUNG",
+        "score": 0.8153266310691833,
+        "metadata": {
+          "title": "Quy định tổ chức thực hiện chương trình Công tác xã hội cho sinh viên hệ chính quy HCMUTE 2013",
+          "version": "v1.0",
+          "owner": "Trường Đại học Công nghệ Kỹ thuật TPHCM",
+          "source": "https://sao.hcmute.edu.vn/Resources/Docs/SubDomain/sao/Quy%20%C4%91%E1%BB%8Bnh%20hi%E1%BB%87n%20h%C3%A0nh/QUYDINH-HDCDONG-2013%20(1).pdf",
+          "document_type": "regulation",
+          "document_number": "224/QĐ-ĐHSPKT-CTHSSV",
+          "publication_year": 2013,
+          "language": "Vietnamese",
+          "content_type": "text"
+        },
+        "sparse_score": 0.0,
+        "dense_score": 0.8153266310691833
+      },
+      {
+        "doc_id": "CTXH_001",
+        "chunk_id": "CTXH_001_chunk_049",
+        "content": "diện lớp phối hợp với BCH Chi đoàn, Chi hội lớp SV đề xuất lên khoa/TT/Đoàn - Hội biểu dương, khen thưởng các cá nhân trong lớp có thành tích xuất sắc trong việc tổ chức triển khai các hoạt động CTXH.\n\n5. Trách nhiệm của sinh viên:\n6. Tự chịu trách nhiệm về việc tích lũy đủ số ngày công tác xã hội tối thiểu theo quy định của Nhà trường trước khi được xét, công nhận tốt nghiệp;\n7. Chủ động, tự giác đăng ký tham gia &amp; tham gia có trách nhiệm các hoạt động CTXH phù hợp do các đơn vị trong và ngoài trường tổ chức, giới thiệu. SV có quyền tham gia hoạt động CTXH ở bất kỳ địa phương nào khi có điều kiện, không nhất thiết phải tham gia ở địa phương nơi cư trú.\n\n- V. KINH PHÍ",
+        "score": 0.8153021335601807,
+        "metadata": {
+          "title": "Quy định tổ chức thực hiện chương trình Công tác xã hội cho sinh viên hệ chính quy HCMUTE 2013",
+          "version": "v1.0",
+          "owner": "Trường Đại học Công nghệ Kỹ thuật TPHCM",
+          "source": "https://sao.hcmute.edu.vn/Resources/Docs/SubDomain/sao/Quy%20%C4%91%E1%BB%8Bnh%20hi%E1%BB%87n%20h%C3%A0nh/QUYDINH-HDCDONG-2013%20(1).pdf",
+          "document_type": "regulation",
+          "document_number": "224/QĐ-ĐHSPKT-CTHSSV",
+          "publication_year": 2013,
+          "language": "Vietnamese",
+          "content_type": "text"
+        },
+        "sparse_score": 0.0,
+        "dense_score": 0.8153021335601807
+      }
+    ]
+  },
+  {
+    "question_id": 5,
+    "question": "Thời gian tối đa để hoàn thành khóa luận tốt nghiệp ngành CTXH là bao lâu?",
+    "expected": null,
+    "retrieval_results": [
+      {
+        "doc_id": "CTXH_002",
+        "chunk_id": "CTXH_002_chunk_003",
+        "content": "## 3. Yêu cầu đối với sinh viên về hoạt động CTXH\n\n- Sinh viên phải tích lũy 04 Ngày CTXH (tương đương 40 điểm CTXH) để được xét tốt nghiệp.\n- Việc tích lũy ngày CTXH của SV được thực hiện trong suốt khóa học; SV tự quyết định thời gian hoàn tất việc tích lũy số ngày CTXH; Nhà trường khuyến cáo SV không nên để dồn vào cuối khóa.\n\n## 4. Các hoạt động nào được cộng điểm Công tác xã hội",
+        "score": 0.8773110508918762,
+        "metadata": {
+          "title": "Quy định về đánh giá kết quả điểm công tác xã hội sinh viên HCMUTE",
+          "version": "v2.0",
+          "owner": "Trường Đại học Công nghệ Kỹ thuật TPHCM",
+          "source": "https://sao.hcmute.edu.vn/Resources/Docs/SubDomain/sao/Quy%20%C4%91%E1%BB%8Bnh%20hi%E1%BB%87n%20h%C3%A0nh/_SO%20TAY%20SV%202024%20-%2006-11%20-%20final.pdf",
+          "document_type": "regulation",
+          "document_number": "224/QĐ-ĐHSPKT-CTHSSV",
+          "publication_year": 2024,
+          "language": "Vietnamese",
+          "content_type": "text"
+        },
+        "sparse_score": 0.0,
+        "dense_score": 0.8773110508918762
+      },
+      {
+        "doc_id": "CTXH_001",
+        "chunk_id": "CTXH_001_chunk_008",
+        "content": "trước khi ra trường.\n\n4. Yêu cầu\n SV phải tích lũy số ngày CTXH tối thiểu/khóa đào tạo theo quy định như sau: 04 ngày CTXH với khóa đào tạo từ 4 năm trở lên; 02 ngày CTXH với khóa đào tạo dưới 4 năm.\n\nVới khóa 2012, quy định SV phải tích lũy số ngày CTXH như sau: 03 ngày CTXH với khóa đào tạo từ 4 năm trở lên; 01 ngày CTXH với khóa đào tạo dưới 4 năm, hệ liên thông từ CĐ lên ĐH được miễn.\n\n- Việc tích lũy ngày CTXH của SV được thực hiện trong suốt khóa học; SV tự quyết định thời gian hoàn tất việc tích lũy số ngày CTXH. Nhà trường khuyến cáo SV không nên để dồn vào cuối khóa.\n- SV tích lũy đủ số ngày CTXH theo quy định, mới được xét công nhận tốt nghiệp.\n\nTrường hợp vì lý do sức khỏe, nên SV rất khó khăn hoặc không thể tham gia các hoạt động công tác xã hội, SV phải làm đơn kèm xác nhận về tình trạng sức khỏe của cơ quan y tế (từ cấp huyện trở lên) để Nhà trường xem xét việc miễn, giảm tham gia hoạt động công tác xã hội.",
+        "score": 0.874138593673706,
+        "metadata": {
+          "title": "Quy định tổ chức thực hiện chương trình Công tác xã hội cho sinh viên hệ chính quy HCMUTE 2013",
+          "version": "v1.0",
+          "owner": "Trường Đại học Công nghệ Kỹ thuật TPHCM",
+          "source": "https://sao.hcmute.edu.vn/Resources/Docs/SubDomain/sao/Quy%20%C4%91%E1%BB%8Bnh%20hi%E1%BB%87n%20h%C3%A0nh/QUYDINH-HDCDONG-2013%20(1).pdf",
+          "document_type": "regulation",
+          "document_number": "224/QĐ-ĐHSPKT-CTHSSV",
+          "publication_year": 2013,
+          "language": "Vietnamese",
+          "content_type": "text"
+        },
+        "sparse_score": 0.0,
+        "dense_score": 0.874138593673706
+      },
+      {
+        "doc_id": "CTXH_001",
+        "chunk_id": "CTXH_001_chunk_007",
+        "content": ", tổ chức &amp; đánh giá SV tham gia hoạt động CTXH, sử dụng kết quả CTXH để xét tốt nghiệp SV hệ chính quy;\n- Quy định này áp dụng đối với SV hệ chính quy tuyển sinh từ khóa 2012 trở đi.\n\n3. Mục đích\n\n- Phát huy tinh thần xung kích của SV, tình nguyện vì cộng đồng, nhân ái, tương trợ và chủ động góp sức trẻ tham gia giải quyết các vấn đề đang được nhà trường và xã hội quan tâm. Qua đó, nâng cao ý thức trách nhiệm của SV đối với bản thân và cộng đồng;\n- Rèn luyện &amp; nâng cao tính chủ động, sáng tạo, linh hoạt trong hoạt động thực tiễn; hình thành các kỹ năng sống, trau dồi bản lĩnh tổ chức công việc,… cho SV trước khi ra trường.\n\n4. Yêu cầu\n SV phải tích lũy số ngày CTXH tối thiểu/khóa đào tạo theo quy định như sau: 04 ngày CTXH với khóa đào tạo từ 4 năm trở lên; 02 ngày CTXH với khóa đào tạo dưới 4 năm.",
+        "score": 0.8711466193199158,
+        "metadata": {
+          "title": "Quy định tổ chức thực hiện chương trình Công tác xã hội cho sinh viên hệ chính quy HCMUTE 2013",
+          "version": "v1.0",
+          "owner": "Trường Đại học Công nghệ Kỹ thuật TPHCM",
+          "source": "https://sao.hcmute.edu.vn/Resources/Docs/SubDomain/sao/Quy%20%C4%91%E1%BB%8Bnh%20hi%E1%BB%87n%20h%C3%A0nh/QUYDINH-HDCDONG-2013%20(1).pdf",
+          "document_type": "regulation",
+          "document_number": "224/QĐ-ĐHSPKT-CTHSSV",
+          "publication_year": 2013,
+          "language": "Vietnamese",
+          "content_type": "text"
+        },
+        "sparse_score": 0.0,
+        "dense_score": 0.8711466193199158
+      },
+      {
+        "doc_id": "CTXH_002",
+        "chunk_id": "CTXH_002_chunk_001",
+        "content": "gia hoạt động CTXH. Số Ngày CTXH được quy đổi từ Điểm CTXH. Theo đó, 10 Điểm CTXH được quy đổi tương đương với 01 Ngày CTXH.\n\n## 2. Mục đích SV phải hoàn thành chương trình CTXH trước khi tốt nghiệp\n\n- Phát huy tinh thần xung kích và tình nguyện vì cộng đồng của SV, khuyến khích lòng nhân ái, tinh thần tương trợ và sự chủ động góp sức trẻ của SV tham gia giải quyết các vấn đề đang được nhà trường và xã hội quan tâm, góp phần thiết thực vào sự phát triển kinh tế - xã hội của TP. Hồ Chí Minh và của đất nước.\n- Nâng cao ý thức trách nhiệm của SV đối với bản thân, gia đình và cộng đồng; rèn luyện và phát triển tính chủ động, sáng tạo, linh hoạt trong hoạt động thực tiễn; hình thành các kỹ năng sống và trau dồi bản lĩnh tổ chức công việc cho SV trước khi ra trường.\n- Thực hiện mục tiêu giáo dục toàn diện người học, nâng cao chuẩn đầu ra của SV",
+        "score": 0.862882137298584,
+        "metadata": {
+          "title": "Quy định về đánh giá kết quả điểm công tác xã hội sinh viên HCMUTE",
+          "version": "v2.0",
+          "owner": "Trường Đại học Công nghệ Kỹ thuật TPHCM",
+          "source": "https://sao.hcmute.edu.vn/Resources/Docs/SubDomain/sao/Quy%20%C4%91%E1%BB%8Bnh%20hi%E1%BB%87n%20h%C3%A0nh/_SO%20TAY%20SV%202024%20-%2006-11%20-%20final.pdf",
+          "document_type": "regulation",
+          "document_number": "224/QĐ-ĐHSPKT-CTHSSV",
+          "publication_year": 2024,
+          "language": "Vietnamese",
+          "content_type": "text"
+        },
+        "sparse_score": 0.0,
+        "dense_score": 0.862882137298584
+      },
+      {
+        "doc_id": "CTXH_001",
+        "chunk_id": "CTXH_001_chunk_049",
+        "content": "diện lớp phối hợp với BCH Chi đoàn, Chi hội lớp SV đề xuất lên khoa/TT/Đoàn - Hội biểu dương, khen thưởng các cá nhân trong lớp có thành tích xuất sắc trong việc tổ chức triển khai các hoạt động CTXH.\n\n5. Trách nhiệm của sinh viên:\n6. Tự chịu trách nhiệm về việc tích lũy đủ số ngày công tác xã hội tối thiểu theo quy định của Nhà trường trước khi được xét, công nhận tốt nghiệp;\n7. Chủ động, tự giác đăng ký tham gia &amp; tham gia có trách nhiệm các hoạt động CTXH phù hợp do các đơn vị trong và ngoài trường tổ chức, giới thiệu. SV có quyền tham gia hoạt động CTXH ở bất kỳ địa phương nào khi có điều kiện, không nhất thiết phải tham gia ở địa phương nơi cư trú.\n\n- V. KINH PHÍ",
+        "score": 0.8590224981307983,
+        "metadata": {
+          "title": "Quy định tổ chức thực hiện chương trình Công tác xã hội cho sinh viên hệ chính quy HCMUTE 2013",
+          "version": "v1.0",
+          "owner": "Trường Đại học Công nghệ Kỹ thuật TPHCM",
+          "source": "https://sao.hcmute.edu.vn/Resources/Docs/SubDomain/sao/Quy%20%C4%91%E1%BB%8Bnh%20hi%E1%BB%87n%20h%C3%A0nh/QUYDINH-HDCDONG-2013%20(1).pdf",
+          "document_type": "regulation",
+          "document_number": "224/QĐ-ĐHSPKT-CTHSSV",
+          "publication_year": 2013,
+          "language": "Vietnamese",
+          "content_type": "text"
+        },
+        "sparse_score": 0.0,
+        "dense_score": 0.8590224981307983
+      }
+    ]
+  },
+  {
+    "question_id": 6,
+    "question": "Trách nhiệm của cơ sở tiếp nhận sinh viên thực tập CTXH là gì?",
+    "expected": null,
+    "retrieval_results": [
+      {
+        "doc_id": "CTXH_001",
+        "chunk_id": "CTXH_001_chunk_049",
+        "content": "diện lớp phối hợp với BCH Chi đoàn, Chi hội lớp SV đề xuất lên khoa/TT/Đoàn - Hội biểu dương, khen thưởng các cá nhân trong lớp có thành tích xuất sắc trong việc tổ chức triển khai các hoạt động CTXH.\n\n5. Trách nhiệm của sinh viên:\n6. Tự chịu trách nhiệm về việc tích lũy đủ số ngày công tác xã hội tối thiểu theo quy định của Nhà trường trước khi được xét, công nhận tốt nghiệp;\n7. Chủ động, tự giác đăng ký tham gia &amp; tham gia có trách nhiệm các hoạt động CTXH phù hợp do các đơn vị trong và ngoài trường tổ chức, giới thiệu. SV có quyền tham gia hoạt động CTXH ở bất kỳ địa phương nào khi có điều kiện, không nhất thiết phải tham gia ở địa phương nơi cư trú.\n\n- V. KINH PHÍ",
+        "score": 0.8650835156440735,
+        "metadata": {
+          "title": "Quy định tổ chức thực hiện chương trình Công tác xã hội cho sinh viên hệ chính quy HCMUTE 2013",
+          "version": "v1.0",
+          "owner": "Trường Đại học Công nghệ Kỹ thuật TPHCM",
+          "source": "https://sao.hcmute.edu.vn/Resources/Docs/SubDomain/sao/Quy%20%C4%91%E1%BB%8Bnh%20hi%E1%BB%87n%20h%C3%A0nh/QUYDINH-HDCDONG-2013%20(1).pdf",
+          "document_type": "regulation",
+          "document_number": "224/QĐ-ĐHSPKT-CTHSSV",
+          "publication_year": 2013,
+          "language": "Vietnamese",
+          "content_type": "text"
+        },
+        "sparse_score": 0.0,
+        "dense_score": 0.8650835156440735
+      },
+      {
+        "doc_id": "CTXH_001",
+        "chunk_id": "CTXH_001_chunk_035",
+        "content": "n học).\n\nVới chương trình hoạt động CTXH có số lượng SV đăng ký tham gia vượt quá quy mô, ưu tiên cho sinh viên đăng ký trước.\n\n3. Bước 3: Tổ chức thực hiện &amp; đánh giá hoạt động CTXH theo kế hoạch\n\n- a. Tại trường: Trưởng các khoa/phòng/ban/TT; Ban thường vụ, Ban thư ký tổ chức Đoàn - Hội cấp khoa/TT &amp; cấp trường chịu trách nhiệm trước Hiệu trưởng về việc tổ chức và đánh giá kết quả hoạt động CTXH do đơn vị triển khai.\n- b. Tại địa phương: Phòng Công tác HSSV, Đoàn trường &amp; Hội SV trường phối hợp với địa phương tổ chức thực hiện và đánh giá kết quả hoạt động CTXH tại địa phương. Với những hoạt động CTXH phức tạp, nguy hiểm, dài ngày, số lượng SV tham gia đông, phải ký hợp đồng trách nhiệm (hợp đồng, văn bản liên tịch, biên bản ghi nhớ,…) giữa trường với địa phương. Phòng Công tác HSSV có trách nhiệm thẩm định, xác minh kết quả đánh giá CTXH của SV.\n\n4. Bước 4: In phiếu đánh giá (cho điểm) hoạt động CTXH.",
+        "score": 0.854530930519104,
+        "metadata": {
+          "title": "Quy định tổ chức thực hiện chương trình Công tác xã hội cho sinh viên hệ chính quy HCMUTE 2013",
+          "version": "v1.0",
+          "owner": "Trường Đại học Công nghệ Kỹ thuật TPHCM",
+          "source": "https://sao.hcmute.edu.vn/Resources/Docs/SubDomain/sao/Quy%20%C4%91%E1%BB%8Bnh%20hi%E1%BB%87n%20h%C3%A0nh/QUYDINH-HDCDONG-2013%20(1).pdf",
+          "document_type": "regulation",
+          "document_number": "224/QĐ-ĐHSPKT-CTHSSV",
+          "publication_year": 2013,
+          "language": "Vietnamese",
+          "content_type": "text"
+        },
+        "sparse_score": 0.0,
+        "dense_score": 0.854530930519104
+      },
+      {
+        "doc_id": "CTXH_002",
+        "chunk_id": "CTXH_002_chunk_009",
+        "content": "sinh và công tác SV hoặc Đoàn TNCS Hồ Chí Minh trường.\n- SV tham gia hoạt động CTXH theo đúng yêu cầu của đơn vị tổ chức, sau khi tham gia thực hiện điểm danh và xem điểm được đơn vị tổ chức đánh giá\n\nsinh và công tác SV hoặc Đoàn TNCS Hồ Chí Minh trường.\n- SV tham gia hoạt động CTXH theo đúng yêu cầu của đơn vị tổ chức, sau khi tham gia thực hiện điểm danh và xem điểm được đơn vị tổ chức đánh giá. Trường hợp đơn vị tổ chức đánh giá điểm không phù hợp có thể phản hồi và kiếu nại nếu cần.\n- Sinh viên theo dõi điểm CTXH được đơn vị tổ chức cập nhật trên trang online SV (https://online.hcmute.edu.vn/); phản hồi với đơn vị tổ chức chương trình nếu điểm nhập không đúng với điểm được công bố sau khi tham gia.\n- Các trường hợp phát sinh gây mất quyền lợi chính đáng của bản thân, SV có quyền khiếu nại đến Ban giám hiệu thông qua Phòng Tuyển sinh và công tác SV để được kiểm tra, xử lý.\n\n## 6. Trách nhiệm các bên liên quan",
+        "score": 0.8534581065177917,
+        "metadata": {
+          "title": "Quy định về đánh giá kết quả điểm công tác xã hội sinh viên HCMUTE",
+          "version": "v2.0",
+          "owner": "Trường Đại học Công nghệ Kỹ thuật TPHCM",
+          "source": "https://sao.hcmute.edu.vn/Resources/Docs/SubDomain/sao/Quy%20%C4%91%E1%BB%8Bnh%20hi%E1%BB%87n%20h%C3%A0nh/_SO%20TAY%20SV%202024%20-%2006-11%20-%20final.pdf",
+          "document_type": "regulation",
+          "document_number": "224/QĐ-ĐHSPKT-CTHSSV",
+          "publication_year": 2024,
+          "language": "Vietnamese",
+          "content_type": "text"
+        },
+        "sparse_score": 0.0,
+        "dense_score": 0.8534581065177917
+      },
+      {
+        "doc_id": "CTXH_001",
+        "chunk_id": "CTXH_001_chunk_042",
+        "content": "m định, xác minh các trường hợp khiếu nại (nếu có) khi SV tham gia hoạt động CTXH tại địa phương;\n7. ổng hợp danh sách SV tích lũy đủ số ngày CTXH theo quy định trình Hội đồng xét tốt nghiệp cho SV.\n8. Tổng hợp và trình Hiệu trưởng danh sách đề nghị khen thưởng các tập thể, cá nhân sinh viên có thành tích xuất sắc trong việc triển khai các hoạt động công tác xã hội.\n\n## 3. Trách nhiệm của Khoa/TT quản lý SV.",
+        "score": 0.8531587719917297,
+        "metadata": {
+          "title": "Quy định tổ chức thực hiện chương trình Công tác xã hội cho sinh viên hệ chính quy HCMUTE 2013",
+          "version": "v1.0",
+          "owner": "Trường Đại học Công nghệ Kỹ thuật TPHCM",
+          "source": "https://sao.hcmute.edu.vn/Resources/Docs/SubDomain/sao/Quy%20%C4%91%E1%BB%8Bnh%20hi%E1%BB%87n%20h%C3%A0nh/QUYDINH-HDCDONG-2013%20(1).pdf",
+          "document_type": "regulation",
+          "document_number": "224/QĐ-ĐHSPKT-CTHSSV",
+          "publication_year": 2013,
+          "language": "Vietnamese",
+          "content_type": "text"
+        },
+        "sparse_score": 0.0,
+        "dense_score": 0.8531587719917297
+      },
+      {
+        "doc_id": "CTXH_001",
+        "chunk_id": "CTXH_001_chunk_050",
+        "content": "c đơn vị trong và ngoài trường tổ chức, giới thiệu. SV có quyền tham gia hoạt động CTXH ở bất kỳ địa phương nào khi có điều kiện, không nhất thiết phải tham gia ở địa phương nơi cư trú.\n\n- V. KINH PHÍ\n\n1. Nguồn kinh phí tổ chức hoạt động CTXH\n2. Từ nguồn kinh phí hỗ trợ của nhà trường;\n3. Từ nguồn tài trợ của các tổ chức, cá nhân trong &amp; ngoài trường;\n4. Từ sự đóng góp tự nguyện của sinh viên khi tham gia chương trình.\n5. Phòng Kế hoạch-Tài chính chịu trách nhiệm hướng dẫn thu, chi những nội dung liên quan đến hoạt động CTXH.\n\n## HIỆU TRƯỞNG\n\n(Đã ký)\n\n## PGS. TS. ĐỖ VĂN DŨNG",
+        "score": 0.8511157631874084,
+        "metadata": {
+          "title": "Quy định tổ chức thực hiện chương trình Công tác xã hội cho sinh viên hệ chính quy HCMUTE 2013",
+          "version": "v1.0",
+          "owner": "Trường Đại học Công nghệ Kỹ thuật TPHCM",
+          "source": "https://sao.hcmute.edu.vn/Resources/Docs/SubDomain/sao/Quy%20%C4%91%E1%BB%8Bnh%20hi%E1%BB%87n%20h%C3%A0nh/QUYDINH-HDCDONG-2013%20(1).pdf",
+          "document_type": "regulation",
+          "document_number": "224/QĐ-ĐHSPKT-CTHSSV",
+          "publication_year": 2013,
+          "language": "Vietnamese",
+          "content_type": "text"
+        },
+        "sparse_score": 0.0,
+        "dense_score": 0.8511157631874084
+      }
+    ]
+  },
+  {
+    "question_id": 7,
+    "question": "Nếu sinh viên vắng mặt quá 20% thời gian thực tập thì sẽ bị xử lý ra sao?",
+    "expected": null,
+    "retrieval_results": [
+      {
+        "doc_id": "CTXH_002",
+        "chunk_id": "CTXH_002_chunk_009",
+        "content": "sinh và công tác SV hoặc Đoàn TNCS Hồ Chí Minh trường.\n- SV tham gia hoạt động CTXH theo đúng yêu cầu của đơn vị tổ chức, sau khi tham gia thực hiện điểm danh và xem điểm được đơn vị tổ chức đánh giá\n\nsinh và công tác SV hoặc Đoàn TNCS Hồ Chí Minh trường.\n- SV tham gia hoạt động CTXH theo đúng yêu cầu của đơn vị tổ chức, sau khi tham gia thực hiện điểm danh và xem điểm được đơn vị tổ chức đánh giá. Trường hợp đơn vị tổ chức đánh giá điểm không phù hợp có thể phản hồi và kiếu nại nếu cần.\n- Sinh viên theo dõi điểm CTXH được đơn vị tổ chức cập nhật trên trang online SV (https://online.hcmute.edu.vn/); phản hồi với đơn vị tổ chức chương trình nếu điểm nhập không đúng với điểm được công bố sau khi tham gia.\n- Các trường hợp phát sinh gây mất quyền lợi chính đáng của bản thân, SV có quyền khiếu nại đến Ban giám hiệu thông qua Phòng Tuyển sinh và công tác SV để được kiểm tra, xử lý.\n\n## 6. Trách nhiệm các bên liên quan",
+        "score": 0.8348135948181152,
+        "metadata": {
+          "title": "Quy định về đánh giá kết quả điểm công tác xã hội sinh viên HCMUTE",
+          "version": "v2.0",
+          "owner": "Trường Đại học Công nghệ Kỹ thuật TPHCM",
+          "source": "https://sao.hcmute.edu.vn/Resources/Docs/SubDomain/sao/Quy%20%C4%91%E1%BB%8Bnh%20hi%E1%BB%87n%20h%C3%A0nh/_SO%20TAY%20SV%202024%20-%2006-11%20-%20final.pdf",
+          "document_type": "regulation",
+          "document_number": "224/QĐ-ĐHSPKT-CTHSSV",
+          "publication_year": 2024,
+          "language": "Vietnamese",
+          "content_type": "text"
+        },
+        "sparse_score": 0.0,
+        "dense_score": 0.8348135948181152
+      },
+      {
+        "doc_id": "CTXH_002",
+        "chunk_id": "CTXH_002_chunk_007",
+        "content": "oàn, hội, lớp, ban chủ nhiệm câu lạc bộ; tham gia tổ chức các hoạt động phong trào đoàn thể hoặc hỗ trợ SV trong đời sống, học tập và sinh hoạt mang lại lợi ích thiết thực cho cộng đồng SV;\n\n## Lưu ý:\n\n- Các hoạt động không mang tính chất CTXH như: xem biểu diễn văn hóa nghệ thuật, chiếu phim; xem &amp; cổ vũ thi đấu thể thao; tham quan bảo tàng, di tích lịch sử; đi du lịch; tham dự hội thảo; sinh hoạt tại các Câu lạc bộ… không được tính ngày CTXH.\n- Khi SV tham gia hoạt động CTXH đã được trả tiền công hoặc trả phí, thì không đươc tính ngày công tác xã hội.\n- SV đăng ký tham gia hoạt động CTXH, nhưng không thực hiện nội dung đã đăng ký mà không có lý do hoặc lý do không chính đáng bị trừ 0,5 ngày CTXH;\n- SV đăng ký tham gia hoạt động CTXH, nhưng không hoàn thành nhiệm vụ, gây ảnh hưởng xấu đến hình ảnh của hoạt động, tổ chức, nhà trường, tùy theo mức độ vi phạm sẽ bị xử lý kỷ luật từ khiển trách trở lên và bị trừ ngày CTXH từ 01 đến toàn bộ số ngày đã tích lũy được.",
+        "score": 0.8313994407653809,
+        "metadata": {
+          "title": "Quy định về đánh giá kết quả điểm công tác xã hội sinh viên HCMUTE",
+          "version": "v2.0",
+          "owner": "Trường Đại học Công nghệ Kỹ thuật TPHCM",
+          "source": "https://sao.hcmute.edu.vn/Resources/Docs/SubDomain/sao/Quy%20%C4%91%E1%BB%8Bnh%20hi%E1%BB%87n%20h%C3%A0nh/_SO%20TAY%20SV%202024%20-%2006-11%20-%20final.pdf",
+          "document_type": "regulation",
+          "document_number": "224/QĐ-ĐHSPKT-CTHSSV",
+          "publication_year": 2024,
+          "language": "Vietnamese",
+          "content_type": "text"
+        },
+        "sparse_score": 0.0,
+        "dense_score": 0.8313994407653809
+      },
+      {
+        "doc_id": "CTXH_002",
+        "chunk_id": "CTXH_002_chunk_008",
+        "content": "ụ, gây ảnh hưởng xấu đến hình ảnh của hoạt động, tổ chức, nhà trường, tùy theo mức độ vi phạm sẽ bị xử lý kỷ luật từ khiển trách trở lên và bị trừ ngày CTXH từ 01 đến toàn bộ số ngày đã tích lũy được.\n\n## 5. Sinh viên tích lũy điểm CTXH như thế nào?\n\n- SV theo dõi thông tin về các hoạt động CTXH do các đơn vị trong trường tổ chức trên các trang thông tin chính thức của nhà trường.SV đăng ký tham gia hoạt động CTXH theo thông báo của đơn vị tổ chức.\n- Đối với các hoạt động CTXH không phải do đơn vị trong trường tổ chức, SV phải báo cáo việc tham gia hoạt động cho Phòng Tuyển sinh và công tác SV hoặc Đoàn TNCS Hồ Chí Minh trường.\n- SV tham gia hoạt động CTXH theo đúng yêu cầu của đơn vị tổ chức, sau khi tham gia thực hiện điểm danh và xem điểm được đơn vị tổ chức đánh giá",
+        "score": 0.8299006223678589,
+        "metadata": {
+          "title": "Quy định về đánh giá kết quả điểm công tác xã hội sinh viên HCMUTE",
+          "version": "v2.0",
+          "owner": "Trường Đại học Công nghệ Kỹ thuật TPHCM",
+          "source": "https://sao.hcmute.edu.vn/Resources/Docs/SubDomain/sao/Quy%20%C4%91%E1%BB%8Bnh%20hi%E1%BB%87n%20h%C3%A0nh/_SO%20TAY%20SV%202024%20-%2006-11%20-%20final.pdf",
+          "document_type": "regulation",
+          "document_number": "224/QĐ-ĐHSPKT-CTHSSV",
+          "publication_year": 2024,
+          "language": "Vietnamese",
+          "content_type": "text"
+        },
+        "sparse_score": 0.0,
+        "dense_score": 0.8299006223678589
+      },
+      {
+        "doc_id": "CTXH_002",
+        "chunk_id": "CTXH_002_chunk_004",
+        "content": "ện trong suốt khóa học; SV tự quyết định thời gian hoàn tất việc tích lũy số ngày CTXH; Nhà trường khuyến cáo SV không nên để dồn vào cuối khóa.\n\n## 4. Các hoạt động nào được cộng điểm Công tác xã hội\n\n- Tình nguyện vì cộng đồng: Mùa hè xanh, hiến máu tình nguyện, xuân tình nguyện, đêm hội trăng rằm, tiếp sức mùa thi, tư vấn hướng nghiệp-tuyển sinh, tiếp sức tân sinh viên; hoạt động cứu trợ thiên tai hoặc vận động quyên góp giúp đồng bào bị thiên tai,…\n- Công ích phục vụ nhà trường, phục vụ lợi ích của SV; tham gia các hoạt động công ích phục vụ các nhu cầu cấp thiết của xã hội nơi cư trú do các đơn vị trong và ngoài trường đề nghị, tổ chức;\n- Tham gia hoạt động giữ gìn và bảo vệ môi trường; tuyên truyền và phổ biến pháp luật;\n- Tham gia các hoạt động chăm lo các đối tượng chính sách, người già neo đơn và trẻ em có hoàn cảnh đặc biệt khó khăn và các bệnh nhân nghèo, neo đơn đang điều trị tại các bệnh viện hay tại nhà;\n- Tham gia hoạt động dạy nghề cho thanh niên; dạy kèm cho các em",
+        "score": 0.8249928951263428,
+        "metadata": {
+          "title": "Quy định về đánh giá kết quả điểm công tác xã hội sinh viên HCMUTE",
+          "version": "v2.0",
+          "owner": "Trường Đại học Công nghệ Kỹ thuật TPHCM",
+          "source": "https://sao.hcmute.edu.vn/Resources/Docs/SubDomain/sao/Quy%20%C4%91%E1%BB%8Bnh%20hi%E1%BB%87n%20h%C3%A0nh/_SO%20TAY%20SV%202024%20-%2006-11%20-%20final.pdf",
+          "document_type": "regulation",
+          "document_number": "224/QĐ-ĐHSPKT-CTHSSV",
+          "publication_year": 2024,
+          "language": "Vietnamese",
+          "content_type": "text"
+        },
+        "sparse_score": 0.0,
+        "dense_score": 0.8249928951263428
+      },
+      {
+        "doc_id": "CTXH_001",
+        "chunk_id": "CTXH_001_chunk_040",
+        "content": "ả (bảng điểm) sau khi đã hoàn tất việc nhập điểm và giải quyết các khiếu nại (nếu có). Thời hạn chậm nhất sau 20 ngày kể từ khi kết thúc việc tổ chức hoạt động CTXH.\n\n## IV. TRÁCH NHIỆM CỦA CÁC ĐƠN VỊ\n\n1. Trách nhiệm của phòng/khoa/ban/TT, Đoàn - Hội: Tất cả các đơn vị trong toàn trường, tổ chức Đoàn thanh niên &amp; Hội SV trường có trách nhiệm tổ chức chu đáo &amp; đánh giá chính xác, khách quan, công bằng các hoạt động CTXH của SV.\n2. Trách nhiệm của phòng Công tác HSSV.\n3. Căn cứ kế hoạch tổ chức hoạt động CTXH do trưởng các đơn vị &amp; tổ chức Đoàn - Hội đề xuất, lập kế hoạch tổ chức hoạt động CTXH theo học kỳ/tháng trên phần mềm PSC, thông báo và hướng dẫn SV đăng ký;\n4. Quản lý về nội dung, kết quả hoạt động CTXH và thực hiện công tác lưu trữ, thống kê kết quả tích lũy số ngày CTXH của SV;\n5. Thống nhất các biểu mẫu, hợp đồng, báo cáo, xác nhận,… phục vụ cho công tác tổ chức triển khai, đánh giá, sử dụng kết quả hoạt động CTXH của SV trong toàn trường;\n6",
+        "score": 0.8228254914283752,
+        "metadata": {
+          "title": "Quy định tổ chức thực hiện chương trình Công tác xã hội cho sinh viên hệ chính quy HCMUTE 2013",
+          "version": "v1.0",
+          "owner": "Trường Đại học Công nghệ Kỹ thuật TPHCM",
+          "source": "https://sao.hcmute.edu.vn/Resources/Docs/SubDomain/sao/Quy%20%C4%91%E1%BB%8Bnh%20hi%E1%BB%87n%20h%C3%A0nh/QUYDINH-HDCDONG-2013%20(1).pdf",
+          "document_type": "regulation",
+          "document_number": "224/QĐ-ĐHSPKT-CTHSSV",
+          "publication_year": 2013,
+          "language": "Vietnamese",
+          "content_type": "text"
+        },
+        "sparse_score": 0.0,
+        "dense_score": 0.8228254914283752
+      }
+    ]
+  },
+  {
+    "question_id": 8,
+    "question": "Điều kiện để sinh viên CTXH được tham gia xét học bổng là gì?",
+    "expected": null,
+    "retrieval_results": [
+      {
+        "doc_id": "CTXH_001",
+        "chunk_id": "CTXH_001_chunk_050",
+        "content": "c đơn vị trong và ngoài trường tổ chức, giới thiệu. SV có quyền tham gia hoạt động CTXH ở bất kỳ địa phương nào khi có điều kiện, không nhất thiết phải tham gia ở địa phương nơi cư trú.\n\n- V. KINH PHÍ\n\n1. Nguồn kinh phí tổ chức hoạt động CTXH\n2. Từ nguồn kinh phí hỗ trợ của nhà trường;\n3. Từ nguồn tài trợ của các tổ chức, cá nhân trong &amp; ngoài trường;\n4. Từ sự đóng góp tự nguyện của sinh viên khi tham gia chương trình.\n5. Phòng Kế hoạch-Tài chính chịu trách nhiệm hướng dẫn thu, chi những nội dung liên quan đến hoạt động CTXH.\n\n## HIỆU TRƯỞNG\n\n(Đã ký)\n\n## PGS. TS. ĐỖ VĂN DŨNG",
+        "score": 0.8681398630142212,
+        "metadata": {
+          "title": "Quy định tổ chức thực hiện chương trình Công tác xã hội cho sinh viên hệ chính quy HCMUTE 2013",
+          "version": "v1.0",
+          "owner": "Trường Đại học Công nghệ Kỹ thuật TPHCM",
+          "source": "https://sao.hcmute.edu.vn/Resources/Docs/SubDomain/sao/Quy%20%C4%91%E1%BB%8Bnh%20hi%E1%BB%87n%20h%C3%A0nh/QUYDINH-HDCDONG-2013%20(1).pdf",
+          "document_type": "regulation",
+          "document_number": "224/QĐ-ĐHSPKT-CTHSSV",
+          "publication_year": 2013,
+          "language": "Vietnamese",
+          "content_type": "text"
+        },
+        "sparse_score": 0.0,
+        "dense_score": 0.8681398630142212
+      },
+      {
+        "doc_id": "CTXH_001",
+        "chunk_id": "CTXH_001_chunk_008",
+        "content": "trước khi ra trường.\n\n4. Yêu cầu\n SV phải tích lũy số ngày CTXH tối thiểu/khóa đào tạo theo quy định như sau: 04 ngày CTXH với khóa đào tạo từ 4 năm trở lên; 02 ngày CTXH với khóa đào tạo dưới 4 năm.\n\nVới khóa 2012, quy định SV phải tích lũy số ngày CTXH như sau: 03 ngày CTXH với khóa đào tạo từ 4 năm trở lên; 01 ngày CTXH với khóa đào tạo dưới 4 năm, hệ liên thông từ CĐ lên ĐH được miễn.\n\n- Việc tích lũy ngày CTXH của SV được thực hiện trong suốt khóa học; SV tự quyết định thời gian hoàn tất việc tích lũy số ngày CTXH. Nhà trường khuyến cáo SV không nên để dồn vào cuối khóa.\n- SV tích lũy đủ số ngày CTXH theo quy định, mới được xét công nhận tốt nghiệp.\n\nTrường hợp vì lý do sức khỏe, nên SV rất khó khăn hoặc không thể tham gia các hoạt động công tác xã hội, SV phải làm đơn kèm xác nhận về tình trạng sức khỏe của cơ quan y tế (từ cấp huyện trở lên) để Nhà trường xem xét việc miễn, giảm tham gia hoạt động công tác xã hội.",
+        "score": 0.8667441606521606,
+        "metadata": {
+          "title": "Quy định tổ chức thực hiện chương trình Công tác xã hội cho sinh viên hệ chính quy HCMUTE 2013",
+          "version": "v1.0",
+          "owner": "Trường Đại học Công nghệ Kỹ thuật TPHCM",
+          "source": "https://sao.hcmute.edu.vn/Resources/Docs/SubDomain/sao/Quy%20%C4%91%E1%BB%8Bnh%20hi%E1%BB%87n%20h%C3%A0nh/QUYDINH-HDCDONG-2013%20(1).pdf",
+          "document_type": "regulation",
+          "document_number": "224/QĐ-ĐHSPKT-CTHSSV",
+          "publication_year": 2013,
+          "language": "Vietnamese",
+          "content_type": "text"
+        },
+        "sparse_score": 0.0,
+        "dense_score": 0.8667441606521606
+      },
+      {
+        "doc_id": "CTXH_001",
+        "chunk_id": "CTXH_001_chunk_049",
+        "content": "diện lớp phối hợp với BCH Chi đoàn, Chi hội lớp SV đề xuất lên khoa/TT/Đoàn - Hội biểu dương, khen thưởng các cá nhân trong lớp có thành tích xuất sắc trong việc tổ chức triển khai các hoạt động CTXH.\n\n5. Trách nhiệm của sinh viên:\n6. Tự chịu trách nhiệm về việc tích lũy đủ số ngày công tác xã hội tối thiểu theo quy định của Nhà trường trước khi được xét, công nhận tốt nghiệp;\n7. Chủ động, tự giác đăng ký tham gia &amp; tham gia có trách nhiệm các hoạt động CTXH phù hợp do các đơn vị trong và ngoài trường tổ chức, giới thiệu. SV có quyền tham gia hoạt động CTXH ở bất kỳ địa phương nào khi có điều kiện, không nhất thiết phải tham gia ở địa phương nơi cư trú.\n\n- V. KINH PHÍ",
+        "score": 0.8663086891174316,
+        "metadata": {
+          "title": "Quy định tổ chức thực hiện chương trình Công tác xã hội cho sinh viên hệ chính quy HCMUTE 2013",
+          "version": "v1.0",
+          "owner": "Trường Đại học Công nghệ Kỹ thuật TPHCM",
+          "source": "https://sao.hcmute.edu.vn/Resources/Docs/SubDomain/sao/Quy%20%C4%91%E1%BB%8Bnh%20hi%E1%BB%87n%20h%C3%A0nh/QUYDINH-HDCDONG-2013%20(1).pdf",
+          "document_type": "regulation",
+          "document_number": "224/QĐ-ĐHSPKT-CTHSSV",
+          "publication_year": 2013,
+          "language": "Vietnamese",
+          "content_type": "text"
+        },
+        "sparse_score": 0.0,
+        "dense_score": 0.8663086891174316
+      },
+      {
+        "doc_id": "CTXH_002",
+        "chunk_id": "CTXH_002_chunk_001",
+        "content": "gia hoạt động CTXH. Số Ngày CTXH được quy đổi từ Điểm CTXH. Theo đó, 10 Điểm CTXH được quy đổi tương đương với 01 Ngày CTXH.\n\n## 2. Mục đích SV phải hoàn thành chương trình CTXH trước khi tốt nghiệp\n\n- Phát huy tinh thần xung kích và tình nguyện vì cộng đồng của SV, khuyến khích lòng nhân ái, tinh thần tương trợ và sự chủ động góp sức trẻ của SV tham gia giải quyết các vấn đề đang được nhà trường và xã hội quan tâm, góp phần thiết thực vào sự phát triển kinh tế - xã hội của TP. Hồ Chí Minh và của đất nước.\n- Nâng cao ý thức trách nhiệm của SV đối với bản thân, gia đình và cộng đồng; rèn luyện và phát triển tính chủ động, sáng tạo, linh hoạt trong hoạt động thực tiễn; hình thành các kỹ năng sống và trau dồi bản lĩnh tổ chức công việc cho SV trước khi ra trường.\n- Thực hiện mục tiêu giáo dục toàn diện người học, nâng cao chuẩn đầu ra của SV",
+        "score": 0.8640841245651245,
+        "metadata": {
+          "title": "Quy định về đánh giá kết quả điểm công tác xã hội sinh viên HCMUTE",
+          "version": "v2.0",
+          "owner": "Trường Đại học Công nghệ Kỹ thuật TPHCM",
+          "source": "https://sao.hcmute.edu.vn/Resources/Docs/SubDomain/sao/Quy%20%C4%91%E1%BB%8Bnh%20hi%E1%BB%87n%20h%C3%A0nh/_SO%20TAY%20SV%202024%20-%2006-11%20-%20final.pdf",
+          "document_type": "regulation",
+          "document_number": "224/QĐ-ĐHSPKT-CTHSSV",
+          "publication_year": 2024,
+          "language": "Vietnamese",
+          "content_type": "text"
+        },
+        "sparse_score": 0.0,
+        "dense_score": 0.8640841245651245
+      },
+      {
+        "doc_id": "CTXH_001",
+        "chunk_id": "CTXH_001_chunk_007",
+        "content": ", tổ chức &amp; đánh giá SV tham gia hoạt động CTXH, sử dụng kết quả CTXH để xét tốt nghiệp SV hệ chính quy;\n- Quy định này áp dụng đối với SV hệ chính quy tuyển sinh từ khóa 2012 trở đi.\n\n3. Mục đích\n\n- Phát huy tinh thần xung kích của SV, tình nguyện vì cộng đồng, nhân ái, tương trợ và chủ động góp sức trẻ tham gia giải quyết các vấn đề đang được nhà trường và xã hội quan tâm. Qua đó, nâng cao ý thức trách nhiệm của SV đối với bản thân và cộng đồng;\n- Rèn luyện &amp; nâng cao tính chủ động, sáng tạo, linh hoạt trong hoạt động thực tiễn; hình thành các kỹ năng sống, trau dồi bản lĩnh tổ chức công việc,… cho SV trước khi ra trường.\n\n4. Yêu cầu\n SV phải tích lũy số ngày CTXH tối thiểu/khóa đào tạo theo quy định như sau: 04 ngày CTXH với khóa đào tạo từ 4 năm trở lên; 02 ngày CTXH với khóa đào tạo dưới 4 năm.",
+        "score": 0.8629486560821533,
+        "metadata": {
+          "title": "Quy định tổ chức thực hiện chương trình Công tác xã hội cho sinh viên hệ chính quy HCMUTE 2013",
+          "version": "v1.0",
+          "owner": "Trường Đại học Công nghệ Kỹ thuật TPHCM",
+          "source": "https://sao.hcmute.edu.vn/Resources/Docs/SubDomain/sao/Quy%20%C4%91%E1%BB%8Bnh%20hi%E1%BB%87n%20h%C3%A0nh/QUYDINH-HDCDONG-2013%20(1).pdf",
+          "document_type": "regulation",
+          "document_number": "224/QĐ-ĐHSPKT-CTHSSV",
+          "publication_year": 2013,
+          "language": "Vietnamese",
+          "content_type": "text"
+        },
+        "sparse_score": 0.0,
+        "dense_score": 0.8629486560821533
+      }
+    ]
+  },
+  {
+    "question_id": 9,
+    "question": "Giá Bitcoin hôm nay thay đổi bao nhiêu phần trăm?",
+    "expected": null,
+    "retrieval_results": [
+      {
+        "doc_id": "CTXH_001",
+        "chunk_id": "CTXH_001_chunk_017",
+        "content": "| | 001101 | Tham gia suốt chiến dịch (01 tháng) tại các tỉnh | 20→40 | 2→4 |\n| --------------------------------------- | ------ | --------------------------------------------------------------------------------------------------------------------------- | ----- | ----- |\n| | 002103 | Tham gia lao động dọn vệ sinh, sắp xếp các xưởng, phòng thí nghiệm, thư viện, phòng làm việc, khu vực công cộng,… (01 buổi) | 5 | 0,5 |",
+        "score": 0.7864375114440918,
+        "metadata": {
+          "title": "Quy định tổ chức thực hiện chương trình Công tác xã hội cho sinh viên hệ chính quy HCMUTE 2013",
+          "version": "v1.0",
+          "owner": "Trường Đại học Công nghệ Kỹ thuật TPHCM",
+          "source": "https://sao.hcmute.edu.vn/Resources/Docs/SubDomain/sao/Quy%20%C4%91%E1%BB%8Bnh%20hi%E1%BB%87n%20h%C3%A0nh/QUYDINH-HDCDONG-2013%20(1).pdf",
+          "document_type": "regulation",
+          "document_number": "224/QĐ-ĐHSPKT-CTHSSV",
+          "publication_year": 2013,
+          "language": "Vietnamese",
+          "content_type": "table"
+        },
+        "sparse_score": 0.0,
+        "dense_score": 0.7864375114440918
+      },
+      {
+        "doc_id": "CTXH_001",
+        "chunk_id": "CTXH_001_chunk_016",
+        "content": "| | 001101 | Tham gia suốt chiến dịch (01 tháng) tại các tỉnh | 20→40 | 2→4 |\n| --------------------------------------- | ------ | --------------------------------------------------------------------------------------------------------------------------- | ----- | ----- |\n| Tiếp sức tân sinh viên | 001701 | Tham gia suốt chương trình (02 tuần) | 20→30 | 2→3 |\n| Hoạt động cứu trợ thiên tai | 001801 | Tổ chức hoạt động cứu trợ thiên tai (01 lần) | 10→20 | 1→2 |\n| Hoạt động cứu trợ thiên tai | 001802 | Tham gia trực tiếp hoạt động cứu trợ thiên tai (01 lần) | 10→20 | 1→2 |\n| Hoạt động cứu trợ thiên tai | 001803 | Tổ chức quyên góp giúp đỡ đồng bào bị thiên tại (01 đợt) | 5 | 0,5 |\n| Hoạt động công ích phục vụ trong trường | 002101 | Tham gia ngày chủ nhật xanh (01 buổi) | 5 | 0,5 |\n| | 002102 | Tham gia ngày chủ nhật xanh (01 ngày) | 5→10 | 0,5→1 |",
+        "score": 0.7820920944213867,
+        "metadata": {
+          "title": "Quy định tổ chức thực hiện chương trình Công tác xã hội cho sinh viên hệ chính quy HCMUTE 2013",
+          "version": "v1.0",
+          "owner": "Trường Đại học Công nghệ Kỹ thuật TPHCM",
+          "source": "https://sao.hcmute.edu.vn/Resources/Docs/SubDomain/sao/Quy%20%C4%91%E1%BB%8Bnh%20hi%E1%BB%87n%20h%C3%A0nh/QUYDINH-HDCDONG-2013%20(1).pdf",
+          "document_type": "regulation",
+          "document_number": "224/QĐ-ĐHSPKT-CTHSSV",
+          "publication_year": 2013,
+          "language": "Vietnamese",
+          "content_type": "table"
+        },
+        "sparse_score": 0.0,
+        "dense_score": 0.7820920944213867
+      },
+      {
+        "doc_id": "CTXH_001",
+        "chunk_id": "CTXH_001_chunk_014",
+        "content": "| | 001101 | Tham gia suốt chiến dịch (01 tháng) tại các tỉnh | 20→40 | 2→4 |\n| --------------------------------------- | ------ | --------------------------------------------------------------------------------------------------------------------------- | ----- | ----- |\n| Mùa hè xanh | 001102 | Tham gia suốt chiến dịch (01 tháng) tại Tp. Hồ Chí Minh | 20→40 | 2→4 |\n| Mùa hè xanh | 001103 | Tham gia suốt chiến dịch (01 tháng) tại trường | 20→40 | 2→4 |\n| Mùa hè xanh | 001104 | Tham gia đội hình chuyên ngắn ngày (02 tuần) | 20→30 | 2→3 |\n| Mùa hè xanh | 001105 | Tham gia đội hình chuyên ngắn ngày (01 tuần) | 10→20 | 1→2 |\n| Hiến máu tình nguyện | 001201 | Tổ chức hoạt động hiến máu tình nguyện (01 lần) | 5→10 | 0,5→1 |\n| Hiến máu tình nguyện | 001202 | Trực tiếp hiến máu tình nguyện (01 lần) | 5 | 0,5 |\n| Xuân tình nguyện | 001301 | Tham gia suốt chương trình (04 ngày) | 10→20 | 1→2 |\n| Đêm hội trăng rằm | 001401 | Tham gia suốt chương trình (04 ngày) | 10→20 | 1→2 |",
+        "score": 0.7751545906066895,
+        "metadata": {
+          "title": "Quy định tổ chức thực hiện chương trình Công tác xã hội cho sinh viên hệ chính quy HCMUTE 2013",
+          "version": "v1.0",
+          "owner": "Trường Đại học Công nghệ Kỹ thuật TPHCM",
+          "source": "https://sao.hcmute.edu.vn/Resources/Docs/SubDomain/sao/Quy%20%C4%91%E1%BB%8Bnh%20hi%E1%BB%87n%20h%C3%A0nh/QUYDINH-HDCDONG-2013%20(1).pdf",
+          "document_type": "regulation",
+          "document_number": "224/QĐ-ĐHSPKT-CTHSSV",
+          "publication_year": 2013,
+          "language": "Vietnamese",
+          "content_type": "table"
+        },
+        "sparse_score": 0.0,
+        "dense_score": 0.7751545906066895
+      },
+      {
+        "doc_id": "CTXH_002",
+        "chunk_id": "CTXH_002_chunk_021",
+        "content": "| Lĩnh vực CTXH | Mã | Nội dung & định lượng | Thang điểm | Quy đổi sang ngày CTXH |\n| ------------------------------------------------------------------- | ------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- | ---------------------- |\n| Dạy học cho các cháu có hoàn cảnh khó khăn | 005202 | Tham gia dạy kèm các cháu có hoàn cảnh khó khăn (01 tuần) | 20→30 | 2→3 |\n| Quyên góp ủng hộ các địa phương khó khăn | 005301 | Tổ chức quyên góp hỗ trợ cho các địa phương khó khăn (01 đợt) | 10→20 | 1→2 |\n| Quyên góp ủng hộ các địa phương khó khăn | 005302 | Tổ chức các hoạt động giao lưu, đỡ đầu các trường học vùng khó khăn (01 lần) | 10→20 | 1→2 |",
+        "score": 0.7749044895172119,
+        "metadata": {
+          "title": "Quy định về đánh giá kết quả điểm công tác xã hội sinh viên HCMUTE",
+          "version": "v2.0",
+          "owner": "Trường Đại học Công nghệ Kỹ thuật TPHCM",
+          "source": "https://sao.hcmute.edu.vn/Resources/Docs/SubDomain/sao/Quy%20%C4%91%E1%BB%8Bnh%20hi%E1%BB%87n%20h%C3%A0nh/_SO%20TAY%20SV%202024%20-%2006-11%20-%20final.pdf",
+          "document_type": "regulation",
+          "document_number": "224/QĐ-ĐHSPKT-CTHSSV",
+          "publication_year": 2024,
+          "language": "Vietnamese",
+          "content_type": "table"
+        },
+        "sparse_score": 0.0,
+        "dense_score": 0.7749044895172119
+      },
+      {
+        "doc_id": "CTXH_001",
+        "chunk_id": "CTXH_001_chunk_023",
+        "content": "| Dạy nghề, chuyên môn cho thanh niên | 005101 | Tham gia dạy nghề, chuyên môn cho thanh niên địa phương (01 tuần) | 20→30 | 2→3 |\n| ---------------------------------------------------------------- | --------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----- | ----- |\n| Dạy nghề, chuyên môn cho thanh niên | 005102 | Tham gia giúp địa phương tin học hóa công tác quản lý (01 tuần) | 20→30 | 2→3 |\n| Dạy học cho các cháu có hoàn cảnh khó khăn | 005201 | Tham gia phổ cập văn hóa cho các cháu theo yêu cầu của địa phương (01 tuần) | 20→30 | 2→3 |\n| Dạy học cho các cháu có hoàn cảnh khó khăn | 005202 | Tham gia dạy kèm các cháu có hoàn cảnh khó khăn (01 tuần) | 20→30 | 2→3 |\n| Quyên góp ủng hộ các địa phương khó khăn | 005301 | Tổ chức quyên góp hỗ trợ cho các địa phương khó khăn (01 đợt) | 10→20 | 1→2 |",
+        "score": 0.7748560905456543,
+        "metadata": {
+          "title": "Quy định tổ chức thực hiện chương trình Công tác xã hội cho sinh viên hệ chính quy HCMUTE 2013",
+          "version": "v1.0",
+          "owner": "Trường Đại học Công nghệ Kỹ thuật TPHCM",
+          "source": "https://sao.hcmute.edu.vn/Resources/Docs/SubDomain/sao/Quy%20%C4%91%E1%BB%8Bnh%20hi%E1%BB%87n%20h%C3%A0nh/QUYDINH-HDCDONG-2013%20(1).pdf",
+          "document_type": "regulation",
+          "document_number": "224/QĐ-ĐHSPKT-CTHSSV",
+          "publication_year": 2013,
+          "language": "Vietnamese",
+          "content_type": "table"
+        },
+        "sparse_score": 0.0,
+        "dense_score": 0.7748560905456543
+      }
+    ]
+  },
+  {
+    "question_id": 10,
+    "question": "Làm thế nào để cài đặt cơ sở dữ liệu MongoDB trên máy chủ Linux?",
+    "expected": null,
+    "retrieval_results": [
+      {
+        "doc_id": "CTXH_001",
+        "chunk_id": "CTXH_001_chunk_023",
+        "content": "| Dạy nghề, chuyên môn cho thanh niên | 005101 | Tham gia dạy nghề, chuyên môn cho thanh niên địa phương (01 tuần) | 20→30 | 2→3 |\n| ---------------------------------------------------------------- | --------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----- | ----- |\n| Dạy nghề, chuyên môn cho thanh niên | 005102 | Tham gia giúp địa phương tin học hóa công tác quản lý (01 tuần) | 20→30 | 2→3 |\n| Dạy học cho các cháu có hoàn cảnh khó khăn | 005201 | Tham gia phổ cập văn hóa cho các cháu theo yêu cầu của địa phương (01 tuần) | 20→30 | 2→3 |\n| Dạy học cho các cháu có hoàn cảnh khó khăn | 005202 | Tham gia dạy kèm các cháu có hoàn cảnh khó khăn (01 tuần) | 20→30 | 2→3 |\n| Quyên góp ủng hộ các địa phương khó khăn | 005301 | Tổ chức quyên góp hỗ trợ cho các địa phương khó khăn (01 đợt) | 10→20 | 1→2 |",
+        "score": 0.7755352854728699,
+        "metadata": {
+          "title": "Quy định tổ chức thực hiện chương trình Công tác xã hội cho sinh viên hệ chính quy HCMUTE 2013",
+          "version": "v1.0",
+          "owner": "Trường Đại học Công nghệ Kỹ thuật TPHCM",
+          "source": "https://sao.hcmute.edu.vn/Resources/Docs/SubDomain/sao/Quy%20%C4%91%E1%BB%8Bnh%20hi%E1%BB%87n%20h%C3%A0nh/QUYDINH-HDCDONG-2013%20(1).pdf",
+          "document_type": "regulation",
+          "document_number": "224/QĐ-ĐHSPKT-CTHSSV",
+          "publication_year": 2013,
+          "language": "Vietnamese",
+          "content_type": "table"
+        },
+        "sparse_score": 0.0,
+        "dense_score": 0.7755352854728699
+      },
+      {
+        "doc_id": "CTXH_001",
+        "chunk_id": "CTXH_001_chunk_022",
+        "content": "| | 002104 | Tham gia lao động dọn vệ sinh, sắp xếp các xưởng, phòng thí nghiệm, thư viện, phòng làm việc, khu vực công cộng,… (01 ngày) | 5→10 | 0,5→1 |\n| ------------------------------------------------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---- | ----- |\n| Chăm sóc người già, trẻ em khó khăn | 004204 | Tham gia chăm sóc các cháu tại các trung tâm tình nguyện (01 lần). | 5→10 | 0,5→1 |\n| Chăm sóc người già, trẻ em khó khăn | 004205 | Tham gia chăm sóc người bệnh có hoàn khó khăn tại bệnh viện hoặc gia đình (01 lần). | 5→10 | 0,5→1 |",
+        "score": 0.7714141607284546,
+        "metadata": {
+          "title": "Quy định tổ chức thực hiện chương trình Công tác xã hội cho sinh viên hệ chính quy HCMUTE 2013",
+          "version": "v1.0",
+          "owner": "Trường Đại học Công nghệ Kỹ thuật TPHCM",
+          "source": "https://sao.hcmute.edu.vn/Resources/Docs/SubDomain/sao/Quy%20%C4%91%E1%BB%8Bnh%20hi%E1%BB%87n%20h%C3%A0nh/QUYDINH-HDCDONG-2013%20(1).pdf",
+          "document_type": "regulation",
+          "document_number": "224/QĐ-ĐHSPKT-CTHSSV",
+          "publication_year": 2013,
+          "language": "Vietnamese",
+          "content_type": "table"
+        },
+        "sparse_score": 0.0,
+        "dense_score": 0.7714141607284546
+      },
+      {
+        "doc_id": "CTXH_001",
+        "chunk_id": "CTXH_001_chunk_016",
+        "content": "| | 001101 | Tham gia suốt chiến dịch (01 tháng) tại các tỉnh | 20→40 | 2→4 |\n| --------------------------------------- | ------ | --------------------------------------------------------------------------------------------------------------------------- | ----- | ----- |\n| Tiếp sức tân sinh viên | 001701 | Tham gia suốt chương trình (02 tuần) | 20→30 | 2→3 |\n| Hoạt động cứu trợ thiên tai | 001801 | Tổ chức hoạt động cứu trợ thiên tai (01 lần) | 10→20 | 1→2 |\n| Hoạt động cứu trợ thiên tai | 001802 | Tham gia trực tiếp hoạt động cứu trợ thiên tai (01 lần) | 10→20 | 1→2 |\n| Hoạt động cứu trợ thiên tai | 001803 | Tổ chức quyên góp giúp đỡ đồng bào bị thiên tại (01 đợt) | 5 | 0,5 |\n| Hoạt động công ích phục vụ trong trường | 002101 | Tham gia ngày chủ nhật xanh (01 buổi) | 5 | 0,5 |\n| | 002102 | Tham gia ngày chủ nhật xanh (01 ngày) | 5→10 | 0,5→1 |",
+        "score": 0.7704262733459473,
+        "metadata": {
+          "title": "Quy định tổ chức thực hiện chương trình Công tác xã hội cho sinh viên hệ chính quy HCMUTE 2013",
+          "version": "v1.0",
+          "owner": "Trường Đại học Công nghệ Kỹ thuật TPHCM",
+          "source": "https://sao.hcmute.edu.vn/Resources/Docs/SubDomain/sao/Quy%20%C4%91%E1%BB%8Bnh%20hi%E1%BB%87n%20h%C3%A0nh/QUYDINH-HDCDONG-2013%20(1).pdf",
+          "document_type": "regulation",
+          "document_number": "224/QĐ-ĐHSPKT-CTHSSV",
+          "publication_year": 2013,
+          "language": "Vietnamese",
+          "content_type": "table"
+        },
+        "sparse_score": 0.0,
+        "dense_score": 0.7704262733459473
+      },
+      {
+        "doc_id": "CTXH_001",
+        "chunk_id": "CTXH_001_chunk_027",
+        "content": "| Dạy nghề, chuyên môn cho thanh niên | 005101 | Tham gia dạy nghề, chuyên môn cho thanh niên địa phương (01 tuần) | 20→30 | 2→3 |\n| ---------------------------------------------------------------- | --------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----- | ----- |\n| Tổ chức và tham gia các phong trào | 006203 | Tham gia thi (biểu diễn, thi đấu) văn hóa, chuyên môn, tay nghề, văn nghệ, thể dục thể thao,…/cấp quốc tế/theo cuộc thi | 15→30 | 1,5→3 |\n| Tổ chức và tham gia các phong trào | 006204 | Tham gia thi (biểu diễn, thi đấu) văn hóa, chuyên môn, tay nghề, văn nghệ, thể dục thể thao,…/cấp thành, ngành /theo cuộc thi | 10→20 | 1→2 |\n| Tổ chức và tham gia các phong trào | 006205 | Tham gia thi (biểu diễn, thi đấu) văn hóa, chuyên môn, tay nghề, văn | 5→10 | 0,5→1 |",
+        "score": 0.7693595886230469,
+        "metadata": {
+          "title": "Quy định tổ chức thực hiện chương trình Công tác xã hội cho sinh viên hệ chính quy HCMUTE 2013",
+          "version": "v1.0",
+          "owner": "Trường Đại học Công nghệ Kỹ thuật TPHCM",
+          "source": "https://sao.hcmute.edu.vn/Resources/Docs/SubDomain/sao/Quy%20%C4%91%E1%BB%8Bnh%20hi%E1%BB%87n%20h%C3%A0nh/QUYDINH-HDCDONG-2013%20(1).pdf",
+          "document_type": "regulation",
+          "document_number": "224/QĐ-ĐHSPKT-CTHSSV",
+          "publication_year": 2013,
+          "language": "Vietnamese",
+          "content_type": "table"
+        },
+        "sparse_score": 0.0,
+        "dense_score": 0.7693595886230469
+      },
+      {
+        "doc_id": "CTXH_001",
+        "chunk_id": "CTXH_001_chunk_021",
+        "content": "| | 002104 | Tham gia lao động dọn vệ sinh, sắp xếp các xưởng, phòng thí nghiệm, thư viện, phòng làm việc, khu vực công cộng,… (01 ngày) | 5→10 | 0,5→1 |\n| ------------------------------------------------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---- | ----- |\n| Chăm sóc các đối tượng chính sách | 004103 | Tổ chức quyên góp để xây nhà tình nghĩa, tình thương (01 đợt). | 5 | 0,5 |\n| Chăm sóc người già, trẻ em khó khăn | 004201 | Tổ chức các đoàn đến chăm sóc người già cô đơn tại các trung tâm nuôi dưỡng người cao tuổi (01 lần). | 5→10 | 0,5→1 |\n| Chăm sóc người già, trẻ em khó khăn | 004202 | Tham gia chăm sóc người già cô đơn tại các trung tâm nuôi dưỡng người cao tuổi (01 lần). | 5→10 | 0,5→1 |\n| Chăm sóc người già, trẻ em khó khăn | 004203 | Tổ chức các đoàn đến chăm sóc các cháu tại các trung tâm tình nguyện (01 lần) . | 5→10 | 0,5→1 |",
+        "score": 0.7693213224411011,
+        "metadata": {
+          "title": "Quy định tổ chức thực hiện chương trình Công tác xã hội cho sinh viên hệ chính quy HCMUTE 2013",
+          "version": "v1.0",
+          "owner": "Trường Đại học Công nghệ Kỹ thuật TPHCM",
+          "source": "https://sao.hcmute.edu.vn/Resources/Docs/SubDomain/sao/Quy%20%C4%91%E1%BB%8Bnh%20hi%E1%BB%87n%20h%C3%A0nh/QUYDINH-HDCDONG-2013%20(1).pdf",
+          "document_type": "regulation",
+          "document_number": "224/QĐ-ĐHSPKT-CTHSSV",
+          "publication_year": 2013,
+          "language": "Vietnamese",
+          "content_type": "table"
+        },
+        "sparse_score": 0.0,
+        "dense_score": 0.7693213224411011
+      }
+    ]
+  },
+  {
+    "question_id": 11,
+    "question": "Dự báo thời tiết ngày mai tại Hà Nội có mưa không?",
+    "expected": null,
+    "retrieval_results": [
+      {
+        "doc_id": "CTXH_001",
+        "chunk_id": "CTXH_001_chunk_016",
+        "content": "| | 001101 | Tham gia suốt chiến dịch (01 tháng) tại các tỉnh | 20→40 | 2→4 |\n| --------------------------------------- | ------ | --------------------------------------------------------------------------------------------------------------------------- | ----- | ----- |\n| Tiếp sức tân sinh viên | 001701 | Tham gia suốt chương trình (02 tuần) | 20→30 | 2→3 |\n| Hoạt động cứu trợ thiên tai | 001801 | Tổ chức hoạt động cứu trợ thiên tai (01 lần) | 10→20 | 1→2 |\n| Hoạt động cứu trợ thiên tai | 001802 | Tham gia trực tiếp hoạt động cứu trợ thiên tai (01 lần) | 10→20 | 1→2 |\n| Hoạt động cứu trợ thiên tai | 001803 | Tổ chức quyên góp giúp đỡ đồng bào bị thiên tại (01 đợt) | 5 | 0,5 |\n| Hoạt động công ích phục vụ trong trường | 002101 | Tham gia ngày chủ nhật xanh (01 buổi) | 5 | 0,5 |\n| | 002102 | Tham gia ngày chủ nhật xanh (01 ngày) | 5→10 | 0,5→1 |",
+        "score": 0.7900768518447876,
+        "metadata": {
+          "title": "Quy định tổ chức thực hiện chương trình Công tác xã hội cho sinh viên hệ chính quy HCMUTE 2013",
+          "version": "v1.0",
+          "owner": "Trường Đại học Công nghệ Kỹ thuật TPHCM",
+          "source": "https://sao.hcmute.edu.vn/Resources/Docs/SubDomain/sao/Quy%20%C4%91%E1%BB%8Bnh%20hi%E1%BB%87n%20h%C3%A0nh/QUYDINH-HDCDONG-2013%20(1).pdf",
+          "document_type": "regulation",
+          "document_number": "224/QĐ-ĐHSPKT-CTHSSV",
+          "publication_year": 2013,
+          "language": "Vietnamese",
+          "content_type": "table"
+        },
+        "sparse_score": 0.0,
+        "dense_score": 0.7900768518447876
+      },
+      {
+        "doc_id": "CTXH_001",
+        "chunk_id": "CTXH_001_chunk_014",
+        "content": "| | 001101 | Tham gia suốt chiến dịch (01 tháng) tại các tỉnh | 20→40 | 2→4 |\n| --------------------------------------- | ------ | --------------------------------------------------------------------------------------------------------------------------- | ----- | ----- |\n| Mùa hè xanh | 001102 | Tham gia suốt chiến dịch (01 tháng) tại Tp. Hồ Chí Minh | 20→40 | 2→4 |\n| Mùa hè xanh | 001103 | Tham gia suốt chiến dịch (01 tháng) tại trường | 20→40 | 2→4 |\n| Mùa hè xanh | 001104 | Tham gia đội hình chuyên ngắn ngày (02 tuần) | 20→30 | 2→3 |\n| Mùa hè xanh | 001105 | Tham gia đội hình chuyên ngắn ngày (01 tuần) | 10→20 | 1→2 |\n| Hiến máu tình nguyện | 001201 | Tổ chức hoạt động hiến máu tình nguyện (01 lần) | 5→10 | 0,5→1 |\n| Hiến máu tình nguyện | 001202 | Trực tiếp hiến máu tình nguyện (01 lần) | 5 | 0,5 |\n| Xuân tình nguyện | 001301 | Tham gia suốt chương trình (04 ngày) | 10→20 | 1→2 |\n| Đêm hội trăng rằm | 001401 | Tham gia suốt chương trình (04 ngày) | 10→20 | 1→2 |",
+        "score": 0.7887140512466431,
+        "metadata": {
+          "title": "Quy định tổ chức thực hiện chương trình Công tác xã hội cho sinh viên hệ chính quy HCMUTE 2013",
+          "version": "v1.0",
+          "owner": "Trường Đại học Công nghệ Kỹ thuật TPHCM",
+          "source": "https://sao.hcmute.edu.vn/Resources/Docs/SubDomain/sao/Quy%20%C4%91%E1%BB%8Bnh%20hi%E1%BB%87n%20h%C3%A0nh/QUYDINH-HDCDONG-2013%20(1).pdf",
+          "document_type": "regulation",
+          "document_number": "224/QĐ-ĐHSPKT-CTHSSV",
+          "publication_year": 2013,
+          "language": "Vietnamese",
+          "content_type": "table"
+        },
+        "sparse_score": 0.0,
+        "dense_score": 0.7887140512466431
+      },
+      {
+        "doc_id": "CTXH_001",
+        "chunk_id": "CTXH_001_chunk_019",
+        "content": "| | 002104 | Tham gia lao động dọn vệ sinh, sắp xếp các xưởng, phòng thí nghiệm, thư viện, phòng làm việc, khu vực công cộng,… (01 ngày) | 5→10 | 0,5→1 |\n| ------------------------------------------------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---- | ----- |\n| Hoạt động bảo vệ môi trường | 003101 | Tổ chức hoặc vận động cộng đồng tham gia hoạt động bảo vệ môi trường, hạn chế tác động của biến động khí hậu, góp phần làm giảm thiểu tác động của biến đổi khí hậu,… (01 lần) | 5→10 | 0,5→1 |\n| Hoạt động bảo vệ môi trường | 003102 | Tham gia hoạt động cụ thể, thiết thực nhằm bảo vệ môi trường Xanh- Sạch-Đẹp tại trường hoặc nơi cư trú (01 lần) | 5→10 | 0,5→1 |",
+        "score": 0.7872921228408813,
+        "metadata": {
+          "title": "Quy định tổ chức thực hiện chương trình Công tác xã hội cho sinh viên hệ chính quy HCMUTE 2013",
+          "version": "v1.0",
+          "owner": "Trường Đại học Công nghệ Kỹ thuật TPHCM",
+          "source": "https://sao.hcmute.edu.vn/Resources/Docs/SubDomain/sao/Quy%20%C4%91%E1%BB%8Bnh%20hi%E1%BB%87n%20h%C3%A0nh/QUYDINH-HDCDONG-2013%20(1).pdf",
+          "document_type": "regulation",
+          "document_number": "224/QĐ-ĐHSPKT-CTHSSV",
+          "publication_year": 2013,
+          "language": "Vietnamese",
+          "content_type": "table"
+        },
+        "sparse_score": 0.0,
+        "dense_score": 0.7872921228408813
+      },
+      {
+        "doc_id": "CTXH_002",
+        "chunk_id": "CTXH_002_chunk_017",
+        "content": "| Lĩnh vực CTXH | Mã | Nội dung & định lượng | Thang điểm | Quy đổi sang ngày CTXH |\n| ------------------------------------------------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | ---------------------- |\n| Hoạt động bảo vệ môi trường | 003101 | Tổ chức hoặc vận động cộng đồng tham gia hoạt động bảo vệ môi trường, hạn chế tác động của biến động khí hậu, góp phần làm giảm thiểu tác động của biến đổi khí hậu,… (01 lần) | 5→10 | 0,5→1 |\n| Hoạt động bảo vệ môi trường | 003102 | Tham gia hoạt động cụ thể, thiết thực nhằm bảo vệ môi trường Xanh-Sạch- Đẹp tại trường hoặc nơi cư trú (01 lần) | 5→10 | 0,5→1 |\n| Công tác tuyên truyền và phổ biến pháp luật | 003201 | Tổ chức hoặc vận động cộng đồng tham gia hoạt động tuyên truyền và phổ biến pháp luật nhằm nâng cao ý thức pháp luật (01 lần) | 5→10 | 0,5→1 |",
+        "score": 0.7846691012382507,
+        "metadata": {
+          "title": "Quy định về đánh giá kết quả điểm công tác xã hội sinh viên HCMUTE",
+          "version": "v2.0",
+          "owner": "Trường Đại học Công nghệ Kỹ thuật TPHCM",
+          "source": "https://sao.hcmute.edu.vn/Resources/Docs/SubDomain/sao/Quy%20%C4%91%E1%BB%8Bnh%20hi%E1%BB%87n%20h%C3%A0nh/_SO%20TAY%20SV%202024%20-%2006-11%20-%20final.pdf",
+          "document_type": "regulation",
+          "document_number": "224/QĐ-ĐHSPKT-CTHSSV",
+          "publication_year": 2024,
+          "language": "Vietnamese",
+          "content_type": "table"
+        },
+        "sparse_score": 0.0,
+        "dense_score": 0.7846691012382507
+      },
+      {
+        "doc_id": "CTXH_002",
+        "chunk_id": "CTXH_002_chunk_014",
+        "content": "| Lĩnh vực CTXH | Mã | Nội dung & định lượng | Thang điểm | Quy đổi sang ngày CTXH |\n| ------------------------------ | ------ | --------------------------------------------------------------------------- | ---------- | ---------------------- |\n| Tư vấn hướng nghiệp-tuyển sinh | 001604 | Được huy động tham gia hướng dẫn HS THPT tham quan Trường (01 lần). | 5 | 0,5 |\n| Tiếp sức tân sinh viên | 001701 | Tham gia suốt chương trình (02 tuần) | 20→30 | 2→3 |\n| Hoạt động cứu trợ thiên tai | 001801 | Tổ chức hoạt động cứu trợ thiên tai (01 lần) | 10→20 | 1→2 |\n| Hoạt động cứu trợ thiên tai | 001802 | Tham gia trực tiếp hoạt động cứu trợ thiên tai (01 lần) | 10→20 | 1→2 |\n| Hoạt động cứu trợ thiên tai | 001803 | Tổ chức quyên góp giúp đỡ đồng bào bị thiên tại (01 đợt) | 5 | 0,5 |",
+        "score": 0.7793234586715698,
+        "metadata": {
+          "title": "Quy định về đánh giá kết quả điểm công tác xã hội sinh viên HCMUTE",
+          "version": "v2.0",
+          "owner": "Trường Đại học Công nghệ Kỹ thuật TPHCM",
+          "source": "https://sao.hcmute.edu.vn/Resources/Docs/SubDomain/sao/Quy%20%C4%91%E1%BB%8Bnh%20hi%E1%BB%87n%20h%C3%A0nh/_SO%20TAY%20SV%202024%20-%2006-11%20-%20final.pdf",
+          "document_type": "regulation",
+          "document_number": "224/QĐ-ĐHSPKT-CTHSSV",
+          "publication_year": 2024,
+          "language": "Vietnamese",
+          "content_type": "table"
+        },
+        "sparse_score": 0.0,
+        "dense_score": 0.7793234586715698
+      }
+    ]
+  },
+  {
+    "question_id": 12,
+    "question": "Hướng dẫn nướng bánh mì bằng nồi chiên không dầu sao cho giòn?",
+    "expected": null,
+    "retrieval_results": [
+      {
+        "doc_id": "CTXH_001",
+        "chunk_id": "CTXH_001_chunk_023",
+        "content": "| Dạy nghề, chuyên môn cho thanh niên | 005101 | Tham gia dạy nghề, chuyên môn cho thanh niên địa phương (01 tuần) | 20→30 | 2→3 |\n| ---------------------------------------------------------------- | --------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----- | ----- |\n| Dạy nghề, chuyên môn cho thanh niên | 005102 | Tham gia giúp địa phương tin học hóa công tác quản lý (01 tuần) | 20→30 | 2→3 |\n| Dạy học cho các cháu có hoàn cảnh khó khăn | 005201 | Tham gia phổ cập văn hóa cho các cháu theo yêu cầu của địa phương (01 tuần) | 20→30 | 2→3 |\n| Dạy học cho các cháu có hoàn cảnh khó khăn | 005202 | Tham gia dạy kèm các cháu có hoàn cảnh khó khăn (01 tuần) | 20→30 | 2→3 |\n| Quyên góp ủng hộ các địa phương khó khăn | 005301 | Tổ chức quyên góp hỗ trợ cho các địa phương khó khăn (01 đợt) | 10→20 | 1→2 |",
+        "score": 0.7991511821746826,
+        "metadata": {
+          "title": "Quy định tổ chức thực hiện chương trình Công tác xã hội cho sinh viên hệ chính quy HCMUTE 2013",
+          "version": "v1.0",
+          "owner": "Trường Đại học Công nghệ Kỹ thuật TPHCM",
+          "source": "https://sao.hcmute.edu.vn/Resources/Docs/SubDomain/sao/Quy%20%C4%91%E1%BB%8Bnh%20hi%E1%BB%87n%20h%C3%A0nh/QUYDINH-HDCDONG-2013%20(1).pdf",
+          "document_type": "regulation",
+          "document_number": "224/QĐ-ĐHSPKT-CTHSSV",
+          "publication_year": 2013,
+          "language": "Vietnamese",
+          "content_type": "table"
+        },
+        "sparse_score": 0.0,
+        "dense_score": 0.7991511821746826
+      },
+      {
+        "doc_id": "CTXH_001",
+        "chunk_id": "CTXH_001_chunk_022",
+        "content": "| | 002104 | Tham gia lao động dọn vệ sinh, sắp xếp các xưởng, phòng thí nghiệm, thư viện, phòng làm việc, khu vực công cộng,… (01 ngày) | 5→10 | 0,5→1 |\n| ------------------------------------------------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---- | ----- |\n| Chăm sóc người già, trẻ em khó khăn | 004204 | Tham gia chăm sóc các cháu tại các trung tâm tình nguyện (01 lần). | 5→10 | 0,5→1 |\n| Chăm sóc người già, trẻ em khó khăn | 004205 | Tham gia chăm sóc người bệnh có hoàn khó khăn tại bệnh viện hoặc gia đình (01 lần). | 5→10 | 0,5→1 |",
+        "score": 0.7954637408256531,
+        "metadata": {
+          "title": "Quy định tổ chức thực hiện chương trình Công tác xã hội cho sinh viên hệ chính quy HCMUTE 2013",
+          "version": "v1.0",
+          "owner": "Trường Đại học Công nghệ Kỹ thuật TPHCM",
+          "source": "https://sao.hcmute.edu.vn/Resources/Docs/SubDomain/sao/Quy%20%C4%91%E1%BB%8Bnh%20hi%E1%BB%87n%20h%C3%A0nh/QUYDINH-HDCDONG-2013%20(1).pdf",
+          "document_type": "regulation",
+          "document_number": "224/QĐ-ĐHSPKT-CTHSSV",
+          "publication_year": 2013,
+          "language": "Vietnamese",
+          "content_type": "table"
+        },
+        "sparse_score": 0.0,
+        "dense_score": 0.7954637408256531
+      },
+      {
+        "doc_id": "CTXH_001",
+        "chunk_id": "CTXH_001_chunk_024",
+        "content": "| Dạy nghề, chuyên môn cho thanh niên | 005101 | Tham gia dạy nghề, chuyên môn cho thanh niên địa phương (01 tuần) | 20→30 | 2→3 |\n| ---------------------------------------------------------------- | --------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----- | ----- |\n| Quyên góp ủng hộ các địa phương khó khăn | 005302 | Tổ chức các hoạt động giao lưu, đỡ đầu các trường học vùng khó khăn (01 lần) | 10→20 | 1→2 |\n| Hoàn thành nhiệm vụ cán bộ đoàn, hội, lớp, ban chủ nhiệm câu lạc | 006101 | Hoàn thành nhiệm vụ cán bộ đoàn, hội từ cấp trường trở lên (có QĐ bổ nhiệm, chuẩn y, giao nhiệm vụ, đánh giá trách nhiệm cuối năm/tính theo năm học ) | 20→40 | 2→4 |",
+        "score": 0.7928774356842041,
+        "metadata": {
+          "title": "Quy định tổ chức thực hiện chương trình Công tác xã hội cho sinh viên hệ chính quy HCMUTE 2013",
+          "version": "v1.0",
+          "owner": "Trường Đại học Công nghệ Kỹ thuật TPHCM",
+          "source": "https://sao.hcmute.edu.vn/Resources/Docs/SubDomain/sao/Quy%20%C4%91%E1%BB%8Bnh%20hi%E1%BB%87n%20h%C3%A0nh/QUYDINH-HDCDONG-2013%20(1).pdf",
+          "document_type": "regulation",
+          "document_number": "224/QĐ-ĐHSPKT-CTHSSV",
+          "publication_year": 2013,
+          "language": "Vietnamese",
+          "content_type": "table"
+        },
+        "sparse_score": 0.0,
+        "dense_score": 0.7928774356842041
+      },
+      {
+        "doc_id": "CTXH_002",
+        "chunk_id": "CTXH_002_chunk_021",
+        "content": "| Lĩnh vực CTXH | Mã | Nội dung & định lượng | Thang điểm | Quy đổi sang ngày CTXH |\n| ------------------------------------------------------------------- | ------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- | ---------------------- |\n| Dạy học cho các cháu có hoàn cảnh khó khăn | 005202 | Tham gia dạy kèm các cháu có hoàn cảnh khó khăn (01 tuần) | 20→30 | 2→3 |\n| Quyên góp ủng hộ các địa phương khó khăn | 005301 | Tổ chức quyên góp hỗ trợ cho các địa phương khó khăn (01 đợt) | 10→20 | 1→2 |\n| Quyên góp ủng hộ các địa phương khó khăn | 005302 | Tổ chức các hoạt động giao lưu, đỡ đầu các trường học vùng khó khăn (01 lần) | 10→20 | 1→2 |",
+        "score": 0.7909722924232483,
+        "metadata": {
+          "title": "Quy định về đánh giá kết quả điểm công tác xã hội sinh viên HCMUTE",
+          "version": "v2.0",
+          "owner": "Trường Đại học Công nghệ Kỹ thuật TPHCM",
+          "source": "https://sao.hcmute.edu.vn/Resources/Docs/SubDomain/sao/Quy%20%C4%91%E1%BB%8Bnh%20hi%E1%BB%87n%20h%C3%A0nh/_SO%20TAY%20SV%202024%20-%2006-11%20-%20final.pdf",
+          "document_type": "regulation",
+          "document_number": "224/QĐ-ĐHSPKT-CTHSSV",
+          "publication_year": 2024,
+          "language": "Vietnamese",
+          "content_type": "table"
+        },
+        "sparse_score": 0.0,
+        "dense_score": 0.7909722924232483
+      },
+      {
+        "doc_id": "CTXH_001",
+        "chunk_id": "CTXH_001_chunk_027",
+        "content": "| Dạy nghề, chuyên môn cho thanh niên | 005101 | Tham gia dạy nghề, chuyên môn cho thanh niên địa phương (01 tuần) | 20→30 | 2→3 |\n| ---------------------------------------------------------------- | --------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----- | ----- |\n| Tổ chức và tham gia các phong trào | 006203 | Tham gia thi (biểu diễn, thi đấu) văn hóa, chuyên môn, tay nghề, văn nghệ, thể dục thể thao,…/cấp quốc tế/theo cuộc thi | 15→30 | 1,5→3 |\n| Tổ chức và tham gia các phong trào | 006204 | Tham gia thi (biểu diễn, thi đấu) văn hóa, chuyên môn, tay nghề, văn nghệ, thể dục thể thao,…/cấp thành, ngành /theo cuộc thi | 10→20 | 1→2 |\n| Tổ chức và tham gia các phong trào | 006205 | Tham gia thi (biểu diễn, thi đấu) văn hóa, chuyên môn, tay nghề, văn | 5→10 | 0,5→1 |",
+        "score": 0.7906951904296875,
+        "metadata": {
+          "title": "Quy định tổ chức thực hiện chương trình Công tác xã hội cho sinh viên hệ chính quy HCMUTE 2013",
+          "version": "v1.0",
+          "owner": "Trường Đại học Công nghệ Kỹ thuật TPHCM",
+          "source": "https://sao.hcmute.edu.vn/Resources/Docs/SubDomain/sao/Quy%20%C4%91%E1%BB%8Bnh%20hi%E1%BB%87n%20h%C3%A0nh/QUYDINH-HDCDONG-2013%20(1).pdf",
+          "document_type": "regulation",
+          "document_number": "224/QĐ-ĐHSPKT-CTHSSV",
+          "publication_year": 2013,
+          "language": "Vietnamese",
+          "content_type": "table"
+        },
+        "sparse_score": 0.0,
+        "dense_score": 0.7906951904296875
+      }
+    ]
+  }
+]

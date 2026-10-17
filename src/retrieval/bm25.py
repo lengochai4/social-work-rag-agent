@@ -5,8 +5,6 @@ from pathlib import Path
 from sentence_transformers import CrossEncoder
 import numpy as np
 
-sys.path.append(str(Path(__file__).resolve().parent.parent / "24110103"))
-print(sys.path)
 from vector_store import VectorStore
 from src.schemas import DocumentChunk
 
@@ -137,8 +135,6 @@ reranker = sorted(
 print("\n===BM25 + Cross Encoder Rerank ===")
 for doc, s in reranker:
     print(f"{s:.3f}|{doc}")
-    
-    
     
     
 if __name__ == "__main__":

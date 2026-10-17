@@ -76,3 +76,8 @@ class RegisterActivityArgs:
 class GetStatusArgs:
     student_id: str
     semester: Optional[str] = None
+
+@dataclass
+class SearchPolicyArgs:
+    query: str
+    doc_id: Optional[str] = None

@@ -1,0 +1,13 @@
+{
+  "timestamp": "2026-10-17T20:15:33.619459",
+  "log_file": "run_20261017_201533.jsonl",
+  "total_questions": 12,
+  "passed": 12,
+  "failed": 0,
+  "accuracy_percent": 100.0,
+  "rejection_accuracy_percent": 100.0,
+  "answer_accuracy_percent": 100.0,
+  "total_tokens": 6386,
+  "total_calls": 12,
+  "calibration_threshold": 0.55
+}
