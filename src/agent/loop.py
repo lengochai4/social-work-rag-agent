@@ -6,19 +6,12 @@ Enforces MAX_STEPS = 10 and Action & Verify constraints (W6 requirement).
 
 import os
 import json
-<<<<<<< .merge_file_gxv939
 from datetime import datetime
-from dotenv import load_dotenv
-from rich import print
-from typing import Dict, Any, List
-from src.llm_client import call_llm
-=======
 from pathlib import Path
 from dataclasses import dataclass, asdict
-from typing import Dict, Any, List, Optional, Callable
+from typing import Dict, Any, List, Optional, Callable, Union
 from dotenv import load_dotenv
 from rich import print
->>>>>>> .merge_file_Zf361u
 
 from src.llm_client import call_llm, TokenUsage
 from src.schemas import RegisterActivityArgs, GetStatusArgs
@@ -48,7 +41,7 @@ TOOLS_SCHEMA = [
                     "query": {"type": "string", "description": "The policy search query"},
                     "doc_id": {
                         "type": "string", 
-                        "description": "Optional document filter ID (e.g., 'CTXH_001' for 2013 regulation, 'CTXH_002' for 2024 student handbook)"
+                        "description": "Specific regulation year to query (e.g., 2013, 2024, 2026). Leave empty/null to query the LATEST active regulations."
                     }
                 },
                 "required": ["query"]
@@ -195,69 +188,6 @@ def react_agent(
                 })
                 continue
 
-<<<<<<< .merge_file_gxv939
-            return content
-
-    return "(stopped: too many steps)"
-
-def save_trace_log(
-        question: str,
-        final_answer: str,
-        usage_stats: Dict[str, Any],
-        traces: List[Dict[str, Any]],
-        is_verified: bool,
-        log_filename: str = None
-) -> str:
-    """ Export trace and detailed USAGE stats to the logs/*.jsonl"""
-    logs_dir = "logs"
-    os.makedirs(logs_dir, exist_ok=True)
-
-    if not log_filename:
-        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-        log_filename = f"agent_eval_{timestamp}.jsonl"
-
-    filepath = os.path.join(logs_dir, log_filename)
-
-    usage_payload = {
-        "calls": usage_stats.get("calls", 0),
-        "prompt_tokens": usage_stats.get("prompt_tokens", 0),
-        "completion_tokens": usage_stats.get("completion_tokens", 0),
-        "total_tokens": usage_stats.get("total_tokens", 0),
-    }
-
-    log_entry = {
-        "timestamp": datetime.now().isoformat(),
-        "question": question,
-        "final_answer": final_answer,
-        "is_verified": is_verified,
-        "usage": usage_payload,
-        "traces": traces
-    }
-
-    with open(filepath, "a", encoding="utf-8") as f:
-        f.write(json.dumps(log_entry, ensure_ascii=False, indent = 2 ) + "\n\n")
-
-    return filepath
-
-def main():
-    load_dotenv()
-
-    dummy_executors = {
-        "search_policy": lambda query: f"Policy lookup result for '{query}': Registration guidelines found.",
-        "register_activity": lambda student_id, activity_code, points, semester="HK1_2025_2026": f"Successfully registered {activity_code} ({points} pts) for student {student_id} in {semester}.",
-        "get_status": lambda student_id, semester=None: f"Status for {student_id}: Total accumulated CTXH points = 5 in {semester or 'all semesters'}."
-    }
-
-    question = "Please register activity ACT01 with 5 points for student SV01 in HK1_2025_2026 and verify the updated status."
-
-    print(f"Question: {question}")
-    final_answer = react_agent(question, dummy_executors)
-    print(f"\nFinal Answer: {final_answer}")
-
-
-if __name__ == "__main__":
-    main()
-=======
             return AgentResult(
                 question=question,
                 final_answer=content,
@@ -275,4 +205,77 @@ if __name__ == "__main__":
         usage=usage_tracker.to_dict(),
         verified=has_verified
     )
->>>>>>> .merge_file_Zf361u
+
+
+def save_trace_log(
+    question: str,
+    final_answer: Union[str, AgentResult],
+    usage_stats: Optional[Dict[str, Any]] = None,
+    traces: Optional[List[Dict[str, Any]]] = None,
+    is_verified: Optional[bool] = None,
+    log_filename: Optional[str] = None
+) -> str:
+    """Export trace and detailed USAGE stats to the logs/*.jsonl"""
+    logs_dir = "logs"
+    os.makedirs(logs_dir, exist_ok=True)
+
+    if not log_filename:
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        log_filename = f"agent_eval_{timestamp}.jsonl"
+
+    filepath = os.path.join(logs_dir, log_filename)
+
+    if isinstance(final_answer, AgentResult):
+        ans_text = final_answer.final_answer
+        usage_payload = final_answer.usage
+        trace_data = final_answer.steps
+        verified_status = final_answer.verified
+    else:
+        ans_text = str(final_answer)
+        stats = usage_stats or {}
+        usage_payload = {
+            "calls": stats.get("calls", 0),
+            "prompt_tokens": stats.get("prompt_tokens", 0),
+            "completion_tokens": stats.get("completion_tokens", 0),
+            "total_tokens": stats.get("total_tokens", 0),
+        }
+        trace_data = traces if traces is not None else []
+        verified_status = is_verified if is_verified is not None else False
+
+    log_entry = {
+        "timestamp": datetime.now().isoformat(),
+        "question": question,
+        "final_answer": ans_text,
+        "is_verified": verified_status,
+        "usage": usage_payload,
+        "traces": trace_data
+    }
+
+    with open(filepath, "a", encoding="utf-8") as f:
+        f.write(json.dumps(log_entry, ensure_ascii=False, indent=2) + "\n\n")
+
+    return filepath
+
+
+def main():
+    load_dotenv()
+
+    dummy_executors = {
+        "search_policy": lambda query: f"Policy lookup result for '{query}': Registration guidelines found.",
+        "register_activity": lambda student_id, activity_code, points, semester="HK1_2025_2026": f"Successfully registered {activity_code} ({points} pts) for student {student_id} in {semester}.",
+        "get_status": lambda student_id, semester=None: f"Status for {student_id}: Total accumulated CTXH points = 5 in {semester or 'all semesters'}."
+    }
+
+    question = "Please register activity ACT01 with 5 points for student SV01 in HK1_2025_2026 and verify the updated status."
+
+    print(f"Question: {question}")
+    result = react_agent(question, dummy_executors)
+    if isinstance(result, AgentResult):
+        print(f"\nFinal Answer: {result.final_answer}")
+        print(f"Token Usage: {result.usage}")
+    else:
+        print(f"\nFinal Answer: {result}")
+
+
+if __name__ == "__main__":
+    main()
