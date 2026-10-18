@@ -41,6 +41,7 @@ The repository includes a native `make.bat` wrapper so you can run `make` comman
   pytest tests/ -v
   ```
 
+LINK DATA: https://drive.google.com/drive/folders/1VCwrwHplQBLwjCfr_11-UZMcpYLjV4zI?hl=vi
 ---
 
 ##  2. The 3 Mandatory Architecture Layers
