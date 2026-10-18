@@ -102,11 +102,3 @@ htmlcov/
 Thumbs.db
 desktop.ini
 .DS_Store
-
-
-# ==========================================
-# Generated Datasets and Embeddings
-# ==========================================
-data/
-data/ctxh_chunks.json
-data/ctxh_embeddings.json

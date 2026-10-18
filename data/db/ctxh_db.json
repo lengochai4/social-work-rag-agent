@@ -1,0 +1,73 @@
+{
+  "students": {
+    "24110089": {
+      "student_id": "24110089",
+      "full_name": "Lê Ngọc Hải",
+      "accumulated_points": {
+        "HK1_2025_2026": 45
+      },
+      "registered_activities": [
+        {
+          "activity_code": "CTXH_TIEP_SUC_MUA_THI_2025",
+          "points": 15,
+          "semester": "HK1_2025_2026",
+          "registered_at": "2025-10-01T08:00:00"
+        },
+        {
+          "activity_code": "CTXH_DON_DEP_KHUON_VIEN_2025",
+          "points": 10,
+          "semester": "HK1_2025_2026",
+          "registered_at": "2025-11-15T09:00:00"
+        },
+        {
+          "activity_code": "CTXH_TIEP_SUC_MUA_THI_2026",
+          "points": 15,
+          "semester": "HK1_2025_2026",
+          "registered_at": "2026-10-17T20:04:11.309421"
+        },
+        {
+          "activity_code": "CTXH_HIEN_MAU_TEST",
+          "points": 5,
+          "semester": "HK1_2025_2026",
+          "registered_at": "2026-10-17T20:18:08.590883"
+        }
+      ]
+    },
+    "24110103": {
+      "student_id": "24110103",
+      "full_name": "Trần Gia Kiệt",
+      "accumulated_points": {
+        "HK1_2025_2026": 35
+      },
+      "registered_activities": [
+        {
+          "activity_code": "CTXH_MUA_HE_XANH_2025",
+          "points": 25,
+          "semester": "HK1_2025_2026",
+          "registered_at": "2025-07-20T08:00:00"
+        },
+        {
+          "activity_code": "CTXH_HOC_BONG_TINH_NGUYEN_2025",
+          "points": 10,
+          "semester": "HK1_2025_2026",
+          "registered_at": "2025-09-10T10:00:00"
+        }
+      ]
+    },
+    "24110077": {
+      "student_id": "24110077",
+      "full_name": "Trần Thiên Ân",
+      "accumulated_points": {
+        "HK1_2025_2026": 10
+      },
+      "registered_activities": [
+        {
+          "activity_code": "CTXH_HIEN_MAU_2025",
+          "points": 10,
+          "semester": "HK1_2025_2026",
+          "registered_at": "2025-10-12T08:30:00"
+        }
+      ]
+    }
+  }
+}
