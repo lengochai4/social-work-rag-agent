@@ -24,9 +24,6 @@ Your job is to answer queries, search regulations, and register activities for s
 
 CRITICAL RULE (Action & Verify):
 If you call 'register_activity', you MUST call 'get_status' in the next step to verify the registered data before giving the final answer to the user.
-
-METADATA FILTER RULE:
-When searching regulations with 'search_policy', if the user specifies or asks about a particular year (such as 2024 or 2025), you MUST provide 'publication_year' in the parameters to filter the correct version of the regulations.
 """
 
 TOOLS_SCHEMA = [
@@ -34,12 +31,11 @@ TOOLS_SCHEMA = [
         "type": "function",
         "function": {
             "name": "search_policy",
-            "description": "Look up CTXH regulations and guidelines from documents. Can filter by publication_year (e.g. 2024, 2025).",
+            "description": "Look up CTXH regulations and guidelines from documents.",
             "parameters": {
                 "type": "object",
                 "properties": {
-                    "query": {"type": "string", "description": "The policy search query"},
-                    "publication_year": {"type": "integer", "description": "Optional filter by regulation year (e.g., 2024, 2025)"}
+                    "query": {"type": "string", "description": "The policy search query"}
                 },
                 "required": ["query"]
             }

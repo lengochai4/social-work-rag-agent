@@ -75,13 +75,7 @@ def run_project():
     print("=" * 80)
 
     dummy_executors = {
-        "search_policy": lambda query, publication_year=None: str(
-            retriever.search(
-                query,
-                top_k=1,
-                filter_metadata={"publication_year": publication_year} if publication_year else None
-            )
-        ),
+        "search_policy": lambda query: str(retriever.search(query, top_k=1)),
         "register_activity": lambda student_id, activity_code, points, semester="HK1_2025_2026": (
             f"Successfully registered {activity_code} ({points} pts) for student {student_id} in {semester}."
         ),

@@ -101,7 +101,6 @@ class HybridSearch:
         self,
         query: str,
         top_k: int = 5,
-        filter_metadata: Optional[dict[str, Any]] = None,
     ) -> list[RetrievalResult]:
         if not query.strip():
             raise ValueError("query cannot be empty.")
@@ -139,27 +138,7 @@ class HybridSearch:
             + (1.0 - self.alpha) * dense_scores
         )
 
-        # Apply metadata filtering if specified
-        if filter_metadata:
-            candidate_indices = []
-            for idx, chunk in enumerate(self.chunks):
-                chunk_meta = chunk.get("metadata", {})
-                match = True
-                for k, v in filter_metadata.items():
-                    val = chunk_meta.get(k, chunk.get(k))
-                    if val != v:
-                        match = False
-                        break
-                if match:
-                    candidate_indices.append(idx)
-            if not candidate_indices:
-                return []
-            candidate_arr = np.array(candidate_indices)
-            candidate_scores = combined_scores[candidate_arr]
-            top_cand_sub = np.argsort(candidate_scores)[::-1][:top_k]
-            ranked_indices = candidate_arr[top_cand_sub]
-        else:
-            ranked_indices = np.argsort(combined_scores)[::-1][:top_k]
+        ranked_indices = np.argsort(combined_scores)[::-1][:top_k]
 
         results = []
         for index in ranked_indices:
