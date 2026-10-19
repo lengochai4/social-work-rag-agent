@@ -1,4 +1,4 @@
-.PHONY: setup demo eval test help
+.PHONY: setup demo eval test embed chunk help
 
 help:
 	@echo "=========================================================="
@@ -6,6 +6,8 @@ help:
 	@echo "=========================================================="
 	@echo "Available commands:"
 	@echo "  make setup - Install dependencies and prepare directories"
+	@echo "  make chunk - Split raw markdown documents into chunks (data/ctxh_chunks.json)"
+	@echo "  make embed - Compute neural vector embeddings and save (data/ctxh_embeddings.json)"
 	@echo "  make demo  - Run 3-layer ReAct Agent live demo (Retrieve -> Compute -> Action & Verify)"
 	@echo "  make eval  - Run evaluation benchmark on 12 test queries and log metrics"
 	@echo "  make test  - Run unit test suite (pytest tests/ -v)"
@@ -21,6 +23,11 @@ demo:
 eval:
 	python run_evaluation.py
 
+chunk:
+	python src/data_preprocessing/build_dataset.py
+
+embed:
+	python src/retrieval/vector_store.py
 
 test:
 	python -m pytest tests/ -v

@@ -322,4 +322,3 @@ def run_ablation_comparison(hybrid_retriever, cases: list, threshold: float = 0.
 
 if __name__ == "__main__":
     evaluate_system()
-

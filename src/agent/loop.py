@@ -11,6 +11,10 @@ from pathlib import Path
 from dataclasses import dataclass, asdict
 from typing import Dict, Any, List, Optional, Callable, Union
 from dotenv import load_dotenv
+import sys
+PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
 from rich import print
 
 from src.llm_client import call_llm, TokenUsage
