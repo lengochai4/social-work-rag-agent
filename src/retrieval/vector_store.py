@@ -1,14 +1,17 @@
 
+import sys
 import json
 from pathlib import Path
+
+PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
 
 import numpy as np
 
 from config import DATA_PATH, OUTPUT_PATH, EMBEDDINGS_PATH
 from src.schemas import Document, DocumentChunk
 from src.retrieval.embedder import Embedder
-
-
 
 class VectorStore:
     def __init__(self, embedder: Embedder | None = None):
@@ -106,4 +109,10 @@ class VectorStore:
             })
 
         return results
-    
+
+
+if __name__ == "__main__":
+    print("Khởi tạo VectorStore và embed dữ liệu từ data/ctxh_chunks.json...")
+    store = VectorStore()
+    store.build(force_rebuild=True)
+    print("Hoàn tất embed và lưu vector vào data/ctxh_embeddings.json!")

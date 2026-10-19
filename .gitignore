@@ -69,7 +69,7 @@ target/
 # ==========================================
 # Logs and Temporary Files
 # ==========================================
-
+*.logs
 *.log
 *.tmp
 *.temp
@@ -77,6 +77,10 @@ target/
 *.swp
 *.swo
 *.swn
+# logs/ (Keep real JSONL benchmark runs per Rubric requirement #3)
+!logs/*.jsonl
+!logs/.gitkeep
+logs/
 
 
 # ==========================================
@@ -98,11 +102,3 @@ htmlcov/
 Thumbs.db
 desktop.ini
 .DS_Store
-
-
-# ==========================================
-# Generated Datasets and Embeddings
-# ==========================================
-data/
-data/ctxh_chunks.json
-data/ctxh_embeddings.json

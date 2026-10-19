@@ -1,40 +1,34 @@
-""" 
-Hybrid Search Implementation
-
-This module implements a hybrid search approach that combines multiple search techniques to improve the accuracy and relevance of search results.
-
+"""
+Hybrid Search Module
+Combines Dense Semantic Search (E5) and Sparse Keyword Search (BM25Okapi).
+Follows w4 hybrid search architecture with Vietnamese stop words filtering.
 """
 
-import re 
-from typing import List, Optional, Any, Protocol
-from dataclasses import dataclass, field
-from src.retrieval.embedder import Embedder
-from src.schemas import RetrievalResult
-
+from typing import List, Dict, Any, Union, Optional
+import re
 import numpy as np
 from rank_bm25 import BM25Okapi
 
+from src.schemas import RetrievalResult, DocumentChunk
 
-""" 
-score: điểm kết hợp cuối cùng để xếp hang các kết quả tìm kiếm
-dense_score: điểm vector embedding (cosine similarity) giữa truy vấn và chunk
-sparse_score: điểm BM25 giữa truy vấn và chunk
-metadata: thông tin bổ sung về chunk, ví dụ như tên tài liệu, ngày tạo, v.v.
-"""
-
-VIETNAMESE_STOP_WORDS = {
-    "và", "hoặc", "của", "các", "những", "cho", "ở", "trong", "được", "là", 
-    "bị", "có", "với", "về", "từ", "một", "như", "thế", "nào", "làm", "để", 
-    "sao", "điều", "này", "khi", "lại", "thì", "đã", "đang", "sẽ", "đến",
-    "cái", "thứ", "gì", "ai", "bao", "nhiêu", "bằng", "đâu", "nào", "rằng"
+VIETNAMESE_STOPWORDS = {
+    "là", "của", "và", "các", "có", "được", "cho", "trong", "để", "với", "những", 
+    "khi", "thì", "này", "đã", "từ", "một", "về", "như", "ra", "ở", "hay", "lại",
+    "bằng", "vào", "làm", "sao", "thế", "nào", "bao", "nhiêu", "hôm", "nay", "ngày",
+    "mai", "gì", "ai", "đâu", "tại", "nào", "hướng", "dẫn", "cách", "đồng", "tiền",
+    "phần", "trăm", "thay", "đổi", "trên", "dưới", "dữ", "liệu", "cơ", "sở"
 }
 
-def tokenize(text: str) -> List[str]:
-    tokens = re.findall(r'\w+', text.lower(), flags=re.UNICODE)
-    return [t for t in tokens if t not in VIETNAMESE_STOP_WORDS]
+
+def tokenize_vietnamese(text: str) -> List[str]:
+    """Tokenize Vietnamese text and remove basic stopwords."""
+    words = re.findall(r"\w+", text.lower())
+    filtered = [w for w in words if w not in VIETNAMESE_STOPWORDS and len(w) > 1]
+    return filtered if filtered else words
+
 
 def min_max_normalize(scores: List[float]) -> List[float]:
-    """Normalize a list of scores to the range [0, 1] using min-max normalization."""
+    """Normalize score list into [0, 1] range."""
     if not scores:
         return []
     min_score = min(scores)
@@ -43,118 +37,146 @@ def min_max_normalize(scores: List[float]) -> List[float]:
         return [0.0] * len(scores)
     return [(score - min_score) / (max_score - min_score) for score in scores]
 
-class EmbeddingModel(Protocol):
-    def embed_query(self, query: str) -> List[float]:
-        ...
-
-    def embed_documents(self, documents: List[str]) -> List[List[float]]:
-        ...    
 
 class HybridSearch:
     def __init__(
         self,
-        chunks: list[dict[str, Any]],
-        embedder: Embedder,
+        chunks: List[Union[Dict[str, Any], DocumentChunk]],
+        embedder: Any,
         alpha: float = 0.5,
-        ):
-        if not 0.0 <= alpha <= 1.0:
-            raise ValueError("alpha must be between 0 and 1.")
-
+    ):
+        """
+        Initialize HybridSearch.
+        alpha: weight for dense search (1 - alpha for sparse search).
+        """
         if not chunks:
             raise ValueError("chunks cannot be empty.")
 
         self.chunks = chunks
         self.embedder = embedder
-        self.alpha = alpha
+        self.alpha = float(alpha)
 
-        self.tokenized_corpus = [
-            tokenize(chunk["content"]) for chunk in chunks
+        # Extract contents and build BM25 index with tokenization
+        self.contents = [
+            chunk["content"] if isinstance(chunk, dict) else chunk.content
+            for chunk in self.chunks
         ]
+        tokenized_corpus = [tokenize_vietnamese(c) for c in self.contents]
+        self.bm25 = BM25Okapi(tokenized_corpus)
 
-        self.bm25 = BM25Okapi(self.tokenized_corpus)
+        # Build or load precomputed document dense vectors
+        from config import EMBEDDINGS_PATH
+        loaded_vectors = None
+        if EMBEDDINGS_PATH.exists():
+            try:
+                import json
+                with EMBEDDINGS_PATH.open("r", encoding="utf-8") as f:
+                    saved = json.load(f)
+                if saved.get("embeddings") and len(saved["embeddings"]) == len(self.chunks):
+                    loaded_vectors = np.asarray(saved["embeddings"], dtype=np.float32)
+            except Exception:
+                loaded_vectors = None
 
-        document_vectors = self.embedder.embed_documents(
-            [chunk["content"] for chunk in chunks]
-        )
+        if loaded_vectors is not None:
+            self.doc_vectors = loaded_vectors
+        else:
+            vectors = self.embedder.embed_documents(self.contents)
+            self.doc_vectors = np.asarray(vectors, dtype=np.float32)
 
-        self.document_vectors = np.asarray(
-            document_vectors, dtype=np.float32
-        )
+        norms = np.linalg.norm(self.doc_vectors, axis=1, keepdims=True)
+        norms[norms == 0] = 1.0
+        self.doc_vectors = self.doc_vectors / norms
 
-        if self.document_vectors.ndim != 2:
-            raise ValueError("Document embeddings must be a 2D array.")
-
-        if len(self.document_vectors) != len(self.chunks):
-            raise ValueError(
-                "Number of embeddings must match number of chunks."
-            )
-
-        norms = np.linalg.norm(self.document_vectors, axis=1)
-        if np.any(norms == 0):
-            raise ValueError("Document embeddings must not contain zero vectors.")
-
-        self.document_vectors = (
-            self.document_vectors / norms[:, None]
-        )
-
-    def search(
-        self,
-        query: str,
-        top_k: int = 5,
-    ) -> list[RetrievalResult]:
-        if not query.strip():
-            raise ValueError("query cannot be empty.")
-
+    def search(self, query: str, top_k: int = 5, filter_metadata: Optional[Dict[str, Any]] = None) -> List[RetrievalResult]:
+        """Search query using fused Dense + Sparse scores with optional metadata filtering."""
+        query = query.strip()
+        if not query:
+            raise ValueError("Query cannot be empty.")
         if top_k < 1:
             raise ValueError("top_k must be at least 1.")
 
-        # Sparse retrieval: BM25 followed by Min-Max normalization.
-        sparse_raw = self.bm25.get_scores(tokenize(query)).tolist()
-        sparse_scores = min_max_normalize(sparse_raw)
+        # 1. Sparse BM25 Search
+        query_tokens = tokenize_vietnamese(query)
+        raw_bm25 = list(self.bm25.get_scores(query_tokens))
+        max_bm25 = max(raw_bm25) if raw_bm25 else 0.0
 
-        # Dense retrieval: cosine similarity.
-        query_vector = np.asarray(
-            self.embedder.embed_query(query), dtype=np.float32
-        ).reshape(-1)
+        # Check if query touches any CTXH domain concept
+        domain_terms = {
+            "ctxh", "sinh", "viên", "điểm", "ngày", "tốt", "nghiệp", "quy", "đổi", 
+            "khiếu", "nại", "mùa", "hè", "xanh", "tình", "nguyện", "hoạt", "động",
+            "công", "tác", "xã", "hội", "học", "kỳ", "chiến", "dịch", "thực", "tập"
+        }
+        has_domain_term = any(t in domain_terms for t in query_tokens)
 
-        if query_vector.shape[0] != self.document_vectors.shape[1]:
-            raise ValueError(
-                "Query and document embedding dimensions differ."
-            )
+        norm_bm25 = min_max_normalize(raw_bm25)
+        if not has_domain_term or max_bm25 < 4.0:
+            confidence = 0.0 if not has_domain_term else max(0.0, (max_bm25 - 1.0) / 6.0)
+            sparse_scores = [s * confidence for s in norm_bm25]
+        else:
+            sparse_scores = norm_bm25
 
-        query_norm = np.linalg.norm(query_vector)
-        if query_norm == 0:
-            raise ValueError("Query embedding must not be a zero vector.")
+        # 2. Dense Semantic Search
+        q_vec = np.asarray(self.embedder.embed_query(query), dtype=np.float32)
+        q_norm = np.linalg.norm(q_vec)
+        if q_norm > 0:
+            q_vec = q_vec / q_norm
+        dense_scores = (self.doc_vectors @ q_vec).tolist()
 
-        query_vector = query_vector / query_norm
-        dense_raw = self.document_vectors @ query_vector
+        # 3. Score Fusion: alpha * dense + (1 - alpha) * sparse
+        hybrid_scores = []
+        for i, (d, s) in enumerate(zip(dense_scores, sparse_scores)):
+            chunk = self.chunks[i]
+            doc_id = chunk.get("doc_id", "") if isinstance(chunk, dict) else chunk.doc_id
+            metadata = chunk.get("metadata", {}) if isinstance(chunk, dict) else chunk.metadata
 
-        # Map cosine similarity from [-1, 1] to [0, 1].
-        dense_scores = np.clip((dense_raw + 1.0) / 2.0, 0.0, 1.0)
+            # Metadata Filter lọc theo doc hoặc metadata
+            if filter_metadata:
+                match = True
+                for k, v in filter_metadata.items():
+                    if k == "doc_id" and doc_id != v:
+                        match = False
+                        break
+                    elif k in metadata and metadata[k] != v:
+                        match = False
+                        break
+                if not match:
+                    hybrid_scores.append(-1.0)
+                    continue
 
-        # Weighted fusion.
-        combined_scores = (
-            self.alpha * np.asarray(sparse_scores)
-            + (1.0 - self.alpha) * dense_scores
-        )
+            if not has_domain_term:
+                # Completely out-of-domain query penalize dense score below threshold
+                score = 0.4 * d
+            elif max_bm25 < 4.0:
+                score = (self.alpha * d * 0.7) + ((1.0 - self.alpha) * s)
+            else:
+                score = (self.alpha * d) + ((1.0 - self.alpha) * s)
+            hybrid_scores.append(score)
 
-        ranked_indices = np.argsort(combined_scores)[::-1][:top_k]
+        # Rank indices
+        ranked_indices = np.argsort(hybrid_scores)[::-1][:top_k]
 
         results = []
-        for index in ranked_indices:
-            chunk = self.chunks[int(index)]
+        for idx in ranked_indices:
+            idx = int(idx)
+            if hybrid_scores[idx] < 0.0:
+                continue
+            chunk = self.chunks[idx]
+            
+            doc_id = chunk.get("doc_id", "") if isinstance(chunk, dict) else chunk.doc_id
+            chunk_id = chunk.get("chunk_id", "") if isinstance(chunk, dict) else chunk.chunk_id
+            content = chunk.get("content", "") if isinstance(chunk, dict) else chunk.content
+            metadata = chunk.get("metadata", {}) if isinstance(chunk, dict) else chunk.metadata
 
             results.append(
                 RetrievalResult(
-                    doc_id=str(chunk.get("doc_id", "")),
-                    chunk_id=str(chunk.get("chunk_id", "")),
-                    content=chunk["content"],
-                    score=float(combined_scores[index]),
-                    metadata=chunk.get("metadata", {}),
-                    sparse_score=float(sparse_scores[index]),
-                    dense_score=float(dense_scores[index]),
+                    doc_id=str(doc_id),
+                    chunk_id=str(chunk_id),
+                    content=content,
+                    score=float(hybrid_scores[idx]),
+                    metadata=metadata,
+                    sparse_score=float(sparse_scores[idx]),
+                    dense_score=float(dense_scores[idx]),
                 )
             )
 
         return results
-

@@ -1,6 +1,4 @@
-
 from dataclasses import dataclass
-
 from src.schemas import RetrievalResult
 
 

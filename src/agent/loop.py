@@ -1,30 +1,37 @@
 """
 The ReAct loop: Reason + Act, step by step for CTXH Social Work Agent.
 Uses OpenAI/Groq Native Tool Calling to handle function execution safely.
-
-Enforces MAX_STEPS = 10 and Action & Verify constraints.
+Enforces MAX_STEPS = 10 and Action & Verify constraints (W6 requirement).
 """
 
 import os
 import json
 from datetime import datetime
+from pathlib import Path
+from dataclasses import dataclass, asdict
+from typing import Dict, Any, List, Optional, Callable, Union
 from dotenv import load_dotenv
+import sys
+PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
 from rich import print
-from typing import Dict, Any, List
-from src.llm_client import call_llm
+
+from src.llm_client import call_llm, TokenUsage
+from src.schemas import RegisterActivityArgs, GetStatusArgs
+from config import PROJECT_ROOT
 
 MAX_STEPS = 10
 
-# ---------------------------------------------------------------------------
-# Step 1: System Prompt & Tools Schema
-# ---------------------------------------------------------------------------
-
-SYSTEM_PROMPT = """You are an AI assistant for CTXH (Social Work) management.
+PROMPT_FILE = PROJECT_ROOT / "prompts" / "agent_system.txt"
+if PROMPT_FILE.exists():
+    SYSTEM_PROMPT = PROMPT_FILE.read_text(encoding="utf-8").strip()
+else:
+    SYSTEM_PROMPT = """You are an AI assistant for CTXH (Social Work) management at HCMUTE.
 Your job is to answer queries, search regulations, and register activities for students.
 
 CRITICAL RULE (Action & Verify):
-If you call 'register_activity', you MUST call 'get_status' in the next step to verify the registered data before giving the final answer to the user.
-"""
+If you call 'register_activity', you MUST call 'get_status' in the next step to verify the registered data before giving the final answer to the user."""
 
 TOOLS_SCHEMA = [
     {
@@ -35,7 +42,11 @@ TOOLS_SCHEMA = [
             "parameters": {
                 "type": "object",
                 "properties": {
-                    "query": {"type": "string", "description": "The policy search query"}
+                    "query": {"type": "string", "description": "The policy search query"},
+                    "doc_id": {
+                        "type": "string", 
+                        "description": "Specific regulation year to query (e.g., 2013, 2024, 2026). Leave empty/null to query the LATEST active regulations."
+                    }
                 },
                 "required": ["query"]
             }
@@ -45,13 +56,13 @@ TOOLS_SCHEMA = [
         "type": "function",
         "function": {
             "name": "register_activity",
-            "description": "Register a CTXH activity for a student.",
+            "description": "Register a CTXH activity for a student (mutates state / side effect).",
             "parameters": {
                 "type": "object",
                 "properties": {
                     "student_id": {"type": "string", "description": "Student ID"},
                     "activity_code": {"type": "string", "description": "Activity code"},
-                    "points": {"type": "integer", "description": "Activity points"},
+                    "points": {"type": "integer", "description": "Activity points to award"},
                     "semester": {"type": "string", "description": "Semester code (e.g., HK1_2025_2026)"}
                 },
                 "required": ["student_id", "activity_code", "points"]
@@ -62,12 +73,12 @@ TOOLS_SCHEMA = [
         "type": "function",
         "function": {
             "name": "get_status",
-            "description": "Check registered activities and total accumulated points for a student.",
+            "description": "Check registered activities and total accumulated points for a student (read/verify).",
             "parameters": {
                 "type": "object",
                 "properties": {
                     "student_id": {"type": "string", "description": "Student ID"},
-                    "semester": {"type": "string", "description": "Semester code"}
+                    "semester": {"type": "string", "description": "Semester code (optional)"}
                 },
                 "required": ["student_id"]
             }
@@ -75,13 +86,25 @@ TOOLS_SCHEMA = [
     }
 ]
 
-# ---------------------------------------------------------------------------
-# Step 2: ReAct Agent Loop
-# ---------------------------------------------------------------------------
+
+@dataclass
+class AgentResult:
+    question: str
+    final_answer: str
+    steps: List[Dict[str, Any]]
+    tool_calls: List[Dict[str, Any]]
+    usage: Dict[str, Any]
+    verified: bool = False
 
 
-def react_agent(question: str, tool_executor_map: dict, max_steps=MAX_STEPS) -> str:
-    """Run Thought / Native Tool Call / Observation cycle."""
+def react_agent(
+    question: str, 
+    tool_executor_map: Dict[str, Callable], 
+    max_steps: int = MAX_STEPS,
+    verbose: bool = True
+) -> AgentResult:
+    """Run ReAct loop: Thought / Native Tool Call / Observation."""
+    usage_tracker = TokenUsage()
     messages = [
         {"role": "system", "content": SYSTEM_PROMPT},
         {"role": "user", "content": question},
@@ -89,46 +112,63 @@ def react_agent(question: str, tool_executor_map: dict, max_steps=MAX_STEPS) -> 
 
     has_registered = False
     has_verified = False
+    trace_steps = []
+    recorded_tool_calls = []
 
     for step in range(1, max_steps + 1):
-        # Pass tools schema so Groq API knows tools are supported
-        response = call_llm(messages=messages, tools=TOOLS_SCHEMA)
+        response = call_llm(
+            messages=messages, 
+            tools=TOOLS_SCHEMA, 
+            tracker=usage_tracker
+        )
         response_message = response.choices[0].message
 
-        print(f"\n--- step {step} ---")
+        if verbose:
+            print(f"\n[bold cyan]--- Bước {step} ---[/bold cyan]")
 
-        # 1. If LLM wants to call a tool
+        # 1. Neu LLM goi tool
         if response_message.tool_calls:
-            messages.append(response_message)  # Save assistant tool call turn
+            messages.append(response_message)
 
             for tool_call in response_message.tool_calls:
                 tool_name = tool_call.function.name
-                tool_call_id = tool_call.id
+                tool_call_id = getattr(tool_call, "id", f"call_{step}")
                 raw_args = tool_call.function.arguments
 
                 try:
                     kwargs = json.loads(raw_args) if isinstance(raw_args, str) else raw_args
                 except Exception as e:
-                    observation = f"Error parsing arguments: {e}"
+                    observation = f"Error: Argument parse failed: {e}"
+                    kwargs = {}
                 else:
                     if tool_name in tool_executor_map:
                         try:
+                            # Chạy tool và bắt ngoại lệ an toàn, trả chuỗi 'Error: ...'
                             observation = str(tool_executor_map[tool_name](**kwargs))
                         except Exception as e:
-                            observation = f"Error executing {tool_name}: {e}"
+                            observation = f"Error: executing {tool_name}: {e}"
                     else:
                         observation = f"Error: unknown tool '{tool_name}'"
 
-                # Update verification flags
+                # Ghi nhận trạng thái kiểm định Side-Effect
                 if tool_name == "register_activity":
                     has_registered = True
                 elif tool_name == "get_status" and has_registered:
                     has_verified = True
 
-                print(f"Tool Call: {tool_name}({kwargs})")
-                print(f"Observation: {observation}")
+                tool_record = {
+                    "step": step,
+                    "name": tool_name,
+                    "args": kwargs,
+                    "observation": observation
+                }
+                recorded_tool_calls.append(tool_record)
+                trace_steps.append(tool_record)
 
-                # Send observation back to LLM
+                if verbose:
+                    print(f"[yellow]Gọi Tool:[/yellow] {tool_name}({kwargs})")
+                    print(f"[green]Kết quả:[/green] {observation[:200]}...")
+
                 messages.append({
                     "role": "tool",
                     "tool_call_id": tool_call_id,
@@ -136,34 +176,50 @@ def react_agent(question: str, tool_executor_map: dict, max_steps=MAX_STEPS) -> 
                     "content": str(observation)
                 })
 
-        # 2. If LLM outputs text (Final Answer)
+        # 2. Neu LLM tra ve Final Answer
         else:
             content = response_message.content or ""
-            print(f"Assistant: {content}")
+            if verbose:
+                print(f"[bold green]Assistant:[/bold green] {content}")
 
-            # Enforce Action & Verify constraint
+            # Ràng buộc Action & Verify
             if has_registered and not has_verified:
                 messages.append(response_message)
                 messages.append({
                     "role": "user",
-                    "content": "SYSTEM ERROR: You registered an activity but HAVE NOT checked status with 'get_status'. "
-                               "You MUST call 'get_status' to verify before giving the final answer."
+                    "content": "SYSTEM CONSTRAINT: You registered an activity but HAVE NOT verified status with 'get_status'. "
+                               "You MUST call 'get_status' to verify before giving the final response."
                 })
                 continue
 
-            return content
+            return AgentResult(
+                question=question,
+                final_answer=content,
+                steps=trace_steps,
+                tool_calls=recorded_tool_calls,
+                usage=usage_tracker.to_dict(),
+                verified=has_verified if has_registered else True
+            )
 
-    return "(stopped: too many steps)"
+    return AgentResult(
+        question=question,
+        final_answer="(Dừng: Vượt quá số bước tối đa MAX_STEPS)",
+        steps=trace_steps,
+        tool_calls=recorded_tool_calls,
+        usage=usage_tracker.to_dict(),
+        verified=has_verified
+    )
+
 
 def save_trace_log(
-        question: str,
-        final_answer: str,
-        usage_stats: Dict[str, Any],
-        traces: List[Dict[str, Any]],
-        is_verified: bool,
-        log_filename: str = None
+    question: str,
+    final_answer: Union[str, AgentResult],
+    usage_stats: Optional[Dict[str, Any]] = None,
+    traces: Optional[List[Dict[str, Any]]] = None,
+    is_verified: Optional[bool] = None,
+    log_filename: Optional[str] = None
 ) -> str:
-    """ Export trace and detailed USAGE stats to the logs/*.jsonl"""
+    """Export trace and detailed USAGE stats to the logs/*.jsonl"""
     logs_dir = "logs"
     os.makedirs(logs_dir, exist_ok=True)
 
@@ -173,26 +229,37 @@ def save_trace_log(
 
     filepath = os.path.join(logs_dir, log_filename)
 
-    usage_payload = {
-        "calls": usage_stats.get("calls", 0),
-        "prompt_tokens": usage_stats.get("prompt_tokens", 0),
-        "completion_tokens": usage_stats.get("completion_tokens", 0),
-        "total_tokens": usage_stats.get("total_tokens", 0),
-    }
+    if isinstance(final_answer, AgentResult):
+        ans_text = final_answer.final_answer
+        usage_payload = final_answer.usage
+        trace_data = final_answer.steps
+        verified_status = final_answer.verified
+    else:
+        ans_text = str(final_answer)
+        stats = usage_stats or {}
+        usage_payload = {
+            "calls": stats.get("calls", 0),
+            "prompt_tokens": stats.get("prompt_tokens", 0),
+            "completion_tokens": stats.get("completion_tokens", 0),
+            "total_tokens": stats.get("total_tokens", 0),
+        }
+        trace_data = traces if traces is not None else []
+        verified_status = is_verified if is_verified is not None else False
 
     log_entry = {
         "timestamp": datetime.now().isoformat(),
         "question": question,
-        "final_answer": final_answer,
-        "is_verified": is_verified,
+        "final_answer": ans_text,
+        "is_verified": verified_status,
         "usage": usage_payload,
-        "traces": traces
+        "traces": trace_data
     }
 
     with open(filepath, "a", encoding="utf-8") as f:
-        f.write(json.dumps(log_entry, ensure_ascii=False, indent = 2 ) + "\n\n")
+        f.write(json.dumps(log_entry, ensure_ascii=False, indent=2) + "\n\n")
 
     return filepath
+
 
 def main():
     load_dotenv()
@@ -206,8 +273,12 @@ def main():
     question = "Please register activity ACT01 with 5 points for student SV01 in HK1_2025_2026 and verify the updated status."
 
     print(f"Question: {question}")
-    final_answer = react_agent(question, dummy_executors)
-    print(f"\nFinal Answer: {final_answer}")
+    result = react_agent(question, dummy_executors)
+    if isinstance(result, AgentResult):
+        print(f"\nFinal Answer: {result.final_answer}")
+        print(f"Token Usage: {result.usage}")
+    else:
+        print(f"\nFinal Answer: {result}")
 
 
 if __name__ == "__main__":

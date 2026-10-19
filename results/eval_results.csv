@@ -1,0 +1,13 @@
+﻿question_id,query,expected_answerable,actual_answerable,is_correct,top_score,calls,prompt_tokens,completion_tokens,total_tokens,latency_sec
+1,Sinh viên cần tích lũy bao nhiêu ngày hoặc bao nhiêu điểm Công tác xã hội để đủ điều kiện xét tốt nghiệp?,True,True,True,0.9275,1,468,48,516,1.326
+2,Tỷ lệ quy đổi giữa Điểm Công tác xã hội và Ngày Công tác xã hội được quy định như thế nào?,True,True,True,0.925,1,766,69,835,1.25
+3,Sinh viên tham gia chiến dịch Mùa hè xanh suốt 1 tháng tại các tỉnh (mã hoạt động 001101) thì được quy đổi tối đa bao nhiêu ngày CTXH?,True,True,True,0.9331,1,810,71,881,1.144
+4,Nếu sinh viên đăng ký tham gia hoạt động CTXH nhưng không thực hiện mà không có lý do chính đáng thì bị xử lý như thế nào?,True,True,True,0.9399,1,753,275,1028,1.565
+5,Những hoạt động nào không được tính ngày Công tác xã hội theo quy định của nhà trường?,True,True,True,0.9292,1,737,307,1044,1.624
+6,Sinh viên khiếu nại kết quả đánh giá điểm CTXH ở đâu và theo quy trình như thế nào?,True,True,True,0.9356,1,576,200,776,8.093
+7,Sinh viên đã tích lũy được 25 điểm CTXH thì đã đủ điều kiện tốt nghiệp chưa và cần tích lũy thêm bao nhiêu điểm nữa?,True,True,True,0.9104,1,475,83,558,12.198
+8,Khi sinh viên tham gia hoạt động CTXH mà đã được trả tiền công hoặc trả phí thì có được tính ngày CTXH không?,True,True,True,0.9547,1,743,92,835,7.678
+9,Giá đồng tiền ảo Bitcoin hôm nay thay đổi bao nhiêu phần trăm?,False,False,True,0.3138,1,15,15,30,0.052
+10,Hướng dẫn cài đặt cơ sở dữ liệu MongoDB trên hệ điều hành Ubuntu Linux?,False,False,True,0.3187,1,17,15,32,0.048
+11,Dự báo thời tiết ngày mai tại Hà Nội có mưa hay không?,False,False,True,0.3166,1,13,15,28,0.037
+12,Cách nướng bánh mì bằng nồi chiên không dầu sao cho vỏ bánh giòn xốp?,False,False,True,0.3129,1,17,15,32,0.034
