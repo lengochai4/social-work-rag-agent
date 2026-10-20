@@ -186,7 +186,17 @@ def react_agent(
 
                 if verbose:
                     print(f"[yellow]Gọi Tool:[/yellow] {tool_name}({kwargs})")
-                    print(f"[green]Kết quả:[/green] {observation[:200]}...")
+                    if tool_name == "search_policy":
+                        import re
+                        headers = re.findall(r"(\[.*?score=[\d\.]+\])", observation)
+                        if headers:
+                            print(f"[green]Kết quả ({len(headers)} chunks retrieved):[/green]")
+                            for h in headers:
+                                print(f"  • {h}")
+                        else:
+                            print(f"[green]Kết quả:[/green] {observation[:250]}...")
+                    else:
+                        print(f"[green]Kết quả:[/green] {observation[:250]}...")
 
                 messages.append({
                     "role": "tool",

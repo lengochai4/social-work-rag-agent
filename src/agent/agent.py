@@ -42,17 +42,25 @@ class SocialWorkAgent:
         results = []
         
         if clean_doc_id:
+            # Nếu người dùng truyền doc_id cụ thể -> Lọc chính xác theo doc_id đó
             filter_meta = {"doc_id": clean_doc_id}
             results = self.retriever.search(query, top_k=3, filter_metadata=filter_meta)
         else:
+            # GIẢI PHÁP ĐỘNG: Tìm kiếm diện rộng top 5-6 kết quả liên quan nhất
             raw_results = self.retriever.search(query, top_k=6, filter_metadata=None)
             
             if raw_results:
+                # Tự động sắp xếp (Sort) theo NĂM BAN HÀNH (publication_year) giảm dần để ưu tiên tài liệu MỚI NHẤT
+                def _extract_year(r) -> int:
+                    y = r.metadata.get("publication_year") or r.metadata.get("year", 0)
+                    return int(y) if str(y).isdigit() else 0
+
                 sorted_results = sorted(
                     raw_results, 
-                    key=lambda r: int(r.metadata.get("year", 0)) if str(r.metadata.get("year", "0")).isdigit() else 0, 
+                    key=_extract_year, 
                     reverse=True
                 )
+                # Lấy top 3 kết quả mới nhất & phù hợp nhất
                 results = sorted_results[:3]
 
         if not results:
@@ -63,10 +71,12 @@ class SocialWorkAgent:
 
         context_parts = []
         for r in results:
+            # Lấy thông tin động từ Metadata của Chunk
             title = r.metadata.get("title", r.metadata.get("source_file", "Quy định CTXH"))
-            doc_code = r.metadata.get("doc_id", r.chunk_id.split("_chunk")[0] if "_chunk" in r.chunk_id else "N/A")
-            year_tag = r.metadata.get("year", "")
+            doc_code = r.doc_id or r.metadata.get("doc_id", r.chunk_id.split("_chunk")[0] if "_chunk" in r.chunk_id else "N/A")
+            year_tag = r.metadata.get("publication_year") or r.metadata.get("year", "")
             
+            # Đảm bảo hiển thị rõ RAG context để LLM đọc đúng năm/văn bản
             header_str = f"[{title} | Mã văn bản: {doc_code} | Năm: {year_tag} | chunk_id={r.chunk_id} | score={r.score:.3f}]"
             context_parts.append(f"{header_str}:\n{r.content}")
 
