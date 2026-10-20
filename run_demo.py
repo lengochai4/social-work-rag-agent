@@ -61,6 +61,7 @@ def run_demo():
         "và kiểm tra lại xem tổng điểm mới của tôi đã đủ điều kiện xét tốt nghiệp chưa?"
     )
 
+
     print(f"\n[bold white]2. Câu hỏi của Sinh Viên gửi đến Agent:[/bold white]")
     print(Panel(f"[italic]{question}[/italic]", style="cyan"))
 

@@ -1,6 +1,3 @@
-# ========================================================
-# HCMUTE CTXH RAG AGENT - DEPENDENCIES
-# ========================================================
 
 # Core Embedding & Semantic Retrieval
 sentence-transformers>=3.0.0
