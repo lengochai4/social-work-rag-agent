@@ -56,7 +56,9 @@ CHUNK_OVERLAP = 200
 # LLM & API CLIENT SETTINGS 
 LLM_PROVIDER = os.getenv("LLM_PROVIDER", "groq")
 LLM_BASE_URL = os.getenv("LLM_BASE_URL", None)
-LLM_MODEL = os.getenv("LLM_MODEL", "qwen/qwen3.8-27b")
+# LLM_MODEL = os.getenv("LLM_MODEL", "qwen/qwen3.8-27b")
+# LLM_MODEL = os.getenv("LLM_MODEL", "openai/gpt-oss-20b")
+LLM_MODEL = os.getenv("LLM_MODEL", "openai/gpt-oss-120b")
 GROQ_API_KEY = os.getenv("GROQ_API_KEY", "")
 
 # Retry & Timeout Settings

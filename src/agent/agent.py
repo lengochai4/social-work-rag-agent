@@ -39,7 +39,7 @@ class SocialWorkAgent:
             return "Error: Cơ sở tri thức chưa được nạp (thiếu data/ctxh_chunks.json)."
 
         filter_meta = {"doc_id": doc_id} if doc_id else None
-        results = self.retriever.search(query, top_k=3, filter_metadata=filter_meta)
+        results = self.retriever.search(query, top_k=2, filter_metadata=filter_meta)
         if not results:
             return "Không tìm thấy tài liệu phù hợp trong quy chế."
 
