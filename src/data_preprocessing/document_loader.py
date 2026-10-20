@@ -25,7 +25,7 @@ DOCUMENT_METADATA = {
             "publication_year": 2013,
             "language": "Vietnamese",
             "source": "https://sao.hcmute.edu.vn/Resources/Docs/SubDomain/sao/Quy%20%C4%91%E1%BB%8Bnh%20hi%E1%BB%87n%20h%C3%A0nh/QUYDINH-HDCDONG-2013%20(1).pdf"
-        },
+    },
     
     "QUY_DINH_DIEM_CTXH-SOTAYSINHVIEN-2024.md": {
         "doc_id": "CTXH_002",
@@ -37,6 +37,17 @@ DOCUMENT_METADATA = {
         "publication_year": 2024,
         "language": "Vietnamese",
         "source": "https://sao.hcmute.edu.vn/Resources/Docs/SubDomain/sao/Quy%20%C4%91%E1%BB%8Bnh%20hi%E1%BB%87n%20h%C3%A0nh/_SO%20TAY%20SV%202024%20-%2006-11%20-%20final.pdf"
+    },
+    "QUY_DINH_DIEM_CTXH-SOTAYSINHVIEN-2025.md": {
+    "doc_id": "CTXH_003",
+    "title": "Quy định về đánh giá kết quả điểm công tác xã hội sinh viên HCMUTE (Áp dụng 2025)",
+    "document_type": "regulation",
+    "document_number": "224/QĐ-ĐHSPKT-CTHSSV",
+    "version": "v3.0",
+    "owner": "Trường Đại học Sư phạm Kỹ thuật TPHCM",
+    "publication_year": 2025,
+    "language": "Vietnamese",
+    "source": "Sổ tay sinh viên 2025"
     }
 }
 
