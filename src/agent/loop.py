@@ -46,7 +46,9 @@ TOOLS_SCHEMA = [
                     "query": {"type": "string", "description": "The policy search query"},
                     "doc_id": {
                         "type": "string", 
-                        "description": "Specific regulation year to query (e.g., '2013', '2024', '2026'). Set as empty string '' if no specific year."
+                        "description": "Optional document ID (e.g., 'CTXH_001', 'CTXH_002') to restrict search "
+                            "to a single specific document. Omit this parameter for general searches "
+                            "across all regulations."
                     }
                 },
                 "required": ["query"]
