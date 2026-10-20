@@ -4,7 +4,7 @@
       "student_id": "24110089",
       "full_name": "Lê Ngọc Hải",
       "accumulated_points": {
-        "HK1_2025_2026": 25
+        "HK1_2025_2026": 40
       },
       "registered_activities": [
         {
@@ -18,6 +18,12 @@
           "points": 10,
           "semester": "HK1_2025_2026",
           "registered_at": "2025-11-15T09:00:00"
+        },
+        {
+          "activity_code": "CTXH_TIEP_SUC_MUA_THI_2026",
+          "points": 15,
+          "semester": "HK1_2025_2026",
+          "registered_at": "2026-10-20T11:32:28.949045"
         }
       ]
     },

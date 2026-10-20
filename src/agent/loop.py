@@ -12,6 +12,7 @@ from dataclasses import dataclass, asdict
 from typing import Dict, Any, List, Optional, Callable, Union
 from dotenv import load_dotenv
 import sys
+
 PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
@@ -45,7 +46,7 @@ TOOLS_SCHEMA = [
                     "query": {"type": "string", "description": "The policy search query"},
                     "doc_id": {
                         "type": "string", 
-                        "description": "Specific regulation year to query (e.g., 2013, 2024, 2026). Leave empty/null to query the LATEST active regulations."
+                        "description": "Specific regulation year to query (e.g., '2013', '2024', '2026'). Set as empty string '' if no specific year."
                     }
                 },
                 "required": ["query"]
@@ -97,6 +98,22 @@ class AgentResult:
     verified: bool = False
 
 
+def sanitize_kwargs(tool_name: str, kwargs: Dict[str, Any]) -> Dict[str, Any]:
+    """Sanitize kwargs from LLM to prevent Schema Type Mismatch errors."""
+    if not isinstance(kwargs, dict):
+        return {}
+    
+    # Xử lý riêng cho search_policy
+    if tool_name == "search_policy":
+        if kwargs.get("doc_id") is None:
+            kwargs["doc_id"] = ""
+        else:
+            kwargs["doc_id"] = str(kwargs["doc_id"])
+            
+    # Xóa toàn bộ các key có giá trị None/null còn lại
+    return {k: v for k, v in kwargs.items() if v is not None}
+
+
 def react_agent(
     question: str, 
     tool_executor_map: Dict[str, Callable], 
@@ -137,13 +154,13 @@ def react_agent(
 
                 try:
                     kwargs = json.loads(raw_args) if isinstance(raw_args, str) else raw_args
+                    kwargs = sanitize_kwargs(tool_name, kwargs)
                 except Exception as e:
                     observation = f"Error: Argument parse failed: {e}"
                     kwargs = {}
                 else:
                     if tool_name in tool_executor_map:
                         try:
-                            # Chạy tool và bắt ngoại lệ an toàn, trả chuỗi 'Error: ...'
                             observation = str(tool_executor_map[tool_name](**kwargs))
                         except Exception as e:
                             observation = f"Error: executing {tool_name}: {e}"
@@ -265,7 +282,7 @@ def main():
     load_dotenv()
 
     dummy_executors = {
-        "search_policy": lambda query: f"Policy lookup result for '{query}': Registration guidelines found.",
+        "search_policy": lambda query, doc_id="": f"Policy lookup result for '{query}' (doc_id='{doc_id}'): Registration guidelines found.",
         "register_activity": lambda student_id, activity_code, points, semester="HK1_2025_2026": f"Successfully registered {activity_code} ({points} pts) for student {student_id} in {semester}.",
         "get_status": lambda student_id, semester=None: f"Status for {student_id}: Total accumulated CTXH points = 5 in {semester or 'all semesters'}."
     }

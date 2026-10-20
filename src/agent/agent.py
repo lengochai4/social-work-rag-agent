@@ -38,19 +38,37 @@ class SocialWorkAgent:
         if not self.retriever:
             return "Error: Cơ sở tri thức chưa được nạp (thiếu data/ctxh_chunks.json)."
 
-        filter_meta = {"doc_id": doc_id} if doc_id else None
-        results = self.retriever.search(query, top_k=3, filter_metadata=filter_meta)
+        clean_doc_id = str(doc_id).strip() if doc_id and str(doc_id).lower() != "null" else ""
+        results = []
+        
+        if clean_doc_id:
+            filter_meta = {"doc_id": clean_doc_id}
+            results = self.retriever.search(query, top_k=3, filter_metadata=filter_meta)
+        else:
+            raw_results = self.retriever.search(query, top_k=6, filter_metadata=None)
+            
+            if raw_results:
+                sorted_results = sorted(
+                    raw_results, 
+                    key=lambda r: int(r.metadata.get("year", 0)) if str(r.metadata.get("year", "0")).isdigit() else 0, 
+                    reverse=True
+                )
+                results = sorted_results[:3]
+
         if not results:
             return "Không tìm thấy tài liệu phù hợp trong quy chế."
 
         if not self.calibrator.should_answer(results):
             return f"Cảnh báo: Điểm phù hợp ({results[0].score:.3f}) dưới ngưỡng tin cậy ({self.threshold}). Không có cơ sở quy định trong tài liệu."
 
-        # Format context with citations
         context_parts = []
         for r in results:
-            title = r.metadata.get("title", "Quy định CTXH")
-            context_parts.append(f"[{title} | chunk_id={r.chunk_id} | score={r.score:.3f}]:\n{r.content}")
+            title = r.metadata.get("title", r.metadata.get("source_file", "Quy định CTXH"))
+            doc_code = r.metadata.get("doc_id", r.chunk_id.split("_chunk")[0] if "_chunk" in r.chunk_id else "N/A")
+            year_tag = r.metadata.get("year", "")
+            
+            header_str = f"[{title} | Mã văn bản: {doc_code} | Năm: {year_tag} | chunk_id={r.chunk_id} | score={r.score:.3f}]"
+            context_parts.append(f"{header_str}:\n{r.content}")
 
         return "\n\n".join(context_parts)
 
