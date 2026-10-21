@@ -50,6 +50,11 @@ cd social-work-rag-agent
 python -m src.data_preprocessing.build_dataset
 ```
 
+**run commands**:
+```bash
+python src/main.py
+```
+
 ## LINK DATA: https://drive.google.com/drive/folders/1VCwrwHplQBLwjCfr_11-UZMcpYLjV4zI?hl=vi
 
 ## 2. The 3 Mandatory Architecture Layers
